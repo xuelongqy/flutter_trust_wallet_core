@@ -1297,6 +1297,7 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   case oasis
   case polygon
   case thorchain
+  case bluzelle
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.CoinType]
   public typealias RawValue = Swift.UInt32
@@ -2264,7 +2265,7 @@ public enum EthereumChainID : Swift.UInt32, Swift.CaseIterable {
   case thunderToken
   case tomoChain
   case binanceSmartChain
-  case matic
+  case polygon
   case wanchain
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.EthereumChainID]
@@ -2647,6 +2648,7 @@ public enum HRP : Swift.UInt32, Swift.CaseIterable, Swift.CustomStringConvertibl
   case terra
   case kava
   case oasis
+  case bluzelle
   case bandChain
   case elrond
   case binance

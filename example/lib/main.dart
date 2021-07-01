@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
 
 void main() {
@@ -14,36 +11,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
   String _address = "none";
+  bool isValid = false;
+  bool isValidWord = false;
+  String suggest = "";
 
   @override
   void initState() {
     FlutterTrustWalletCore.init();
     super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      platformVersion = await FlutterTrustWalletCore.platformVersion ??
-          'Unknown platform version';
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
   }
 
   @override
@@ -51,26 +27,38 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('wallet core example app'),
         ),
-        body: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text('Running on: $_platformVersion\n'),
-              SizedBox(
-                height: 100,
+        body: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text("Mnemonic:isValid = $isValid"),
+                    Text("Mnemonic:isValidWord = $isValidWord"),
+                    Text("Mnemonic:suggest = $suggest"),
+                  ],
+                ),
               ),
+            ),
+            Center(
+              child: SafeArea(
+                child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
 
-              Text(_address),
-              ElevatedButton(onPressed: () {
-                setState(() {
-                  _address = FlutterTrustWalletCore.genETHAddress();
-                });
-
-              }, child: Text("Gen ETH Address")),
-            ],
-          ),
+                        isValid = TWMnemonic.isValid("digital reward jar vehicle globe crunch quality cattle marble lawn rotate will");
+                        isValidWord = TWMnemonic.isValidWord("abandon");
+                        suggest = TWMnemonic.suggest("cal");
+                      });
+                    },
+                    child: Text("Gen info")),
+              ),
+            ),
+          ],
         ),
       ),
     );
