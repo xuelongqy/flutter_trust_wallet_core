@@ -78,4 +78,12 @@ class TWHDWallet {
         .asFunction();
     return TWString(func(_twHDWallet, twCoinType)).toDartString();
   }
+
+  String getKeyForCoin(int twCoinType) {
+    final Pointer<Utf8> Function(Pointer, int) func = walletCoreLib
+        .lookup<NativeFunction<Pointer<Utf8> Function(Pointer, Int32)>>(
+        'TWHDWalletGetKeyForCoin')
+        .asFunction();
+    return TWString(func(_twHDWallet, twCoinType)).toDartString();
+  }
 }
