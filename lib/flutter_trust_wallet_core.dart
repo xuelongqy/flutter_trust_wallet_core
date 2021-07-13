@@ -8,24 +8,23 @@ import 'package:ffi/ffi.dart';
 
 import 'extensions.dart';
 
-part 'tw_hd_wallet.dart';
+part 'impl/tw_hd_wallet.dart';
 
-part 'tw_mnemonic.dart';
+part 'impl/tw_mnemonic.dart';
 
-part 'tw_string.dart';
+part 'impl/tw_string.dart';
 
-part 'tw_data.dart';
+part 'impl/tw_data.dart';
 
-part 'tw_coin_type.dart';
+part 'impl/tw_coin_type.dart';
 
-part 'tw_blockchain.dart';
+part 'impl/tw_blockchain.dart';
 
-part 'tw_curve.dart';
+part 'impl/tw_curve.dart';
 
-part 'tw_purpose.dart';
+part 'impl/tw_purpose.dart';
 
-part 'tw_hd_version.dart';
-
+part 'impl/tw_hd_version.dart';
 
 late DynamicLibrary walletCoreLib;
 

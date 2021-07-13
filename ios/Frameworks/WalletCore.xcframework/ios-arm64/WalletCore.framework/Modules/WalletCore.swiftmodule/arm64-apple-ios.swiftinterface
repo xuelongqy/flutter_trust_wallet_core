@@ -2620,9 +2620,9 @@ public enum HDVersion : Swift.UInt32, Swift.CaseIterable {
   final public var mnemonic: Swift.String {
     get
   }
-  public init(strength: Swift.Int32, passphrase: Swift.String)
-  public init(mnemonic: Swift.String, passphrase: Swift.String)
-  public init(data: Foundation.Data, passphrase: Swift.String)
+  public init?(strength: Swift.Int32, passphrase: Swift.String)
+  public init?(mnemonic: Swift.String, passphrase: Swift.String)
+  public init?(data: Foundation.Data, passphrase: Swift.String)
   @objc deinit
   final public func getMasterKey(curve: WalletCore.Curve) -> WalletCore.PrivateKey
   final public func getKeyForCoin(coin: WalletCore.CoinType) -> WalletCore.PrivateKey
