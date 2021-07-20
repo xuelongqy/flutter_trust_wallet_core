@@ -1,10 +1,10 @@
 
 part of trust_wallet_core;
 
-class TWBlockchain {
+class DartTWBlockchain {
   final int blockchain;
 
-  TWBlockchain(this.blockchain);
+  DartTWBlockchain(this.blockchain);
 
   static const int TWBlockchainBitcoin = 0;
   static const int TWBlockchainEthereum = 1;

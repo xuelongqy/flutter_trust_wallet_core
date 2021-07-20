@@ -69,16 +69,16 @@ class _MyAppState extends State<MyApp> {
                         logs.clear();
 
                         logger.log(Level.debug, "TWMnemonic.isValid('digital reward jar vehicle globe crunch quality cattle marble lawn rotate will)");
-                        logger.log(Level.debug, TWMnemonic.isValid('digital reward jar vehicle globe crunch quality cattle marble lawn rotate will'));
+                        logger.log(Level.debug, DartTWMnemonic.isValid('digital reward jar vehicle globe crunch quality cattle marble lawn rotate will'));
 
                         logger.log(Level.debug, "TWMnemonic.isValidWord('glob')");
-                        logger.log(Level.debug, TWMnemonic.isValidWord('glob'));
+                        logger.log(Level.debug, DartTWMnemonic.isValidWord('glob'));
 
                         logger.log(Level.debug, "TWMnemonic.suggest('ja')");
-                        logger.log(Level.debug, TWMnemonic.suggest('ja'));
+                        logger.log(Level.debug, DartTWMnemonic.suggest('ja'));
 
                         logger.log(Level.debug, " TWHDWallet.create(128)");
-                        logger.log(Level.debug, TWHDWallet.create(128).mnemonic());
+                        logger.log(Level.debug, DartTWHDWallet.create(128).mnemonic());
 
                         setState(() {});
                       },

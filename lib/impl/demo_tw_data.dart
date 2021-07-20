@@ -1,9 +1,9 @@
 part of trust_wallet_core;
 
-class TWData {
+class DartTWData {
   late Pointer<Void> _twData;
 
-  TWData createWithBytes(Uint8List bytes) {
+  DartTWData createWithBytes(Uint8List bytes) {
     final Pointer<Void> Function(Pointer<Uint8>, int) func = walletCoreLib
         .lookup<NativeFunction<Pointer<Void> Function(Pointer<Uint8>, Int32)>>(
         'TWDataCreateWithBytes')
@@ -13,7 +13,7 @@ class TWData {
     return this;
   }
 
-  TWData createWithSize(int size) {
+  DartTWData createWithSize(int size) {
     final Pointer<Void> Function(int) func = walletCoreLib
         .lookup<NativeFunction<Pointer<Void> Function(Int32)>>(
         'TWDataCreateWithSize')
@@ -23,7 +23,7 @@ class TWData {
     return this;
   }
 
-  TWData createWithData(Pointer<Void> data) {
+  DartTWData createWithData(Pointer<Void> data) {
     final Pointer<Void> Function(Pointer<Void>) func = walletCoreLib
         .lookup<NativeFunction<Pointer<Void> Function(Pointer<Void>)>>(
         'TWDataCreateWithData')

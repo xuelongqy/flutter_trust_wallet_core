@@ -1,15 +1,15 @@
 part of trust_wallet_core;
 
 
-class TWString {
+class DartTWString {
   late String _dartString;
   late Pointer<Utf8> _twString;
 
-  TWString.fromDartString(this._dartString) {
+  DartTWString.fromDartString(this._dartString) {
     createWithUTF8Bytes(_dartString);
   }
 
-  TWString(this._twString) {
+  DartTWString(this._twString) {
     this._dartString = utf8Bytes(_twString);
   }
 
@@ -17,7 +17,7 @@ class TWString {
     return this._twString.toDartString();
   }
 
-  TWString createWithUTF8Bytes(String str) {
+  DartTWString createWithUTF8Bytes(String str) {
     final Pointer<Utf8> Function(Pointer<Utf8>) func = walletCoreLib.lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Utf8>)>>('TWStringCreateWithUTF8Bytes').asFunction();
     this._twString = func(str.toNativeUtf8());
     return this;

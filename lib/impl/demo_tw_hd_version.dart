@@ -1,8 +1,8 @@
 part of trust_wallet_core;
 
-class TWHDVersion {
+class DartTWHDVersion {
   final int hDVersion;
-  TWHDVersion(this.hDVersion);
+  DartTWHDVersion(this.hDVersion);
   static const int TWHDVersionNone = 0;
 
   // Bitcoin

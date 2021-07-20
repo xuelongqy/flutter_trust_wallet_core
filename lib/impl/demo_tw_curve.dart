@@ -1,10 +1,10 @@
 part of trust_wallet_core;
 
-class TWCurve {
+class DartTWCurve {
 
   final int curve;
 
-  TWCurve(this.curve);
+  DartTWCurve(this.curve);
 
   /// "secp256k1"
   static const int TWCurveSECP256k1 = 0;

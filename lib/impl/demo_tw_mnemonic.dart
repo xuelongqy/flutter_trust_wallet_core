@@ -1,8 +1,8 @@
 part of trust_wallet_core;
 
-class TWMnemonic {
+class DartTWMnemonic {
   static bool isValid(String mnemonic) {
-    final _mnemonic = TWString.fromDartString(mnemonic);
+    final _mnemonic = DartTWString.fromDartString(mnemonic);
     final int Function(Pointer<Utf8>) func = walletCoreLib
         .lookup<NativeFunction<Int32 Function(Pointer<Utf8>)>>(
             'TWMnemonicIsValid')
@@ -13,7 +13,7 @@ class TWMnemonic {
   }
 
   static bool isValidWord(String word) {
-    TWString s = TWString.fromDartString(word);
+    DartTWString s = DartTWString.fromDartString(word);
     final int Function(Pointer<Utf8>) func = walletCoreLib
         .lookup<NativeFunction<Int32 Function(Pointer<Utf8>)>>(
             'TWMnemonicIsValidWord')
@@ -25,12 +25,12 @@ class TWMnemonic {
   }
 
   static String suggest(String mnemonicPrefix) {
-    TWString s = TWString.fromDartString(mnemonicPrefix);
+    DartTWString s = DartTWString.fromDartString(mnemonicPrefix);
     final Pointer<Utf8> Function(Pointer<Utf8>) func = walletCoreLib
         .lookup<NativeFunction<Pointer<Utf8> Function(Pointer<Utf8>)>>(
             'TWMnemonicSuggest')
         .asFunction();
-    final result =  TWString(func(s._twString));
+    final result =  DartTWString(func(s._twString));
     s.delete();
     return result._dartString;
   }

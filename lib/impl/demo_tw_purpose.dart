@@ -1,9 +1,9 @@
 part of trust_wallet_core;
 
-class TWPurpose {
+class DartTWPurpose {
   final int purpose;
 
-  TWPurpose(this.purpose);
+  DartTWPurpose(this.purpose);
 
   static const int TWPurposeBIP44 = 44;
   static const int TWPurposeBIP49 = 49;

@@ -1,9 +1,9 @@
 part of trust_wallet_core;
 
-class TWCoinType {
+class DartTWCoinType {
   final int coinType;
 
-  TWCoinType(this.coinType);
+  DartTWCoinType(this.coinType);
 
   static const int TWCoinTypeAeternity = 457;
   static const int TWCoinTypeAion = 425;
@@ -72,43 +72,43 @@ class TWCoinType {
   static const int TWCoinTypeTHORChain = 931;
   static const int TWCoinTypeBluzelle = 483;
 
-  TWBlockchain blockchain(TWCoinType tWCoinType) {
+  DartTWBlockchain blockchain(DartTWCoinType tWCoinType) {
     final int Function(int) func = walletCoreLib
         .lookup<NativeFunction<Int32 Function(Int32)>>('TWCoinTypeBlockchain')
         .asFunction();
-    return TWBlockchain(func(tWCoinType.coinType));
+    return DartTWBlockchain(func(tWCoinType.coinType));
   }
 
-  TWPurpose purpose(TWCoinType tWCoinType) {
+  DartTWPurpose purpose(DartTWCoinType tWCoinType) {
     final int Function(int) func = walletCoreLib
         .lookup<NativeFunction<Int32 Function(Int32)>>('TWCoinTypePurpose')
         .asFunction();
-    return TWPurpose(func(tWCoinType.coinType));
+    return DartTWPurpose(func(tWCoinType.coinType));
   }
 
-  TWCurve curve(TWCoinType tWCoinType) {
+  DartTWCurve curve(DartTWCoinType tWCoinType) {
     final int Function(int) func = walletCoreLib
         .lookup<NativeFunction<Int32 Function(Int32)>>('TWCoinTypeCurve')
         .asFunction();
-    return TWCurve(func(tWCoinType.coinType));
+    return DartTWCurve(func(tWCoinType.coinType));
   }
 
-  TWHDVersion xpubVersion(TWCoinType tWCoinType) {
+  DartTWHDVersion xpubVersion(DartTWCoinType tWCoinType) {
     final int Function(int) func = walletCoreLib
         .lookup<NativeFunction<Int32 Function(Int32)>>('TWCoinTypeXpubVersion')
         .asFunction();
-    return TWHDVersion(func(tWCoinType.coinType));
+    return DartTWHDVersion(func(tWCoinType.coinType));
   }
 
-  TWHDVersion xprvVersion(TWCoinType tWCoinType) {
+  DartTWHDVersion xprvVersion(DartTWCoinType tWCoinType) {
     final int Function(int) func = walletCoreLib
         .lookup<NativeFunction<Int32 Function(Int32)>>('TWCoinTypeXprvVersion')
         .asFunction();
-    return TWHDVersion(func(tWCoinType.coinType));
+    return DartTWHDVersion(func(tWCoinType.coinType));
   }
 
-  bool validate(TWCoinType twCoinType, String address) {
-    final _address = TWString.fromDartString(address);
+  bool validate(DartTWCoinType twCoinType, String address) {
+    final _address = DartTWString.fromDartString(address);
     final int Function(int, Pointer<Utf8>) func = walletCoreLib
         .lookup<NativeFunction<Int32 Function(Int32, Pointer<Utf8>)>>(
             'TWCoinTypeValidate')
