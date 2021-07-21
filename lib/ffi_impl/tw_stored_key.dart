@@ -2,30 +2,24 @@ part of trust_wallet_core;
 
 /// trust wallet core
 class TWStoredKey extends Opaque {
-  /// Represents a key stored as an encrypted file.
-  late final Pointer<Int32> _TW_EXPORT_CLASS = _lookup<Int32>('TW_EXPORT_CLASS');
-
-  int get TW_EXPORT_CLASS => _TW_EXPORT_CLASS.value;
-
-  set TW_EXPORT_CLASS(int value) => _TW_EXPORT_CLASS.value = value;
 
   /// Loads a key from a file.  Returned object needs to be deleted.
-  Pointer<Int32> TWStoredKeyLoad(
-    Pointer<Int32> path,
+   static Pointer<Void> TWStoredKeyLoad(
+    Pointer<Utf8> path,
   ) {
     return _TWStoredKeyLoad(
       path,
     );
   }
 
-  late final _TWStoredKeyLoad_ptr = _lookup<NativeFunction<_c_TWStoredKeyLoad>>('TWStoredKeyLoad');
-  late final _dart_TWStoredKeyLoad _TWStoredKeyLoad = _TWStoredKeyLoad_ptr.asFunction<_dart_TWStoredKeyLoad>();
+   static late final _TWStoredKeyLoad_ptr = _lookup<NativeFunction<_c_TWStoredKeyLoad>>('TWStoredKeyLoad');
+   static late final _dart_TWStoredKeyLoad _TWStoredKeyLoad = _TWStoredKeyLoad_ptr.asFunction<_dart_TWStoredKeyLoad>();
 
   /// Imports a private key.  Returned object needs to be deleted.
-  Pointer<Int32> TWStoredKeyImportPrivateKey(
-    Pointer<Int32> privateKey,
-    Pointer<Int32> name,
-    Pointer<Int32> password,
+   static Pointer<Void> TWStoredKeyImportPrivateKey(
+    Pointer<Void> privateKey,
+    Pointer<Utf8> name,
+    Pointer<Void> password,
     int coin,
   ) {
     return _TWStoredKeyImportPrivateKey(
@@ -36,14 +30,14 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyImportPrivateKey_ptr = _lookup<NativeFunction<_c_TWStoredKeyImportPrivateKey>>('TWStoredKeyImportPrivateKey');
-  late final _dart_TWStoredKeyImportPrivateKey _TWStoredKeyImportPrivateKey = _TWStoredKeyImportPrivateKey_ptr.asFunction<_dart_TWStoredKeyImportPrivateKey>();
+   static late final _TWStoredKeyImportPrivateKey_ptr = _lookup<NativeFunction<_c_TWStoredKeyImportPrivateKey>>('TWStoredKeyImportPrivateKey');
+   static late final _dart_TWStoredKeyImportPrivateKey _TWStoredKeyImportPrivateKey = _TWStoredKeyImportPrivateKey_ptr.asFunction<_dart_TWStoredKeyImportPrivateKey>();
 
   /// Imports an HD wallet.  Returned object needs to be deleted.
-  Pointer<Int32> TWStoredKeyImportHDWallet(
-    Pointer<Int32> mnemonic,
-    Pointer<Int32> name,
-    Pointer<Int32> password,
+   static Pointer<Void> TWStoredKeyImportHDWallet(
+    Pointer<Utf8> mnemonic,
+    Pointer<Utf8> name,
+    Pointer<Void> password,
     int coin,
   ) {
     return _TWStoredKeyImportHDWallet(
@@ -54,25 +48,25 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyImportHDWallet_ptr = _lookup<NativeFunction<_c_TWStoredKeyImportHDWallet>>('TWStoredKeyImportHDWallet');
-  late final _dart_TWStoredKeyImportHDWallet _TWStoredKeyImportHDWallet = _TWStoredKeyImportHDWallet_ptr.asFunction<_dart_TWStoredKeyImportHDWallet>();
+   static late final _TWStoredKeyImportHDWallet_ptr = _lookup<NativeFunction<_c_TWStoredKeyImportHDWallet>>('TWStoredKeyImportHDWallet');
+   static late final _dart_TWStoredKeyImportHDWallet _TWStoredKeyImportHDWallet = _TWStoredKeyImportHDWallet_ptr.asFunction<_dart_TWStoredKeyImportHDWallet>();
 
   /// Imports a key from JSON.  Returned object needs to be deleted.
-  Pointer<Int32> TWStoredKeyImportJSON(
-    Pointer<Int32> json,
+   static Pointer<Void> TWStoredKeyImportJSON(
+    Pointer<Void> json,
   ) {
     return _TWStoredKeyImportJSON(
       json,
     );
   }
 
-  late final _TWStoredKeyImportJSON_ptr = _lookup<NativeFunction<_c_TWStoredKeyImportJSON>>('TWStoredKeyImportJSON');
-  late final _dart_TWStoredKeyImportJSON _TWStoredKeyImportJSON = _TWStoredKeyImportJSON_ptr.asFunction<_dart_TWStoredKeyImportJSON>();
+   static late final _TWStoredKeyImportJSON_ptr = _lookup<NativeFunction<_c_TWStoredKeyImportJSON>>('TWStoredKeyImportJSON');
+   static late final _dart_TWStoredKeyImportJSON _TWStoredKeyImportJSON = _TWStoredKeyImportJSON_ptr.asFunction<_dart_TWStoredKeyImportJSON>();
 
   /// Creates a new key.  Returned object needs to be deleted.
-  Pointer<Int32> TWStoredKeyCreate(
-    Pointer<Int32> name,
-    Pointer<Int32> password,
+   static Pointer<Void> TWStoredKeyCreate(
+    Pointer<Utf8> name,
+    Pointer<Void> password,
   ) {
     return _TWStoredKeyCreate(
       name,
@@ -80,11 +74,11 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyCreate_ptr = _lookup<NativeFunction<_c_TWStoredKeyCreate>>('TWStoredKeyCreate');
-  late final _dart_TWStoredKeyCreate _TWStoredKeyCreate = _TWStoredKeyCreate_ptr.asFunction<_dart_TWStoredKeyCreate>();
+   static late final _TWStoredKeyCreate_ptr = _lookup<NativeFunction<_c_TWStoredKeyCreate>>('TWStoredKeyCreate');
+   static late final _dart_TWStoredKeyCreate _TWStoredKeyCreate = _TWStoredKeyCreate_ptr.asFunction<_dart_TWStoredKeyCreate>();
 
-  int TWStoredKeyDelete(
-    Pointer<TWStoredKey> key,
+  void TWStoredKeyDelete(
+    Pointer<Void> key,
   ) {
     return _TWStoredKeyDelete(
       key,
@@ -94,29 +88,70 @@ class TWStoredKey extends Opaque {
   late final _TWStoredKeyDelete_ptr = _lookup<NativeFunction<_c_TWStoredKeyDelete>>('TWStoredKeyDelete');
   late final _dart_TWStoredKeyDelete _TWStoredKeyDelete = _TWStoredKeyDelete_ptr.asFunction<_dart_TWStoredKeyDelete>();
 
-  /// Stored key uniqie identifier.  Returned object needs to be deleted.
-  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
 
-  int get TWString => _TWString.value;
+   /// Stored key uniqie identifier.  Returned object needs to be deleted.
+   Pointer<Utf8> TWStoredKeyIdentifier(
+       Pointer<Void> key,
+       ) {
+     return _TWStoredKeyIdentifier(
+       key,
+     );
+   }
 
-  set TWString(int value) => _TWString.value = value;
+   late final _TWStoredKeyIdentifier_ptr =
+   _lookup<NativeFunction<_c_TWStoredKeyIdentifier>>(
+       'TWStoredKeyIdentifier');
+   late final _dart_TWStoredKeyIdentifier _TWStoredKeyIdentifier =
+   _TWStoredKeyIdentifier_ptr.asFunction<_dart_TWStoredKeyIdentifier>();
 
-  /// Whether this key is a mnemonic phrase for a HD wallet.
-  late final Pointer<Int32> _bool = _lookup<Int32>('bool');
+   /// Stored key namer.  Returned object needs to be deleted.
+   Pointer<Utf8> TWStoredKeyName(
+       Pointer<Void> key,
+       ) {
+     return _TWStoredKeyName(
+       key,
+     );
+   }
 
-  int get bool => _bool.value;
+   late final _TWStoredKeyName_ptr =
+   _lookup<NativeFunction<_c_TWStoredKeyName>>('TWStoredKeyName');
+   late final _dart_TWStoredKeyName _TWStoredKeyName =
+   _TWStoredKeyName_ptr.asFunction<_dart_TWStoredKeyName>();
 
-  set bool(int value) => _bool.value = value;
+   /// Whether this key is a mnemonic phrase for a HD wallet.
+   int TWStoredKeyIsMnemonic(
+       Pointer<Void> key,
+       ) {
+     return _TWStoredKeyIsMnemonic(
+       key,
+     );
+   }
 
-  /// The number of accounts.
-  late final Pointer<Int32> _size_t = _lookup<Int32>('size_t');
+   late final _TWStoredKeyIsMnemonic_ptr =
+   _lookup<NativeFunction<_c_TWStoredKeyIsMnemonic>>(
+       'TWStoredKeyIsMnemonic');
+   late final _dart_TWStoredKeyIsMnemonic _TWStoredKeyIsMnemonic =
+   _TWStoredKeyIsMnemonic_ptr.asFunction<_dart_TWStoredKeyIsMnemonic>();
 
-  int get size_t => _size_t.value;
+   /// The number of accounts.
+   int TWStoredKeyAccountCount(
+       Pointer<Void> key,
+       ) {
+     return _TWStoredKeyAccountCount(
+       key,
+     );
+   }
 
-  set size_t(int value) => _size_t.value = value;
+   late final _TWStoredKeyAccountCount_ptr =
+   _lookup<NativeFunction<_c_TWStoredKeyAccountCount>>(
+       'TWStoredKeyAccountCount');
+   late final _dart_TWStoredKeyAccountCount _TWStoredKeyAccountCount =
+   _TWStoredKeyAccountCount_ptr.asFunction<_dart_TWStoredKeyAccountCount>();
 
-  Pointer<Int32> TWStoredKeyAccount(
-    Pointer<TWStoredKey> key,
+
+   /// Returns the account at a given index.  Returned object needs to be deleted.
+  Pointer<Void> TWStoredKeyAccount(
+    Pointer<Void> key,
     int index,
   ) {
     return _TWStoredKeyAccount(
@@ -129,10 +164,10 @@ class TWStoredKey extends Opaque {
   late final _dart_TWStoredKeyAccount _TWStoredKeyAccount = _TWStoredKeyAccount_ptr.asFunction<_dart_TWStoredKeyAccount>();
 
   /// Returns the account for a specific coin, creating it if necessary.  Returned object needs to be deleted.
-  Pointer<Int32> TWStoredKeyAccountForCoin(
-    Pointer<TWStoredKey> key,
+  Pointer<Void> TWStoredKeyAccountForCoin(
+    Pointer<Void> key,
     int coin,
-    Pointer<TWHDWallet> wallet,
+    Pointer<Void> wallet,
   ) {
     return _TWStoredKeyAccountForCoin(
       key,
@@ -145,8 +180,8 @@ class TWStoredKey extends Opaque {
   late final _dart_TWStoredKeyAccountForCoin _TWStoredKeyAccountForCoin = _TWStoredKeyAccountForCoin_ptr.asFunction<_dart_TWStoredKeyAccountForCoin>();
 
   /// Remove the account for a specific coin
-  int TWStoredKeyRemoveAccountForCoin(
-    Pointer<TWStoredKey> key,
+  void TWStoredKeyRemoveAccountForCoin(
+    Pointer<Void> key,
     int coin,
   ) {
     return _TWStoredKeyRemoveAccountForCoin(
@@ -159,12 +194,12 @@ class TWStoredKey extends Opaque {
   late final _dart_TWStoredKeyRemoveAccountForCoin _TWStoredKeyRemoveAccountForCoin = _TWStoredKeyRemoveAccountForCoin_ptr.asFunction<_dart_TWStoredKeyRemoveAccountForCoin>();
 
   /// Adds a new account.
-  int TWStoredKeyAddAccount(
-    Pointer<TWStoredKey> key,
-    Pointer<Int32> address,
+  void TWStoredKeyAddAccount(
+    Pointer<Void> key,
+    Pointer<Utf8> address,
     int coin,
-    Pointer<Int32> derivationPath,
-    Pointer<Int32> extetndedPublicKey,
+    Pointer<Utf8> derivationPath,
+    Pointer<Utf8> extetndedPublicKey,
   ) {
     return _TWStoredKeyAddAccount(
       key,
@@ -178,17 +213,64 @@ class TWStoredKey extends Opaque {
   late final _TWStoredKeyAddAccount_ptr = _lookup<NativeFunction<_c_TWStoredKeyAddAccount>>('TWStoredKeyAddAccount');
   late final _dart_TWStoredKeyAddAccount _TWStoredKeyAddAccount = _TWStoredKeyAddAccount_ptr.asFunction<_dart_TWStoredKeyAddAccount>();
 
-  /// Decrypts the private key.
-  late final Pointer<Int32> _TWData = _lookup<Int32>('TWData');
 
-  int get TWData => _TWData.value;
+   /// Saves the key to a file.
+   int TWStoredKeyStore(
+       Pointer<Void> key,
+       Pointer<Utf8> path,
+       ) {
+     return _TWStoredKeyStore(
+       key,
+       path,
+     );
+   }
 
-  set TWData(int value) => _TWData.value = value;
+   late final _TWStoredKeyStore_ptr =
+   _lookup<NativeFunction<_c_TWStoredKeyStore>>('TWStoredKeyStore');
+   late final _dart_TWStoredKeyStore _TWStoredKeyStore =
+   _TWStoredKeyStore_ptr.asFunction<_dart_TWStoredKeyStore>();
 
-  Pointer<Int32> TWStoredKeyPrivateKey(
-    Pointer<TWStoredKey> key,
+   /// Decrypts the private key.
+   Pointer<Void> TWStoredKeyDecryptPrivateKey(
+       Pointer<Void> key,
+       Pointer<Void> password,
+       ) {
+     return _TWStoredKeyDecryptPrivateKey(
+       key,
+       password,
+     );
+   }
+
+   late final _TWStoredKeyDecryptPrivateKey_ptr =
+   _lookup<NativeFunction<_c_TWStoredKeyDecryptPrivateKey>>(
+       'TWStoredKeyDecryptPrivateKey');
+   late final _dart_TWStoredKeyDecryptPrivateKey _TWStoredKeyDecryptPrivateKey =
+   _TWStoredKeyDecryptPrivateKey_ptr.asFunction<
+       _dart_TWStoredKeyDecryptPrivateKey>();
+
+   /// Decrypts the mnemonic phrase.
+   Pointer<Utf8> TWStoredKeyDecryptMnemonic(
+       Pointer<Void> key,
+       Pointer<Void> password,
+       ) {
+     return _TWStoredKeyDecryptMnemonic(
+       key,
+       password,
+     );
+   }
+
+   late final _TWStoredKeyDecryptMnemonic_ptr =
+   _lookup<NativeFunction<_c_TWStoredKeyDecryptMnemonic>>(
+       'TWStoredKeyDecryptMnemonic');
+   late final _dart_TWStoredKeyDecryptMnemonic _TWStoredKeyDecryptMnemonic =
+   _TWStoredKeyDecryptMnemonic_ptr.asFunction<
+       _dart_TWStoredKeyDecryptMnemonic>();
+
+
+  Pointer<Void> TWStoredKeyPrivateKey(
+    Pointer<Void> key,
     int coin,
-    Pointer<Int32> password,
+    Pointer<Void> password,
   ) {
     return _TWStoredKeyPrivateKey(
       key,
@@ -200,9 +282,9 @@ class TWStoredKey extends Opaque {
   late final _TWStoredKeyPrivateKey_ptr = _lookup<NativeFunction<_c_TWStoredKeyPrivateKey>>('TWStoredKeyPrivateKey');
   late final _dart_TWStoredKeyPrivateKey _TWStoredKeyPrivateKey = _TWStoredKeyPrivateKey_ptr.asFunction<_dart_TWStoredKeyPrivateKey>();
 
-  Pointer<Int32> TWStoredKeyWallet(
-    Pointer<TWStoredKey> key,
-    Pointer<Int32> password,
+  Pointer<Void> TWStoredKeyWallet(
+    Pointer<Void> key,
+    Pointer<Void> password,
   ) {
     return _TWStoredKeyWallet(
       key,
@@ -212,136 +294,252 @@ class TWStoredKey extends Opaque {
 
   late final _TWStoredKeyWallet_ptr = _lookup<NativeFunction<_c_TWStoredKeyWallet>>('TWStoredKeyWallet');
   late final _dart_TWStoredKeyWallet _TWStoredKeyWallet = _TWStoredKeyWallet_ptr.asFunction<_dart_TWStoredKeyWallet>();
+
+   /// Exports the key as JSON
+   Pointer<Void> TWStoredKeyExportJSON(
+       Pointer<Void> key,
+       ) {
+     return _TWStoredKeyExportJSON(
+       key,
+     );
+   }
+
+   late final _TWStoredKeyExportJSON_ptr =
+   _lookup<NativeFunction<_c_TWStoredKeyExportJSON>>(
+       'TWStoredKeyExportJSON');
+   late final _dart_TWStoredKeyExportJSON _TWStoredKeyExportJSON =
+   _TWStoredKeyExportJSON_ptr.asFunction<_dart_TWStoredKeyExportJSON>();
+
+   /// Fills in empty and invalid addresses.
+   ///
+   /// This method needs the encryption password to re-derive addresses from private keys.
+   /// @returns `false` if the password is incorrect.
+   int TWStoredKeyFixAddresses(
+       Pointer<Void> key,
+       Pointer<Void> password,
+       ) {
+     return _TWStoredKeyFixAddresses(
+       key,
+       password,
+     );
+   }
+
+   late final _TWStoredKeyFixAddresses_ptr =
+   _lookup<NativeFunction<_c_TWStoredKeyFixAddresses>>(
+       'TWStoredKeyFixAddresses');
+   late final _dart_TWStoredKeyFixAddresses _TWStoredKeyFixAddresses =
+   _TWStoredKeyFixAddresses_ptr.asFunction<_dart_TWStoredKeyFixAddresses>();
 }
 
-typedef _c_TWStoredKeyLoad = Pointer<Int32> Function(
-  Pointer<Int32> path,
+typedef _c_TWStoredKeyLoad = Pointer<Void> Function(
+  Pointer<Utf8> path,
 );
 
-typedef _dart_TWStoredKeyLoad = Pointer<Int32> Function(
-  Pointer<Int32> path,
+typedef _dart_TWStoredKeyLoad = Pointer<Void> Function(
+  Pointer<Utf8> path,
 );
 
-typedef _c_TWStoredKeyImportPrivateKey = Pointer<Int32> Function(
-  Pointer<Int32> privateKey,
-  Pointer<Int32> name,
-  Pointer<Int32> password,
+typedef _c_TWStoredKeyImportPrivateKey = Pointer<Void> Function(
+  Pointer<Void> privateKey,
+  Pointer<Utf8> name,
+  Pointer<Void> password,
   Int32 coin,
 );
 
-typedef _dart_TWStoredKeyImportPrivateKey = Pointer<Int32> Function(
-  Pointer<Int32> privateKey,
-  Pointer<Int32> name,
-  Pointer<Int32> password,
+typedef _dart_TWStoredKeyImportPrivateKey = Pointer<Void> Function(
+  Pointer<Void> privateKey,
+  Pointer<Utf8> name,
+  Pointer<Void> password,
   int coin,
 );
 
-typedef _c_TWStoredKeyImportHDWallet = Pointer<Int32> Function(
-  Pointer<Int32> mnemonic,
-  Pointer<Int32> name,
-  Pointer<Int32> password,
+typedef _c_TWStoredKeyImportHDWallet = Pointer<Void> Function(
+  Pointer<Utf8> mnemonic,
+  Pointer<Utf8> name,
+  Pointer<Void> password,
   Int32 coin,
 );
 
-typedef _dart_TWStoredKeyImportHDWallet = Pointer<Int32> Function(
-  Pointer<Int32> mnemonic,
-  Pointer<Int32> name,
-  Pointer<Int32> password,
+typedef _dart_TWStoredKeyImportHDWallet = Pointer<Void> Function(
+  Pointer<Utf8> mnemonic,
+  Pointer<Utf8> name,
+  Pointer<Void> password,
   int coin,
 );
 
-typedef _c_TWStoredKeyImportJSON = Pointer<Int32> Function(
-  Pointer<Int32> json,
+typedef _c_TWStoredKeyImportJSON = Pointer<Void> Function(
+  Pointer<Void> json,
 );
 
-typedef _dart_TWStoredKeyImportJSON = Pointer<Int32> Function(
-  Pointer<Int32> json,
+typedef _dart_TWStoredKeyImportJSON = Pointer<Void> Function(
+  Pointer<Void> json,
 );
 
-typedef _c_TWStoredKeyCreate = Pointer<Int32> Function(
-  Pointer<Int32> name,
-  Pointer<Int32> password,
+typedef _c_TWStoredKeyCreate = Pointer<Void> Function(
+  Pointer<Utf8> name,
+  Pointer<Void> password,
 );
 
-typedef _dart_TWStoredKeyCreate = Pointer<Int32> Function(
-  Pointer<Int32> name,
-  Pointer<Int32> password,
+typedef _dart_TWStoredKeyCreate = Pointer<Void> Function(
+  Pointer<Utf8> name,
+  Pointer<Void> password,
 );
 
-typedef _c_TWStoredKeyDelete = Int32 Function(
-  Pointer<TWStoredKey> key,
+typedef _c_TWStoredKeyDelete = Void Function(
+  Pointer<Void> key,
 );
 
-typedef _dart_TWStoredKeyDelete = int Function(
-  Pointer<TWStoredKey> key,
+typedef _dart_TWStoredKeyDelete = void Function(
+  Pointer<Void> key,
 );
 
-typedef _c_TWStoredKeyAccount = Pointer<Int32> Function(
-  Pointer<TWStoredKey> key,
+typedef _c_TWStoredKeyIdentifier = Pointer<Utf8> Function(
+    Pointer<Void> key,
+    );
+
+typedef _dart_TWStoredKeyIdentifier = Pointer<Utf8> Function(
+    Pointer<Void> key,
+    );
+
+typedef _c_TWStoredKeyName = Pointer<Utf8> Function(
+    Pointer<Void> key,
+    );
+
+typedef _dart_TWStoredKeyName = Pointer<Utf8> Function(
+    Pointer<Void> key,
+    );
+
+typedef _c_TWStoredKeyIsMnemonic = Int32 Function(
+    Pointer<Void> key,
+    );
+
+typedef _dart_TWStoredKeyIsMnemonic = int Function(
+    Pointer<Void> key,
+    );
+
+typedef _c_TWStoredKeyAccountCount = Int32 Function(
+    Pointer<Void> key,
+    );
+
+typedef _dart_TWStoredKeyAccountCount = int Function(
+    Pointer<Void> key,
+    );
+
+typedef _c_TWStoredKeyAccount = Pointer<Void> Function(
+  Pointer<Void> key,
   Int32 index,
 );
 
-typedef _dart_TWStoredKeyAccount = Pointer<Int32> Function(
-  Pointer<TWStoredKey> key,
+typedef _dart_TWStoredKeyAccount = Pointer<Void> Function(
+  Pointer<Void> key,
   int index,
 );
 
-typedef _c_TWStoredKeyAccountForCoin = Pointer<Int32> Function(
-  Pointer<TWStoredKey> key,
+typedef _c_TWStoredKeyAccountForCoin = Pointer<Void> Function(
+  Pointer<Void> key,
   Int32 coin,
-  Pointer<TWHDWallet> wallet,
+  Pointer<Void> wallet,
 );
 
-typedef _dart_TWStoredKeyAccountForCoin = Pointer<Int32> Function(
-  Pointer<TWStoredKey> key,
+typedef _dart_TWStoredKeyAccountForCoin = Pointer<Void> Function(
+  Pointer<Void> key,
   int coin,
-  Pointer<TWHDWallet> wallet,
+  Pointer<Void> wallet,
 );
 
-typedef _c_TWStoredKeyRemoveAccountForCoin = Int32 Function(
-  Pointer<TWStoredKey> key,
+typedef _c_TWStoredKeyRemoveAccountForCoin = Void Function(
+  Pointer<Void> key,
   Int32 coin,
 );
 
-typedef _dart_TWStoredKeyRemoveAccountForCoin = int Function(
-  Pointer<TWStoredKey> key,
+typedef _dart_TWStoredKeyRemoveAccountForCoin = void Function(
+  Pointer<Void> key,
   int coin,
 );
 
-typedef _c_TWStoredKeyAddAccount = Int32 Function(
-  Pointer<TWStoredKey> key,
-  Pointer<Int32> address,
+typedef _c_TWStoredKeyAddAccount = Void Function(
+  Pointer<Void> key,
+  Pointer<Utf8> address,
   Int32 coin,
-  Pointer<Int32> derivationPath,
-  Pointer<Int32> extetndedPublicKey,
+  Pointer<Utf8> derivationPath,
+  Pointer<Utf8> extetndedPublicKey,
 );
 
-typedef _dart_TWStoredKeyAddAccount = int Function(
-  Pointer<TWStoredKey> key,
-  Pointer<Int32> address,
+typedef _dart_TWStoredKeyAddAccount = void Function(
+  Pointer<Void> key,
+  Pointer<Utf8> address,
   int coin,
-  Pointer<Int32> derivationPath,
-  Pointer<Int32> extetndedPublicKey,
+  Pointer<Utf8> derivationPath,
+  Pointer<Utf8> extetndedPublicKey,
 );
 
-typedef _c_TWStoredKeyPrivateKey = Pointer<Int32> Function(
-  Pointer<TWStoredKey> key,
+typedef _c_TWStoredKeyStore = Int32 Function(
+    Pointer<Void> key,
+    Pointer<Utf8> path,
+    );
+
+typedef _dart_TWStoredKeyStore = int Function(
+    Pointer<Void> key,
+    Pointer<Utf8> path,
+    );
+
+typedef _c_TWStoredKeyDecryptPrivateKey = Pointer<Void> Function(
+    Pointer<Void> key,
+    Pointer<Void> password,
+    );
+
+typedef _dart_TWStoredKeyDecryptPrivateKey = Pointer<Void> Function(
+    Pointer<Void> key,
+    Pointer<Void> password,
+    );
+
+typedef _c_TWStoredKeyDecryptMnemonic = Pointer<Utf8> Function(
+    Pointer<Void> key,
+    Pointer<Void> password,
+    );
+
+typedef _dart_TWStoredKeyDecryptMnemonic = Pointer<Utf8> Function(
+    Pointer<Void> key,
+    Pointer<Void> password,
+    );
+
+typedef _c_TWStoredKeyPrivateKey = Pointer<Void> Function(
+  Pointer<Void> key,
   Int32 coin,
-  Pointer<Int32> password,
+  Pointer<Void> password,
 );
 
-typedef _dart_TWStoredKeyPrivateKey = Pointer<Int32> Function(
-  Pointer<TWStoredKey> key,
+typedef _dart_TWStoredKeyPrivateKey = Pointer<Void> Function(
+  Pointer<Void> key,
   int coin,
-  Pointer<Int32> password,
+  Pointer<Void> password,
 );
 
-typedef _c_TWStoredKeyWallet = Pointer<Int32> Function(
-  Pointer<TWStoredKey> key,
-  Pointer<Int32> password,
+typedef _c_TWStoredKeyWallet = Pointer<Void> Function(
+  Pointer<Void> key,
+  Pointer<Void> password,
 );
 
-typedef _dart_TWStoredKeyWallet = Pointer<Int32> Function(
-  Pointer<TWStoredKey> key,
-  Pointer<Int32> password,
+typedef _dart_TWStoredKeyWallet = Pointer<Void> Function(
+  Pointer<Void> key,
+  Pointer<Void> password,
 );
+
+
+typedef _c_TWStoredKeyExportJSON = Pointer<Void> Function(
+    Pointer<Void> key,
+    );
+
+typedef _dart_TWStoredKeyExportJSON = Pointer<Void> Function(
+    Pointer<Void> key,
+    );
+
+typedef _c_TWStoredKeyFixAddresses = Int32 Function(
+    Pointer<Void> key,
+    Pointer<Void> password,
+    );
+
+typedef _dart_TWStoredKeyFixAddresses = int Function(
+    Pointer<Void> key,
+    Pointer<Void> password,
+    );
