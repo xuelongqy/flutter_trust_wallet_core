@@ -68,7 +68,7 @@ class TWPrivateKey extends Opaque {
   late final _TWPrivateKeyData_ptr = _lookup<NativeFunction<_c_TWPrivateKeyData>>('TWPrivateKeyData');
   late final _dart_TWPrivateKeyData _TWPrivateKeyData = _TWPrivateKeyData_ptr.asFunction<_dart_TWPrivateKeyData>();
 
-  Pointer<Int32> TWPrivateKeyGetPublicKeySecp256k1(
+  Pointer<Void> TWPrivateKeyGetPublicKeySecp256k1(
     Pointer<Void> pk,
     int compressed,
   ) {
@@ -83,7 +83,7 @@ class TWPrivateKey extends Opaque {
       _TWPrivateKeyGetPublicKeySecp256k1_ptr.asFunction<_dart_TWPrivateKeyGetPublicKeySecp256k1>();
 
   /// Returns the public key associated with this private key.
-  Pointer<Int32> TWPrivateKeyGetPublicKeyNist256p1(
+  Pointer<Void> TWPrivateKeyGetPublicKeyNist256p1(
     Pointer<Void> pk,
   ) {
     return _TWPrivateKeyGetPublicKeyNist256p1(
@@ -96,7 +96,7 @@ class TWPrivateKey extends Opaque {
       _TWPrivateKeyGetPublicKeyNist256p1_ptr.asFunction<_dart_TWPrivateKeyGetPublicKeyNist256p1>();
 
   /// Returns the public key associated with this private key.
-  Pointer<Int32> TWPrivateKeyGetPublicKeyEd25519(
+  Pointer<Void> TWPrivateKeyGetPublicKeyEd25519(
     Pointer<Void> pk,
   ) {
     return _TWPrivateKeyGetPublicKeyEd25519(
@@ -108,7 +108,7 @@ class TWPrivateKey extends Opaque {
   late final _dart_TWPrivateKeyGetPublicKeyEd25519 _TWPrivateKeyGetPublicKeyEd25519 = _TWPrivateKeyGetPublicKeyEd25519_ptr.asFunction<_dart_TWPrivateKeyGetPublicKeyEd25519>();
 
   /// Returns the public key associated with this private key.
-  Pointer<Int32> TWPrivateKeyGetPublicKeyEd25519Blake2b(
+  Pointer<Void> TWPrivateKeyGetPublicKeyEd25519Blake2b(
     Pointer<Void> pk,
   ) {
     return _TWPrivateKeyGetPublicKeyEd25519Blake2b(
@@ -121,7 +121,7 @@ class TWPrivateKey extends Opaque {
       _TWPrivateKeyGetPublicKeyEd25519Blake2b_ptr.asFunction<_dart_TWPrivateKeyGetPublicKeyEd25519Blake2b>();
 
   /// Returns the public key associated with this private key.
-  Pointer<Int32> TWPrivateKeyGetPublicKeyEd25519Extended(
+  Pointer<Void> TWPrivateKeyGetPublicKeyEd25519Extended(
     Pointer<Void> pk,
   ) {
     return _TWPrivateKeyGetPublicKeyEd25519Extended(
@@ -134,7 +134,7 @@ class TWPrivateKey extends Opaque {
       _TWPrivateKeyGetPublicKeyEd25519Extended_ptr.asFunction<_dart_TWPrivateKeyGetPublicKeyEd25519Extended>();
 
   /// Returns the public key associated with this private key.
-  Pointer<Int32> TWPrivateKeyGetPublicKeyCurve25519(
+  Pointer<Void> TWPrivateKeyGetPublicKeyCurve25519(
     Pointer<Void> pk,
   ) {
     return _TWPrivateKeyGetPublicKeyCurve25519(
@@ -258,53 +258,53 @@ typedef _dart_TWPrivateKeyData = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
-typedef _c_TWPrivateKeyGetPublicKeySecp256k1 = Pointer<Int32> Function(
+typedef _c_TWPrivateKeyGetPublicKeySecp256k1 = Pointer<Void> Function(
   Pointer<Void> pk,
   Int32 compressed,
 );
 
-typedef _dart_TWPrivateKeyGetPublicKeySecp256k1 = Pointer<Int32> Function(
+typedef _dart_TWPrivateKeyGetPublicKeySecp256k1 = Pointer<Void> Function(
   Pointer<Void> pk,
   int compressed,
 );
 
-typedef _c_TWPrivateKeyGetPublicKeyNist256p1 = Pointer<Int32> Function(
+typedef _c_TWPrivateKeyGetPublicKeyNist256p1 = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
-typedef _dart_TWPrivateKeyGetPublicKeyNist256p1 = Pointer<Int32> Function(
+typedef _dart_TWPrivateKeyGetPublicKeyNist256p1 = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
-typedef _c_TWPrivateKeyGetPublicKeyEd25519 = Pointer<Int32> Function(
+typedef _c_TWPrivateKeyGetPublicKeyEd25519 = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
-typedef _dart_TWPrivateKeyGetPublicKeyEd25519 = Pointer<Int32> Function(
+typedef _dart_TWPrivateKeyGetPublicKeyEd25519 = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
-typedef _c_TWPrivateKeyGetPublicKeyEd25519Blake2b = Pointer<Int32> Function(
+typedef _c_TWPrivateKeyGetPublicKeyEd25519Blake2b = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
-typedef _dart_TWPrivateKeyGetPublicKeyEd25519Blake2b = Pointer<Int32> Function(
+typedef _dart_TWPrivateKeyGetPublicKeyEd25519Blake2b = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
-typedef _c_TWPrivateKeyGetPublicKeyEd25519Extended = Pointer<Int32> Function(
+typedef _c_TWPrivateKeyGetPublicKeyEd25519Extended = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
-typedef _dart_TWPrivateKeyGetPublicKeyEd25519Extended = Pointer<Int32> Function(
+typedef _dart_TWPrivateKeyGetPublicKeyEd25519Extended = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
-typedef _c_TWPrivateKeyGetPublicKeyCurve25519 = Pointer<Int32> Function(
+typedef _c_TWPrivateKeyGetPublicKeyCurve25519 = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
-typedef _dart_TWPrivateKeyGetPublicKeyCurve25519 = Pointer<Int32> Function(
+typedef _dart_TWPrivateKeyGetPublicKeyCurve25519 = Pointer<Void> Function(
   Pointer<Void> pk,
 );
 
