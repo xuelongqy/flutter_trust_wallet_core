@@ -1,12 +1,12 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWAccount extends Opaque {
-  static Pointer<Int32> TWAccountCreate(
-    Pointer<Int32> address,
+abstract class TWAccount extends Opaque {
+  static Pointer<Void> TWAccountCreate(
+    Pointer<Utf8> address,
     int coin,
-    Pointer<Int32> derivationPath,
-    Pointer<Int32> extendedPublicKey,
+    Pointer<Utf8> derivationPath,
+    Pointer<Utf8> extendedPublicKey,
   ) {
     return _TWAccountCreate(
       address,
@@ -75,18 +75,18 @@ class TWAccount extends Opaque {
   late final _dart_TWAccountCoin _TWAccountCoin = _TWAccountCoin_ptr.asFunction<_dart_TWAccountCoin>();
 }
 
-typedef _c_TWAccountCreate = Pointer<Int32> Function(
-  Pointer<Int32> address,
+typedef _c_TWAccountCreate = Pointer<Void> Function(
+  Pointer<Utf8> address,
   Int32 coin,
-  Pointer<Int32> derivationPath,
-  Pointer<Int32> extendedPublicKey,
+  Pointer<Utf8> derivationPath,
+  Pointer<Utf8> extendedPublicKey,
 );
 
-typedef _dart_TWAccountCreate = Pointer<Int32> Function(
-  Pointer<Int32> address,
+typedef _dart_TWAccountCreate = Pointer<Void> Function(
+  Pointer<Utf8> address,
   int coin,
-  Pointer<Int32> derivationPath,
-  Pointer<Int32> extendedPublicKey,
+  Pointer<Utf8> derivationPath,
+  Pointer<Utf8> extendedPublicKey,
 );
 
 typedef _c_TWAccountDelete = Void Function(

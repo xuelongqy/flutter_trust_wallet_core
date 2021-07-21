@@ -1,21 +1,139 @@
 part of trust_wallet_core;
 
-/// trust wallet core
 class TWAES extends Opaque {
-  late final Pointer<Int32> _TW_EXPORT_STRUCT = lookup<Int32>('TW_EXPORT_STRUCT');
-
-  int get TW_EXPORT_STRUCT => _TW_EXPORT_STRUCT.value;
-
-  set TW_EXPORT_STRUCT(int value) => _TW_EXPORT_STRUCT.value = value;
-
   /// Encrypts a block of data using AES in Cipher Block Chaining (CBC) mode.
   ///
   /// \param key encryption key, must be 16, 24, or 32 bytes long.
   /// \param data data to encrypt.
   /// \param iv initialization vector.
-  late final Pointer<Int32> _TWData = lookup<Int32>('TWData');
+  static Pointer<Void> TWAESEncryptCBC(
+    Pointer<Void> key,
+    Pointer<Void> data,
+    Pointer<Void> iv,
+    int mode,
+  ) {
+    return _TWAESEncryptCBC(
+      key,
+      data,
+      iv,
+      mode,
+    );
+  }
 
-  int get TWData => _TWData.value;
+  static late final _TWAESEncryptCBC_ptr = lookup<NativeFunction<_c_TWAESEncryptCBC>>('TWAESEncryptCBC');
+  static late final _dart_TWAESEncryptCBC _TWAESEncryptCBC = _TWAESEncryptCBC_ptr.asFunction<_dart_TWAESEncryptCBC>();
 
-  set TWData(int value) => _TWData.value = value;
+  /// Decrypts a block of data using AES in Cipher Block Chaining (CBC) mode.
+  ///
+  /// \param key decryption key, must be 16, 24, or 32 bytes long.
+  /// \param data data to decrypt.
+  /// \param iv initialization vector.
+  static Pointer<Void> TWAESDecryptCBC(
+    Pointer<Void> key,
+    Pointer<Void> data,
+    Pointer<Void> iv,
+    int mode,
+  ) {
+    return _TWAESDecryptCBC(
+      key,
+      data,
+      iv,
+      mode,
+    );
+  }
+
+  static late final _TWAESDecryptCBC_ptr = lookup<NativeFunction<_c_TWAESDecryptCBC>>('TWAESDecryptCBC');
+  static late final _dart_TWAESDecryptCBC _TWAESDecryptCBC = _TWAESDecryptCBC_ptr.asFunction<_dart_TWAESDecryptCBC>();
+
+  /// Encrypts a block of data using AES in Counter (CTR) mode.
+  ///
+  /// \param key encryption key, must be 16, 24, or 32 bytes long.
+  /// \param data data to encrypt.
+  /// \param iv initialization vector.
+  static Pointer<Void> TWAESEncryptCTR(
+    Pointer<Void> key,
+    Pointer<Void> data,
+    Pointer<Void> iv,
+  ) {
+    return _TWAESEncryptCTR(
+      key,
+      data,
+      iv,
+    );
+  }
+
+  static late final _TWAESEncryptCTR_ptr = lookup<NativeFunction<_c_TWAESEncryptCTR>>('TWAESEncryptCTR');
+  static late final _dart_TWAESEncryptCTR _TWAESEncryptCTR = _TWAESEncryptCTR_ptr.asFunction<_dart_TWAESEncryptCTR>();
+
+  /// Decrypts a block of data using AES in Counter (CTR) mode.
+  ///
+  /// \param key decryption key, must be 16, 24, or 32 bytes long.
+  /// \param data data to decrypt.
+  /// \param iv initialization vector.
+  static Pointer<Void> TWAESDecryptCTR(
+    Pointer<Void> key,
+    Pointer<Void> data,
+    Pointer<Void> iv,
+  ) {
+    return _TWAESDecryptCTR(
+      key,
+      data,
+      iv,
+    );
+  }
+
+  static late final _TWAESDecryptCTR_ptr = lookup<NativeFunction<_c_TWAESDecryptCTR>>('TWAESDecryptCTR');
+  static late final _dart_TWAESDecryptCTR _TWAESDecryptCTR = _TWAESDecryptCTR_ptr.asFunction<_dart_TWAESDecryptCTR>();
 }
+
+typedef _c_TWAESEncryptCBC = Pointer<Void> Function(
+  Pointer<Void> key,
+  Pointer<Void> data,
+  Pointer<Void> iv,
+  Int32 mode,
+);
+
+typedef _dart_TWAESEncryptCBC = Pointer<Void> Function(
+  Pointer<Void> key,
+  Pointer<Void> data,
+  Pointer<Void> iv,
+  int mode,
+);
+
+typedef _c_TWAESDecryptCBC = Pointer<Void> Function(
+  Pointer<Void> key,
+  Pointer<Void> data,
+  Pointer<Void> iv,
+  Int32 mode,
+);
+
+typedef _dart_TWAESDecryptCBC = Pointer<Void> Function(
+  Pointer<Void> key,
+  Pointer<Void> data,
+  Pointer<Void> iv,
+  int mode,
+);
+
+typedef _c_TWAESEncryptCTR = Pointer<Void> Function(
+  Pointer<Void> key,
+  Pointer<Void> data,
+  Pointer<Void> iv,
+);
+
+typedef _dart_TWAESEncryptCTR = Pointer<Void> Function(
+  Pointer<Void> key,
+  Pointer<Void> data,
+  Pointer<Void> iv,
+);
+
+typedef _c_TWAESDecryptCTR = Pointer<Void> Function(
+  Pointer<Void> key,
+  Pointer<Void> data,
+  Pointer<Void> iv,
+);
+
+typedef _dart_TWAESDecryptCTR = Pointer<Void> Function(
+  Pointer<Void> key,
+  Pointer<Void> data,
+  Pointer<Void> iv,
+);
