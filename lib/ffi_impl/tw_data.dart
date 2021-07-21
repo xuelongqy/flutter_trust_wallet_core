@@ -110,7 +110,7 @@ abstract class TWData extends Opaque {
     Pointer<Void> data,
     int start,
     int size,
-    Pointer<Int32> output,
+    Pointer<Uint8> output,
   ) {
     return _TWDataCopyBytes(
       data,
@@ -128,7 +128,7 @@ abstract class TWData extends Opaque {
     Pointer<Void> data,
     int start,
     int size,
-    Pointer<Int32> bytes,
+    Pointer<Uint8> bytes,
   ) {
     return _TWDataReplaceBytes(
       data,
@@ -144,7 +144,7 @@ abstract class TWData extends Opaque {
   /// Appends data from a byte array.
   void TWDataAppendBytes(
     Pointer<Void> data,
-    Pointer<Int32> bytes,
+    Pointer<Uint8> bytes,
     int size,
   ) {
     return _TWDataAppendBytes(
@@ -238,7 +238,7 @@ abstract class TWData extends Opaque {
 
 typedef _c_TWDataCreateWithBytes = Pointer<Void> Function(
   Pointer<Uint8> bytes,
-  Int32 size,
+  Uint8 size,
 );
 
 typedef _dart_TWDataCreateWithBytes = Pointer<Void> Function(
@@ -247,7 +247,7 @@ typedef _dart_TWDataCreateWithBytes = Pointer<Void> Function(
 );
 
 typedef _c_TWDataCreateWithSize = Pointer<Void> Function(
-  Int32 size,
+  Uint8 size,
 );
 
 typedef _dart_TWDataCreateWithSize = Pointer<Void> Function(
@@ -270,7 +270,7 @@ typedef _dart_TWDataCreateWithHexString = Pointer<Void> Function(
   Pointer<Utf8> hex,
 );
 
-typedef _c_TWDataSize = Int32 Function(
+typedef _c_TWDataSize = Uint8 Function(
   Pointer<Void> data,
 );
 
@@ -288,7 +288,7 @@ typedef _dart_TWDataBytes = Pointer<Uint8> Function(
 
 typedef _c_TWDataGet = Uint8 Function(
   Pointer<Void> data,
-  Int32 index,
+  Uint8 index,
 );
 
 typedef _dart_TWDataGet = int Function(
@@ -298,7 +298,7 @@ typedef _dart_TWDataGet = int Function(
 
 typedef _c_TWDataSet = Void Function(
   Pointer<Void> data,
-  Int32 index,
+  Uint8 index,
   Uint8 byte,
 );
 
@@ -309,47 +309,47 @@ typedef _dart_TWDataSet = void Function(
 
 typedef _c_TWDataCopyBytes = Void Function(
   Pointer<Void> data,
-  Int32 start,
-  Int32 size,
-  Pointer<Int32> output,
+  Uint8 start,
+  Uint8 size,
+  Pointer<Uint8> output,
 );
 
 typedef _dart_TWDataCopyBytes = void Function(
   Pointer<Void> data,
   int start,
   int size,
-  Pointer<Int32> output,
+  Pointer<Uint8> output,
 );
 
 typedef _c_TWDataReplaceBytes = Void Function(
   Pointer<Void> data,
-  Int32 start,
-  Int32 size,
-  Pointer<Int32> bytes,
+  Uint8 start,
+  Uint8 size,
+  Pointer<Uint8> bytes,
 );
 
 typedef _dart_TWDataReplaceBytes = void Function(
   Pointer<Void> data,
   int start,
   int size,
-  Pointer<Int32> bytes,
+  Pointer<Uint8> bytes,
 );
 
 typedef _c_TWDataAppendBytes = Void Function(
   Pointer<Void> data,
-  Pointer<Int32> bytes,
-  Int32 size,
+  Pointer<Uint8> bytes,
+  Uint8 size,
 );
 
 typedef _dart_TWDataAppendBytes = void Function(
   Pointer<Void> data,
-  Pointer<Int32> bytes,
+  Pointer<Uint8> bytes,
   int size,
 );
 
 typedef _c_TWDataAppendByte = Void Function(
   Pointer<Void> data,
-  Int32 byte,
+  Uint8 byte,
 );
 
 typedef _dart_TWDataAppendByte = void Function(
@@ -391,7 +391,7 @@ typedef _dart_TWDataDelete = void Function(
   Pointer<Void> data,
 );
 
-typedef _c_TWDataEqual = Int32 Function(
+typedef _c_TWDataEqual = Uint8 Function(
   Pointer<Void> lhs,
   Pointer<Void> rhs,
 );
