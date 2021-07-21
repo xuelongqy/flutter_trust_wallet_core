@@ -1,10 +1,10 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWData extends Opaque {
+abstract class TWData extends Opaque {
   /// Creates a block of data from a byte array.
   Pointer<Void> TWDataCreateWithBytes(
-    Pointer<Int32> bytes,
+    Pointer<Uint8> bytes,
     int size,
   ) {
     return _TWDataCreateWithBytes(
@@ -42,7 +42,7 @@ class TWData extends Opaque {
 
   /// Creates a block of data from a hexadecimal string.  Odd length is invalid (intended grouping to bytes is not obvious).
   Pointer<Void> TWDataCreateWithHexString(
-    Pointer<Int32> hex,
+    Pointer<Utf8> hex,
   ) {
     return _TWDataCreateWithHexString(
       hex,
@@ -65,7 +65,7 @@ class TWData extends Opaque {
   late final _dart_TWDataSize _TWDataSize = _TWDataSize_ptr.asFunction<_dart_TWDataSize>();
 
   /// Returns the raw pointer to the contents of data.
-  Pointer<Int32> TWDataBytes(
+  Pointer<Uint8> TWDataBytes(
     Pointer<Void> data,
   ) {
     return _TWDataBytes(
@@ -93,8 +93,7 @@ class TWData extends Opaque {
   /// Sets the byte at the provided index.
   void TWDataSet(
     Pointer<Void> data,
-    int index,
-    int byte,
+    int index, int byte,
   ) {
     return _TWDataSet(
       data,
@@ -238,12 +237,12 @@ class TWData extends Opaque {
 }
 
 typedef _c_TWDataCreateWithBytes = Pointer<Void> Function(
-  Pointer<Int32> bytes,
+  Pointer<Uint8> bytes,
   Int32 size,
 );
 
 typedef _dart_TWDataCreateWithBytes = Pointer<Void> Function(
-  Pointer<Int32> bytes,
+  Pointer<Uint8> bytes,
   int size,
 );
 
@@ -264,11 +263,11 @@ typedef _dart_TWDataCreateWithData = Pointer<Void> Function(
 );
 
 typedef _c_TWDataCreateWithHexString = Pointer<Void> Function(
-  Pointer<Int32> hex,
+  Pointer<Utf8> hex,
 );
 
 typedef _dart_TWDataCreateWithHexString = Pointer<Void> Function(
-  Pointer<Int32> hex,
+  Pointer<Utf8> hex,
 );
 
 typedef _c_TWDataSize = Int32 Function(
@@ -279,15 +278,15 @@ typedef _dart_TWDataSize = int Function(
   Pointer<Void> data,
 );
 
-typedef _c_TWDataBytes = Pointer<Int32> Function(
+typedef _c_TWDataBytes = Pointer<Uint8> Function(
   Pointer<Void> data,
 );
 
-typedef _dart_TWDataBytes = Pointer<Int32> Function(
+typedef _dart_TWDataBytes = Pointer<Uint8> Function(
   Pointer<Void> data,
 );
 
-typedef _c_TWDataGet = Int32 Function(
+typedef _c_TWDataGet = Uint8 Function(
   Pointer<Void> data,
   Int32 index,
 );
@@ -300,13 +299,12 @@ typedef _dart_TWDataGet = int Function(
 typedef _c_TWDataSet = Void Function(
   Pointer<Void> data,
   Int32 index,
-  Int32 byte,
+  Uint8 byte,
 );
 
 typedef _dart_TWDataSet = void Function(
   Pointer<Void> data,
-  int index,
-  int byte,
+  int index, int byte,
 );
 
 typedef _c_TWDataCopyBytes = Void Function(
