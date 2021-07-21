@@ -106,7 +106,7 @@ part 'ffi_impl/tw_string.dart';
 
 late DynamicLibrary walletCoreLib;
 
-final Pointer<T> Function<T extends NativeType>(String symbolName) lookup = walletCoreLib.lookup;
+final Pointer<T> Function<T extends NativeType>(String symbolName) _lookup = walletCoreLib.lookup;
 
 class FlutterTrustWalletCore {
   static void init() {

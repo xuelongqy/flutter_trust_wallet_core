@@ -3,7 +3,7 @@ part of trust_wallet_core;
 /// trust wallet core
 class TWSegwitAddress extends Opaque {
   /// Compares two addresses for equality.
-  late final Pointer<Int32> _bool = lookup<Int32>('bool');
+  late final Pointer<Int32> _bool = _lookup<Int32>('bool');
 
   int get bool => _bool.value;
 
@@ -18,7 +18,7 @@ class TWSegwitAddress extends Opaque {
     );
   }
 
-  late final _TWSegwitAddressCreateWithString_ptr = lookup<NativeFunction<_c_TWSegwitAddressCreateWithString>>('TWSegwitAddressCreateWithString');
+  late final _TWSegwitAddressCreateWithString_ptr = _lookup<NativeFunction<_c_TWSegwitAddressCreateWithString>>('TWSegwitAddressCreateWithString');
   late final _dart_TWSegwitAddressCreateWithString _TWSegwitAddressCreateWithString = _TWSegwitAddressCreateWithString_ptr.asFunction<_dart_TWSegwitAddressCreateWithString>();
 
   /// Creates an address from a public key.
@@ -32,7 +32,7 @@ class TWSegwitAddress extends Opaque {
     );
   }
 
-  late final _TWSegwitAddressCreateWithPublicKey_ptr = lookup<NativeFunction<_c_TWSegwitAddressCreateWithPublicKey>>('TWSegwitAddressCreateWithPublicKey');
+  late final _TWSegwitAddressCreateWithPublicKey_ptr = _lookup<NativeFunction<_c_TWSegwitAddressCreateWithPublicKey>>('TWSegwitAddressCreateWithPublicKey');
   late final _dart_TWSegwitAddressCreateWithPublicKey _TWSegwitAddressCreateWithPublicKey =
       _TWSegwitAddressCreateWithPublicKey_ptr.asFunction<_dart_TWSegwitAddressCreateWithPublicKey>();
 
@@ -44,11 +44,11 @@ class TWSegwitAddress extends Opaque {
     );
   }
 
-  late final _TWSegwitAddressDelete_ptr = lookup<NativeFunction<_c_TWSegwitAddressDelete>>('TWSegwitAddressDelete');
+  late final _TWSegwitAddressDelete_ptr = _lookup<NativeFunction<_c_TWSegwitAddressDelete>>('TWSegwitAddressDelete');
   late final _dart_TWSegwitAddressDelete _TWSegwitAddressDelete = _TWSegwitAddressDelete_ptr.asFunction<_dart_TWSegwitAddressDelete>();
 
   /// Returns the address string representation.
-  late final Pointer<Int32> _TWString = lookup<Int32>('TWString');
+  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
 
   int get TWString => _TWString.value;
 
@@ -62,11 +62,11 @@ class TWSegwitAddress extends Opaque {
     );
   }
 
-  late final _TWSegwitAddressHRP_ptr = lookup<NativeFunction<_c_TWSegwitAddressHRP>>('TWSegwitAddressHRP');
+  late final _TWSegwitAddressHRP_ptr = _lookup<NativeFunction<_c_TWSegwitAddressHRP>>('TWSegwitAddressHRP');
   late final _dart_TWSegwitAddressHRP _TWSegwitAddressHRP = _TWSegwitAddressHRP_ptr.asFunction<_dart_TWSegwitAddressHRP>();
 
   /// Returns the witness program
-  late final Pointer<Int32> _TWData = lookup<Int32>('TWData');
+  late final Pointer<Int32> _TWData = _lookup<Int32>('TWData');
 
   int get TWData => _TWData.value;
 

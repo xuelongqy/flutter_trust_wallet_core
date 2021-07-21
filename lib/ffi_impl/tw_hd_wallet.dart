@@ -14,7 +14,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  static late final _TWHDWalletCreate_ptr = lookup<NativeFunction<_c_TWHDWalletCreate>>('TWHDWalletCreate');
+  static late final _TWHDWalletCreate_ptr = _lookup<NativeFunction<_c_TWHDWalletCreate>>('TWHDWalletCreate');
   static late final _dart_TWHDWalletCreate _TWHDWalletCreate = _TWHDWalletCreate_ptr.asFunction<_dart_TWHDWalletCreate>();
 
   /// Creates an HDWallet from a mnemonic seed.  Returned object needs to be deleted.
@@ -28,7 +28,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  static late final _TWHDWalletCreateWithMnemonic_ptr = lookup<NativeFunction<_c_TWHDWalletCreateWithMnemonic>>('TWHDWalletCreateWithMnemonic');
+  static late final _TWHDWalletCreateWithMnemonic_ptr = _lookup<NativeFunction<_c_TWHDWalletCreateWithMnemonic>>('TWHDWalletCreateWithMnemonic');
   static late final _dart_TWHDWalletCreateWithMnemonic _TWHDWalletCreateWithMnemonic = _TWHDWalletCreateWithMnemonic_ptr.asFunction<_dart_TWHDWalletCreateWithMnemonic>();
 
   /// Creates an HDWallet from a seed.  Returned object needs to be deleted.
@@ -42,7 +42,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  static late final _TWHDWalletCreateWithData_ptr = lookup<NativeFunction<_c_TWHDWalletCreateWithData>>('TWHDWalletCreateWithData');
+  static late final _TWHDWalletCreateWithData_ptr = _lookup<NativeFunction<_c_TWHDWalletCreateWithData>>('TWHDWalletCreateWithData');
   static late final _dart_TWHDWalletCreateWithData _TWHDWalletCreateWithData = _TWHDWalletCreateWithData_ptr.asFunction<_dart_TWHDWalletCreateWithData>();
 
   /// Deletes a wallet.
@@ -54,7 +54,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  late final _TWHDWalletDelete_ptr = lookup<NativeFunction<_c_TWHDWalletDelete>>('TWHDWalletDelete');
+  late final _TWHDWalletDelete_ptr = _lookup<NativeFunction<_c_TWHDWalletDelete>>('TWHDWalletDelete');
   late final _dart_TWHDWalletDelete _TWHDWalletDelete = _TWHDWalletDelete_ptr.asFunction<_dart_TWHDWalletDelete>();
 
   /// Wallet seed.
@@ -66,7 +66,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  late final _TWHDWalletSeed_ptr = lookup<NativeFunction<_c_TWHDWalletSeed>>('TWHDWalletSeed');
+  late final _TWHDWalletSeed_ptr = _lookup<NativeFunction<_c_TWHDWalletSeed>>('TWHDWalletSeed');
   late final _dart_TWHDWalletSeed _TWHDWalletSeed = _TWHDWalletSeed_ptr.asFunction<_dart_TWHDWalletSeed>();
 
   /// Wallet Mnemonic
@@ -78,7 +78,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  late final _TWHDWalletMnemonic_ptr = lookup<NativeFunction<_c_TWHDWalletMnemonic>>('TWHDWalletMnemonic');
+  late final _TWHDWalletMnemonic_ptr = _lookup<NativeFunction<_c_TWHDWalletMnemonic>>('TWHDWalletMnemonic');
   late final _dart_TWHDWalletMnemonic _TWHDWalletMnemonic = _TWHDWalletMnemonic_ptr.asFunction<_dart_TWHDWalletMnemonic>();
 
   /// Returns master key.  Returned object needs to be deleted.
@@ -92,7 +92,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  late final _TWHDWalletGetMasterKey_ptr = lookup<NativeFunction<_c_TWHDWalletGetMasterKey>>('TWHDWalletGetMasterKey');
+  late final _TWHDWalletGetMasterKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetMasterKey>>('TWHDWalletGetMasterKey');
   late final _dart_TWHDWalletGetMasterKey _TWHDWalletGetMasterKey = _TWHDWalletGetMasterKey_ptr.asFunction<_dart_TWHDWalletGetMasterKey>();
 
   /// Generates the default private key for the specified coin.  Returned object needs to be deleted.
@@ -106,7 +106,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  late final _TWHDWalletGetKeyForCoin_ptr = lookup<NativeFunction<_c_TWHDWalletGetKeyForCoin>>('TWHDWalletGetKeyForCoin');
+  late final _TWHDWalletGetKeyForCoin_ptr = _lookup<NativeFunction<_c_TWHDWalletGetKeyForCoin>>('TWHDWalletGetKeyForCoin');
   late final _dart_TWHDWalletGetKeyForCoin _TWHDWalletGetKeyForCoin = _TWHDWalletGetKeyForCoin_ptr.asFunction<_dart_TWHDWalletGetKeyForCoin>();
 
   /// Generates the default address for the specified coin (without exposing intermediary private key).
@@ -120,7 +120,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  late final _TWHDWalletGetAddressForCoin_ptr = lookup<NativeFunction<_c_TWHDWalletGetAddressForCoin>>('TWHDWalletGetAddressForCoin');
+  late final _TWHDWalletGetAddressForCoin_ptr = _lookup<NativeFunction<_c_TWHDWalletGetAddressForCoin>>('TWHDWalletGetAddressForCoin');
   late final _dart_TWHDWalletGetAddressForCoin _TWHDWalletGetAddressForCoin = _TWHDWalletGetAddressForCoin_ptr.asFunction<_dart_TWHDWalletGetAddressForCoin>();
 
   /// Generates the private key for the specified derivation path.  Returned object needs to be deleted.
@@ -136,7 +136,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  late final _TWHDWalletGetKey_ptr = lookup<NativeFunction<_c_TWHDWalletGetKey>>('TWHDWalletGetKey');
+  late final _TWHDWalletGetKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetKey>>('TWHDWalletGetKey');
   late final _dart_TWHDWalletGetKey _TWHDWalletGetKey = _TWHDWalletGetKey_ptr.asFunction<_dart_TWHDWalletGetKey>();
 
   /// Shortcut method to generate private key with the specified account/change/address (bip44 standard). Returned object needs to be deleted.
@@ -158,7 +158,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  late final _TWHDWalletGetDerivedKey_ptr = lookup<NativeFunction<_c_TWHDWalletGetDerivedKey>>('TWHDWalletGetDerivedKey');
+  late final _TWHDWalletGetDerivedKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetDerivedKey>>('TWHDWalletGetDerivedKey');
   late final _dart_TWHDWalletGetDerivedKey _TWHDWalletGetDerivedKey = _TWHDWalletGetDerivedKey_ptr.asFunction<_dart_TWHDWalletGetDerivedKey>();
 
 
@@ -179,7 +179,7 @@ abstract class TWHDWallet extends Opaque {
   }
 
   late final _TWHDWalletGetExtendedPrivateKey_ptr =
-  lookup<NativeFunction<_c_TWHDWalletGetExtendedPrivateKey>>(
+  _lookup<NativeFunction<_c_TWHDWalletGetExtendedPrivateKey>>(
       'TWHDWalletGetExtendedPrivateKey');
   late final _dart_TWHDWalletGetExtendedPrivateKey
   _TWHDWalletGetExtendedPrivateKey = _TWHDWalletGetExtendedPrivateKey_ptr
@@ -201,7 +201,7 @@ abstract class TWHDWallet extends Opaque {
   }
 
   late final _TWHDWalletGetExtendedPublicKey_ptr =
-  lookup<NativeFunction<_c_TWHDWalletGetExtendedPublicKey>>(
+  _lookup<NativeFunction<_c_TWHDWalletGetExtendedPublicKey>>(
       'TWHDWalletGetExtendedPublicKey');
   late final _dart_TWHDWalletGetExtendedPublicKey
   _TWHDWalletGetExtendedPublicKey = _TWHDWalletGetExtendedPublicKey_ptr
@@ -220,7 +220,7 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  static late final _TWHDWalletGetPublicKeyFromExtended_ptr = lookup<NativeFunction<_c_TWHDWalletGetPublicKeyFromExtended>>('TWHDWalletGetPublicKeyFromExtended');
+  static late final _TWHDWalletGetPublicKeyFromExtended_ptr = _lookup<NativeFunction<_c_TWHDWalletGetPublicKeyFromExtended>>('TWHDWalletGetPublicKeyFromExtended');
   static late final _dart_TWHDWalletGetPublicKeyFromExtended _TWHDWalletGetPublicKeyFromExtended =
       _TWHDWalletGetPublicKeyFromExtended_ptr.asFunction<_dart_TWHDWalletGetPublicKeyFromExtended>();
 }

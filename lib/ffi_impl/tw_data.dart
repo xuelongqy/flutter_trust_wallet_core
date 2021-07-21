@@ -13,7 +13,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataCreateWithBytes_ptr = lookup<NativeFunction<_c_TWDataCreateWithBytes>>('TWDataCreateWithBytes');
+  late final _TWDataCreateWithBytes_ptr = _lookup<NativeFunction<_c_TWDataCreateWithBytes>>('TWDataCreateWithBytes');
   late final _dart_TWDataCreateWithBytes _TWDataCreateWithBytes = _TWDataCreateWithBytes_ptr.asFunction<_dart_TWDataCreateWithBytes>();
 
   /// Creates an uninitialized block of data with the provided size.
@@ -25,7 +25,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataCreateWithSize_ptr = lookup<NativeFunction<_c_TWDataCreateWithSize>>('TWDataCreateWithSize');
+  late final _TWDataCreateWithSize_ptr = _lookup<NativeFunction<_c_TWDataCreateWithSize>>('TWDataCreateWithSize');
   late final _dart_TWDataCreateWithSize _TWDataCreateWithSize = _TWDataCreateWithSize_ptr.asFunction<_dart_TWDataCreateWithSize>();
 
   /// Creates a block of data by copying another block of data.
@@ -37,7 +37,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataCreateWithData_ptr = lookup<NativeFunction<_c_TWDataCreateWithData>>('TWDataCreateWithData');
+  late final _TWDataCreateWithData_ptr = _lookup<NativeFunction<_c_TWDataCreateWithData>>('TWDataCreateWithData');
   late final _dart_TWDataCreateWithData _TWDataCreateWithData = _TWDataCreateWithData_ptr.asFunction<_dart_TWDataCreateWithData>();
 
   /// Creates a block of data from a hexadecimal string.  Odd length is invalid (intended grouping to bytes is not obvious).
@@ -49,7 +49,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataCreateWithHexString_ptr = lookup<NativeFunction<_c_TWDataCreateWithHexString>>('TWDataCreateWithHexString');
+  late final _TWDataCreateWithHexString_ptr = _lookup<NativeFunction<_c_TWDataCreateWithHexString>>('TWDataCreateWithHexString');
   late final _dart_TWDataCreateWithHexString _TWDataCreateWithHexString = _TWDataCreateWithHexString_ptr.asFunction<_dart_TWDataCreateWithHexString>();
 
   /// Returns the size in bytes.
@@ -61,7 +61,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataSize_ptr = lookup<NativeFunction<_c_TWDataSize>>('TWDataSize');
+  late final _TWDataSize_ptr = _lookup<NativeFunction<_c_TWDataSize>>('TWDataSize');
   late final _dart_TWDataSize _TWDataSize = _TWDataSize_ptr.asFunction<_dart_TWDataSize>();
 
   /// Returns the raw pointer to the contents of data.
@@ -73,7 +73,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataBytes_ptr = lookup<NativeFunction<_c_TWDataBytes>>('TWDataBytes');
+  late final _TWDataBytes_ptr = _lookup<NativeFunction<_c_TWDataBytes>>('TWDataBytes');
   late final _dart_TWDataBytes _TWDataBytes = _TWDataBytes_ptr.asFunction<_dart_TWDataBytes>();
 
   /// Returns the byte at the provided index.
@@ -87,7 +87,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataGet_ptr = lookup<NativeFunction<_c_TWDataGet>>('TWDataGet');
+  late final _TWDataGet_ptr = _lookup<NativeFunction<_c_TWDataGet>>('TWDataGet');
   late final _dart_TWDataGet _TWDataGet = _TWDataGet_ptr.asFunction<_dart_TWDataGet>();
 
   /// Sets the byte at the provided index.
@@ -102,7 +102,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataSet_ptr = lookup<NativeFunction<_c_TWDataSet>>('TWDataSet');
+  late final _TWDataSet_ptr = _lookup<NativeFunction<_c_TWDataSet>>('TWDataSet');
   late final _dart_TWDataSet _TWDataSet = _TWDataSet_ptr.asFunction<_dart_TWDataSet>();
 
   /// Copies a range of bytes into the provided buffer.
@@ -120,7 +120,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataCopyBytes_ptr = lookup<NativeFunction<_c_TWDataCopyBytes>>('TWDataCopyBytes');
+  late final _TWDataCopyBytes_ptr = _lookup<NativeFunction<_c_TWDataCopyBytes>>('TWDataCopyBytes');
   late final _dart_TWDataCopyBytes _TWDataCopyBytes = _TWDataCopyBytes_ptr.asFunction<_dart_TWDataCopyBytes>();
 
   /// Replaces a range of bytes with the contents of the provided buffer.
@@ -138,7 +138,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataReplaceBytes_ptr = lookup<NativeFunction<_c_TWDataReplaceBytes>>('TWDataReplaceBytes');
+  late final _TWDataReplaceBytes_ptr = _lookup<NativeFunction<_c_TWDataReplaceBytes>>('TWDataReplaceBytes');
   late final _dart_TWDataReplaceBytes _TWDataReplaceBytes = _TWDataReplaceBytes_ptr.asFunction<_dart_TWDataReplaceBytes>();
 
   /// Appends data from a byte array.
@@ -154,7 +154,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataAppendBytes_ptr = lookup<NativeFunction<_c_TWDataAppendBytes>>('TWDataAppendBytes');
+  late final _TWDataAppendBytes_ptr = _lookup<NativeFunction<_c_TWDataAppendBytes>>('TWDataAppendBytes');
   late final _dart_TWDataAppendBytes _TWDataAppendBytes = _TWDataAppendBytes_ptr.asFunction<_dart_TWDataAppendBytes>();
 
   /// Appends a single byte.
@@ -168,7 +168,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataAppendByte_ptr = lookup<NativeFunction<_c_TWDataAppendByte>>('TWDataAppendByte');
+  late final _TWDataAppendByte_ptr = _lookup<NativeFunction<_c_TWDataAppendByte>>('TWDataAppendByte');
   late final _dart_TWDataAppendByte _TWDataAppendByte = _TWDataAppendByte_ptr.asFunction<_dart_TWDataAppendByte>();
 
   /// Appends a block of data.
@@ -182,7 +182,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataAppendData_ptr = lookup<NativeFunction<_c_TWDataAppendData>>('TWDataAppendData');
+  late final _TWDataAppendData_ptr = _lookup<NativeFunction<_c_TWDataAppendData>>('TWDataAppendData');
   late final _dart_TWDataAppendData _TWDataAppendData = _TWDataAppendData_ptr.asFunction<_dart_TWDataAppendData>();
 
   /// Revereses the bytes.
@@ -194,7 +194,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataReverse_ptr = lookup<NativeFunction<_c_TWDataReverse>>('TWDataReverse');
+  late final _TWDataReverse_ptr = _lookup<NativeFunction<_c_TWDataReverse>>('TWDataReverse');
   late final _dart_TWDataReverse _TWDataReverse = _TWDataReverse_ptr.asFunction<_dart_TWDataReverse>();
 
   /// Sets all bytes to the given value.
@@ -206,7 +206,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataReset_ptr = lookup<NativeFunction<_c_TWDataReset>>('TWDataReset');
+  late final _TWDataReset_ptr = _lookup<NativeFunction<_c_TWDataReset>>('TWDataReset');
   late final _dart_TWDataReset _TWDataReset = _TWDataReset_ptr.asFunction<_dart_TWDataReset>();
 
   /// Deletes a block of data created with a `TWDataCreate*` method.
@@ -218,7 +218,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataDelete_ptr = lookup<NativeFunction<_c_TWDataDelete>>('TWDataDelete');
+  late final _TWDataDelete_ptr = _lookup<NativeFunction<_c_TWDataDelete>>('TWDataDelete');
   late final _dart_TWDataDelete _TWDataDelete = _TWDataDelete_ptr.asFunction<_dart_TWDataDelete>();
 
   /// Determines whether two data blocks are equal.
@@ -232,7 +232,7 @@ abstract class TWData extends Opaque {
     );
   }
 
-  late final _TWDataEqual_ptr = lookup<NativeFunction<_c_TWDataEqual>>('TWDataEqual');
+  late final _TWDataEqual_ptr = _lookup<NativeFunction<_c_TWDataEqual>>('TWDataEqual');
   late final _dart_TWDataEqual _TWDataEqual = _TWDataEqual_ptr.asFunction<_dart_TWDataEqual>();
 }
 

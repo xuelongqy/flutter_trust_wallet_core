@@ -3,7 +3,7 @@ part of trust_wallet_core;
 /// trust wallet core
 class TWRippleXAddress extends Opaque {
   /// Compares two addresses for equality.
-  late final Pointer<Int32> _bool = lookup<Int32>('bool');
+  late final Pointer<Int32> _bool = _lookup<Int32>('bool');
 
   int get bool => _bool.value;
 
@@ -18,7 +18,7 @@ class TWRippleXAddress extends Opaque {
     );
   }
 
-  late final _TWRippleXAddressCreateWithString_ptr = lookup<NativeFunction<_c_TWRippleXAddressCreateWithString>>('TWRippleXAddressCreateWithString');
+  late final _TWRippleXAddressCreateWithString_ptr = _lookup<NativeFunction<_c_TWRippleXAddressCreateWithString>>('TWRippleXAddressCreateWithString');
   late final _dart_TWRippleXAddressCreateWithString _TWRippleXAddressCreateWithString = _TWRippleXAddressCreateWithString_ptr.asFunction<_dart_TWRippleXAddressCreateWithString>();
 
   /// Creates an address from a public key and destination tag.
@@ -32,7 +32,7 @@ class TWRippleXAddress extends Opaque {
     );
   }
 
-  late final _TWRippleXAddressCreateWithPublicKey_ptr = lookup<NativeFunction<_c_TWRippleXAddressCreateWithPublicKey>>('TWRippleXAddressCreateWithPublicKey');
+  late final _TWRippleXAddressCreateWithPublicKey_ptr = _lookup<NativeFunction<_c_TWRippleXAddressCreateWithPublicKey>>('TWRippleXAddressCreateWithPublicKey');
   late final _dart_TWRippleXAddressCreateWithPublicKey _TWRippleXAddressCreateWithPublicKey =
       _TWRippleXAddressCreateWithPublicKey_ptr.asFunction<_dart_TWRippleXAddressCreateWithPublicKey>();
 
@@ -44,18 +44,18 @@ class TWRippleXAddress extends Opaque {
     );
   }
 
-  late final _TWRippleXAddressDelete_ptr = lookup<NativeFunction<_c_TWRippleXAddressDelete>>('TWRippleXAddressDelete');
+  late final _TWRippleXAddressDelete_ptr = _lookup<NativeFunction<_c_TWRippleXAddressDelete>>('TWRippleXAddressDelete');
   late final _dart_TWRippleXAddressDelete _TWRippleXAddressDelete = _TWRippleXAddressDelete_ptr.asFunction<_dart_TWRippleXAddressDelete>();
 
   /// Returns the address string representation.
-  late final Pointer<Int32> _TWString = lookup<Int32>('TWString');
+  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
 
   int get TWString => _TWString.value;
 
   set TWString(int value) => _TWString.value = value;
 
   /// Returns the destination tag.
-  late final Pointer<Int32> _uint32_t = lookup<Int32>('uint32_t');
+  late final Pointer<Int32> _uint32_t = _lookup<Int32>('uint32_t');
 
   int get uint32_t => _uint32_t.value;
 

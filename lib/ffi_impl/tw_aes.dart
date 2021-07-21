@@ -20,7 +20,7 @@ class TWAES extends Opaque {
     );
   }
 
-  static late final _TWAESEncryptCBC_ptr = lookup<NativeFunction<_c_TWAESEncryptCBC>>('TWAESEncryptCBC');
+  static late final _TWAESEncryptCBC_ptr = _lookup<NativeFunction<_c_TWAESEncryptCBC>>('TWAESEncryptCBC');
   static late final _dart_TWAESEncryptCBC _TWAESEncryptCBC = _TWAESEncryptCBC_ptr.asFunction<_dart_TWAESEncryptCBC>();
 
   /// Decrypts a block of data using AES in Cipher Block Chaining (CBC) mode.
@@ -42,7 +42,7 @@ class TWAES extends Opaque {
     );
   }
 
-  static late final _TWAESDecryptCBC_ptr = lookup<NativeFunction<_c_TWAESDecryptCBC>>('TWAESDecryptCBC');
+  static late final _TWAESDecryptCBC_ptr = _lookup<NativeFunction<_c_TWAESDecryptCBC>>('TWAESDecryptCBC');
   static late final _dart_TWAESDecryptCBC _TWAESDecryptCBC = _TWAESDecryptCBC_ptr.asFunction<_dart_TWAESDecryptCBC>();
 
   /// Encrypts a block of data using AES in Counter (CTR) mode.
@@ -62,7 +62,7 @@ class TWAES extends Opaque {
     );
   }
 
-  static late final _TWAESEncryptCTR_ptr = lookup<NativeFunction<_c_TWAESEncryptCTR>>('TWAESEncryptCTR');
+  static late final _TWAESEncryptCTR_ptr = _lookup<NativeFunction<_c_TWAESEncryptCTR>>('TWAESEncryptCTR');
   static late final _dart_TWAESEncryptCTR _TWAESEncryptCTR = _TWAESEncryptCTR_ptr.asFunction<_dart_TWAESEncryptCTR>();
 
   /// Decrypts a block of data using AES in Counter (CTR) mode.
@@ -82,7 +82,7 @@ class TWAES extends Opaque {
     );
   }
 
-  static late final _TWAESDecryptCTR_ptr = lookup<NativeFunction<_c_TWAESDecryptCTR>>('TWAESDecryptCTR');
+  static late final _TWAESDecryptCTR_ptr = _lookup<NativeFunction<_c_TWAESDecryptCTR>>('TWAESDecryptCTR');
   static late final _dart_TWAESDecryptCTR _TWAESDecryptCTR = _TWAESDecryptCTR_ptr.asFunction<_dart_TWAESDecryptCTR>();
 }
 

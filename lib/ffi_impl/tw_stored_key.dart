@@ -3,7 +3,7 @@ part of trust_wallet_core;
 /// trust wallet core
 class TWStoredKey extends Opaque {
   /// Represents a key stored as an encrypted file.
-  late final Pointer<Int32> _TW_EXPORT_CLASS = lookup<Int32>('TW_EXPORT_CLASS');
+  late final Pointer<Int32> _TW_EXPORT_CLASS = _lookup<Int32>('TW_EXPORT_CLASS');
 
   int get TW_EXPORT_CLASS => _TW_EXPORT_CLASS.value;
 
@@ -18,7 +18,7 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyLoad_ptr = lookup<NativeFunction<_c_TWStoredKeyLoad>>('TWStoredKeyLoad');
+  late final _TWStoredKeyLoad_ptr = _lookup<NativeFunction<_c_TWStoredKeyLoad>>('TWStoredKeyLoad');
   late final _dart_TWStoredKeyLoad _TWStoredKeyLoad = _TWStoredKeyLoad_ptr.asFunction<_dart_TWStoredKeyLoad>();
 
   /// Imports a private key.  Returned object needs to be deleted.
@@ -36,7 +36,7 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyImportPrivateKey_ptr = lookup<NativeFunction<_c_TWStoredKeyImportPrivateKey>>('TWStoredKeyImportPrivateKey');
+  late final _TWStoredKeyImportPrivateKey_ptr = _lookup<NativeFunction<_c_TWStoredKeyImportPrivateKey>>('TWStoredKeyImportPrivateKey');
   late final _dart_TWStoredKeyImportPrivateKey _TWStoredKeyImportPrivateKey = _TWStoredKeyImportPrivateKey_ptr.asFunction<_dart_TWStoredKeyImportPrivateKey>();
 
   /// Imports an HD wallet.  Returned object needs to be deleted.
@@ -54,7 +54,7 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyImportHDWallet_ptr = lookup<NativeFunction<_c_TWStoredKeyImportHDWallet>>('TWStoredKeyImportHDWallet');
+  late final _TWStoredKeyImportHDWallet_ptr = _lookup<NativeFunction<_c_TWStoredKeyImportHDWallet>>('TWStoredKeyImportHDWallet');
   late final _dart_TWStoredKeyImportHDWallet _TWStoredKeyImportHDWallet = _TWStoredKeyImportHDWallet_ptr.asFunction<_dart_TWStoredKeyImportHDWallet>();
 
   /// Imports a key from JSON.  Returned object needs to be deleted.
@@ -66,7 +66,7 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyImportJSON_ptr = lookup<NativeFunction<_c_TWStoredKeyImportJSON>>('TWStoredKeyImportJSON');
+  late final _TWStoredKeyImportJSON_ptr = _lookup<NativeFunction<_c_TWStoredKeyImportJSON>>('TWStoredKeyImportJSON');
   late final _dart_TWStoredKeyImportJSON _TWStoredKeyImportJSON = _TWStoredKeyImportJSON_ptr.asFunction<_dart_TWStoredKeyImportJSON>();
 
   /// Creates a new key.  Returned object needs to be deleted.
@@ -80,7 +80,7 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyCreate_ptr = lookup<NativeFunction<_c_TWStoredKeyCreate>>('TWStoredKeyCreate');
+  late final _TWStoredKeyCreate_ptr = _lookup<NativeFunction<_c_TWStoredKeyCreate>>('TWStoredKeyCreate');
   late final _dart_TWStoredKeyCreate _TWStoredKeyCreate = _TWStoredKeyCreate_ptr.asFunction<_dart_TWStoredKeyCreate>();
 
   int TWStoredKeyDelete(
@@ -91,25 +91,25 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyDelete_ptr = lookup<NativeFunction<_c_TWStoredKeyDelete>>('TWStoredKeyDelete');
+  late final _TWStoredKeyDelete_ptr = _lookup<NativeFunction<_c_TWStoredKeyDelete>>('TWStoredKeyDelete');
   late final _dart_TWStoredKeyDelete _TWStoredKeyDelete = _TWStoredKeyDelete_ptr.asFunction<_dart_TWStoredKeyDelete>();
 
   /// Stored key uniqie identifier.  Returned object needs to be deleted.
-  late final Pointer<Int32> _TWString = lookup<Int32>('TWString');
+  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
 
   int get TWString => _TWString.value;
 
   set TWString(int value) => _TWString.value = value;
 
   /// Whether this key is a mnemonic phrase for a HD wallet.
-  late final Pointer<Int32> _bool = lookup<Int32>('bool');
+  late final Pointer<Int32> _bool = _lookup<Int32>('bool');
 
   int get bool => _bool.value;
 
   set bool(int value) => _bool.value = value;
 
   /// The number of accounts.
-  late final Pointer<Int32> _size_t = lookup<Int32>('size_t');
+  late final Pointer<Int32> _size_t = _lookup<Int32>('size_t');
 
   int get size_t => _size_t.value;
 
@@ -125,7 +125,7 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyAccount_ptr = lookup<NativeFunction<_c_TWStoredKeyAccount>>('TWStoredKeyAccount');
+  late final _TWStoredKeyAccount_ptr = _lookup<NativeFunction<_c_TWStoredKeyAccount>>('TWStoredKeyAccount');
   late final _dart_TWStoredKeyAccount _TWStoredKeyAccount = _TWStoredKeyAccount_ptr.asFunction<_dart_TWStoredKeyAccount>();
 
   /// Returns the account for a specific coin, creating it if necessary.  Returned object needs to be deleted.
@@ -141,7 +141,7 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyAccountForCoin_ptr = lookup<NativeFunction<_c_TWStoredKeyAccountForCoin>>('TWStoredKeyAccountForCoin');
+  late final _TWStoredKeyAccountForCoin_ptr = _lookup<NativeFunction<_c_TWStoredKeyAccountForCoin>>('TWStoredKeyAccountForCoin');
   late final _dart_TWStoredKeyAccountForCoin _TWStoredKeyAccountForCoin = _TWStoredKeyAccountForCoin_ptr.asFunction<_dart_TWStoredKeyAccountForCoin>();
 
   /// Remove the account for a specific coin
@@ -155,7 +155,7 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyRemoveAccountForCoin_ptr = lookup<NativeFunction<_c_TWStoredKeyRemoveAccountForCoin>>('TWStoredKeyRemoveAccountForCoin');
+  late final _TWStoredKeyRemoveAccountForCoin_ptr = _lookup<NativeFunction<_c_TWStoredKeyRemoveAccountForCoin>>('TWStoredKeyRemoveAccountForCoin');
   late final _dart_TWStoredKeyRemoveAccountForCoin _TWStoredKeyRemoveAccountForCoin = _TWStoredKeyRemoveAccountForCoin_ptr.asFunction<_dart_TWStoredKeyRemoveAccountForCoin>();
 
   /// Adds a new account.
@@ -175,11 +175,11 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyAddAccount_ptr = lookup<NativeFunction<_c_TWStoredKeyAddAccount>>('TWStoredKeyAddAccount');
+  late final _TWStoredKeyAddAccount_ptr = _lookup<NativeFunction<_c_TWStoredKeyAddAccount>>('TWStoredKeyAddAccount');
   late final _dart_TWStoredKeyAddAccount _TWStoredKeyAddAccount = _TWStoredKeyAddAccount_ptr.asFunction<_dart_TWStoredKeyAddAccount>();
 
   /// Decrypts the private key.
-  late final Pointer<Int32> _TWData = lookup<Int32>('TWData');
+  late final Pointer<Int32> _TWData = _lookup<Int32>('TWData');
 
   int get TWData => _TWData.value;
 
@@ -197,7 +197,7 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyPrivateKey_ptr = lookup<NativeFunction<_c_TWStoredKeyPrivateKey>>('TWStoredKeyPrivateKey');
+  late final _TWStoredKeyPrivateKey_ptr = _lookup<NativeFunction<_c_TWStoredKeyPrivateKey>>('TWStoredKeyPrivateKey');
   late final _dart_TWStoredKeyPrivateKey _TWStoredKeyPrivateKey = _TWStoredKeyPrivateKey_ptr.asFunction<_dart_TWStoredKeyPrivateKey>();
 
   Pointer<Int32> TWStoredKeyWallet(
@@ -210,7 +210,7 @@ class TWStoredKey extends Opaque {
     );
   }
 
-  late final _TWStoredKeyWallet_ptr = lookup<NativeFunction<_c_TWStoredKeyWallet>>('TWStoredKeyWallet');
+  late final _TWStoredKeyWallet_ptr = _lookup<NativeFunction<_c_TWStoredKeyWallet>>('TWStoredKeyWallet');
   late final _dart_TWStoredKeyWallet _TWStoredKeyWallet = _TWStoredKeyWallet_ptr.asFunction<_dart_TWStoredKeyWallet>();
 }
 

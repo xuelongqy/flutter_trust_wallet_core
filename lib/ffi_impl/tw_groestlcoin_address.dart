@@ -3,7 +3,7 @@ part of trust_wallet_core;
 /// trust wallet core
 class TWGroestlcoinAddress extends Opaque {
   /// Compares two addresses for equality.
-  late final Pointer<Int32> _bool = lookup<Int32>('bool');
+  late final Pointer<Int32> _bool = _lookup<Int32>('bool');
 
   int get bool => _bool.value;
 
@@ -18,7 +18,7 @@ class TWGroestlcoinAddress extends Opaque {
     );
   }
 
-  late final _TWGroestlcoinAddressCreateWithString_ptr = lookup<NativeFunction<_c_TWGroestlcoinAddressCreateWithString>>('TWGroestlcoinAddressCreateWithString');
+  late final _TWGroestlcoinAddressCreateWithString_ptr = _lookup<NativeFunction<_c_TWGroestlcoinAddressCreateWithString>>('TWGroestlcoinAddressCreateWithString');
   late final _dart_TWGroestlcoinAddressCreateWithString _TWGroestlcoinAddressCreateWithString =
       _TWGroestlcoinAddressCreateWithString_ptr.asFunction<_dart_TWGroestlcoinAddressCreateWithString>();
 
@@ -33,7 +33,7 @@ class TWGroestlcoinAddress extends Opaque {
     );
   }
 
-  late final _TWGroestlcoinAddressCreateWithPublicKey_ptr = lookup<NativeFunction<_c_TWGroestlcoinAddressCreateWithPublicKey>>('TWGroestlcoinAddressCreateWithPublicKey');
+  late final _TWGroestlcoinAddressCreateWithPublicKey_ptr = _lookup<NativeFunction<_c_TWGroestlcoinAddressCreateWithPublicKey>>('TWGroestlcoinAddressCreateWithPublicKey');
   late final _dart_TWGroestlcoinAddressCreateWithPublicKey _TWGroestlcoinAddressCreateWithPublicKey =
       _TWGroestlcoinAddressCreateWithPublicKey_ptr.asFunction<_dart_TWGroestlcoinAddressCreateWithPublicKey>();
 
@@ -45,11 +45,11 @@ class TWGroestlcoinAddress extends Opaque {
     );
   }
 
-  late final _TWGroestlcoinAddressDelete_ptr = lookup<NativeFunction<_c_TWGroestlcoinAddressDelete>>('TWGroestlcoinAddressDelete');
+  late final _TWGroestlcoinAddressDelete_ptr = _lookup<NativeFunction<_c_TWGroestlcoinAddressDelete>>('TWGroestlcoinAddressDelete');
   late final _dart_TWGroestlcoinAddressDelete _TWGroestlcoinAddressDelete = _TWGroestlcoinAddressDelete_ptr.asFunction<_dart_TWGroestlcoinAddressDelete>();
 
   /// Returns the address base58 string representation.
-  late final Pointer<Int32> _TWString = lookup<Int32>('TWString');
+  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
 
   int get TWString => _TWString.value;
 

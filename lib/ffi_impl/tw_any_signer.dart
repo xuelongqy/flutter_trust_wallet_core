@@ -13,7 +13,7 @@ class TWAnySigner extends Opaque {
     );
   }
 
-  late final _TWAnySignerSign_ptr = lookup<NativeFunction<_c_TWAnySignerSign>>('TWAnySignerSign');
+  late final _TWAnySignerSign_ptr = _lookup<NativeFunction<_c_TWAnySignerSign>>('TWAnySignerSign');
   late final _dart_TWAnySignerSign _TWAnySignerSign = _TWAnySignerSign_ptr.asFunction<_dart_TWAnySignerSign>();
 
   /// Signs a json transaction with private key.
@@ -29,7 +29,7 @@ class TWAnySigner extends Opaque {
     );
   }
 
-  late final _TWAnySignerSignJSON_ptr = lookup<NativeFunction<_c_TWAnySignerSignJSON>>('TWAnySignerSignJSON');
+  late final _TWAnySignerSignJSON_ptr = _lookup<NativeFunction<_c_TWAnySignerSignJSON>>('TWAnySignerSignJSON');
   late final _dart_TWAnySignerSignJSON _TWAnySignerSignJSON = _TWAnySignerSignJSON_ptr.asFunction<_dart_TWAnySignerSignJSON>();
 
   int TWAnySignerSupportsJSON(
@@ -40,7 +40,7 @@ class TWAnySigner extends Opaque {
     );
   }
 
-  late final _TWAnySignerSupportsJSON_ptr = lookup<NativeFunction<_c_TWAnySignerSupportsJSON>>('TWAnySignerSupportsJSON');
+  late final _TWAnySignerSupportsJSON_ptr = _lookup<NativeFunction<_c_TWAnySignerSupportsJSON>>('TWAnySignerSupportsJSON');
   late final _dart_TWAnySignerSupportsJSON _TWAnySignerSupportsJSON = _TWAnySignerSupportsJSON_ptr.asFunction<_dart_TWAnySignerSupportsJSON>();
 
   /// Plan a transaction (for UTXO chains).
@@ -54,7 +54,7 @@ class TWAnySigner extends Opaque {
     );
   }
 
-  late final _TWAnySignerPlan_ptr = lookup<NativeFunction<_c_TWAnySignerPlan>>('TWAnySignerPlan');
+  late final _TWAnySignerPlan_ptr = _lookup<NativeFunction<_c_TWAnySignerPlan>>('TWAnySignerPlan');
   late final _dart_TWAnySignerPlan _TWAnySignerPlan = _TWAnySignerPlan_ptr.asFunction<_dart_TWAnySignerPlan>();
 }
 

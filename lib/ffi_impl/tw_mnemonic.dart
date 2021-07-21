@@ -13,7 +13,7 @@ class TWMnemonic extends Opaque {
   }
 
   static late final _TWMnemonicIsValid_ptr =
-  lookup<NativeFunction<_c_TWMnemonicIsValid>>('TWMnemonicIsValid');
+  _lookup<NativeFunction<_c_TWMnemonicIsValid>>('TWMnemonicIsValid');
   static late final _dart_TWMnemonicIsValid _TWMnemonicIsValid =
   _TWMnemonicIsValid_ptr.asFunction<_dart_TWMnemonicIsValid>();
 
@@ -26,7 +26,7 @@ class TWMnemonic extends Opaque {
     );
   }
 
-  static late final _TWMnemonicIsValidWord_ptr = lookup<NativeFunction<_c_TWMnemonicIsValidWord>>('TWMnemonicIsValidWord');
+  static late final _TWMnemonicIsValidWord_ptr = _lookup<NativeFunction<_c_TWMnemonicIsValidWord>>('TWMnemonicIsValidWord');
   static late final _dart_TWMnemonicIsValidWord _TWMnemonicIsValidWord = _TWMnemonicIsValidWord_ptr.asFunction<_dart_TWMnemonicIsValidWord>();
 
   /// Return BIP39 English words that match the given prefix.  A single string is returned, with space-separated list of words.
@@ -38,7 +38,7 @@ class TWMnemonic extends Opaque {
     );
   }
 
-  static late final _TWMnemonicSuggest_ptr = lookup<NativeFunction<_c_TWMnemonicSuggest>>('TWMnemonicSuggest');
+  static late final _TWMnemonicSuggest_ptr = _lookup<NativeFunction<_c_TWMnemonicSuggest>>('TWMnemonicSuggest');
   static late final _dart_TWMnemonicSuggest _TWMnemonicSuggest = _TWMnemonicSuggest_ptr.asFunction<_dart_TWMnemonicSuggest>();
 }
 

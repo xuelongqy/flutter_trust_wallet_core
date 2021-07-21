@@ -2,7 +2,7 @@ part of trust_wallet_core;
 
 /// trust wallet core
 class TWEthereumAbiFunction extends Opaque {
-  late final Pointer<Int32> _TW_EXPORT_CLASS = lookup<Int32>('TW_EXPORT_CLASS');
+  late final Pointer<Int32> _TW_EXPORT_CLASS = _lookup<Int32>('TW_EXPORT_CLASS');
 
   int get TW_EXPORT_CLASS => _TW_EXPORT_CLASS.value;
 
@@ -17,7 +17,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionCreateWithString_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionCreateWithString>>('TWEthereumAbiFunctionCreateWithString');
+  late final _TWEthereumAbiFunctionCreateWithString_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionCreateWithString>>('TWEthereumAbiFunctionCreateWithString');
   late final _dart_TWEthereumAbiFunctionCreateWithString _TWEthereumAbiFunctionCreateWithString =
       _TWEthereumAbiFunctionCreateWithString_ptr.asFunction<_dart_TWEthereumAbiFunctionCreateWithString>();
 
@@ -30,11 +30,11 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionDelete_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionDelete>>('TWEthereumAbiFunctionDelete');
+  late final _TWEthereumAbiFunctionDelete_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionDelete>>('TWEthereumAbiFunctionDelete');
   late final _dart_TWEthereumAbiFunctionDelete _TWEthereumAbiFunctionDelete = _TWEthereumAbiFunctionDelete_ptr.asFunction<_dart_TWEthereumAbiFunctionDelete>();
 
   /// Return the function type signature, of the form "baz(int32,uint256)"
-  late final Pointer<Int32> _TWString = lookup<Int32>('TWString');
+  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
 
   int get TWString => _TWString.value;
 
@@ -43,7 +43,7 @@ class TWEthereumAbiFunction extends Opaque {
   /// Methods for adding parameters of the given type (input or output).
   /// For output parameters (isOutput=true) a value has to be specified, although usually not needd.
   /// Returns the index of the parameter (0-based).
-  late final Pointer<Int32> _TW_METHOD_DISCARDABLE_RESULT = lookup<Int32>('TW_METHOD_DISCARDABLE_RESULT');
+  late final Pointer<Int32> _TW_METHOD_DISCARDABLE_RESULT = _lookup<Int32>('TW_METHOD_DISCARDABLE_RESULT');
 
   int get TW_METHOD_DISCARDABLE_RESULT => _TW_METHOD_DISCARDABLE_RESULT.value;
 
@@ -61,7 +61,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamUInt8_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUInt8>>('TWEthereumAbiFunctionAddParamUInt8');
+  late final _TWEthereumAbiFunctionAddParamUInt8_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUInt8>>('TWEthereumAbiFunctionAddParamUInt8');
   late final _dart_TWEthereumAbiFunctionAddParamUInt8 _TWEthereumAbiFunctionAddParamUInt8 =
       _TWEthereumAbiFunctionAddParamUInt8_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUInt8>();
 
@@ -77,7 +77,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamUInt16_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUInt16>>('TWEthereumAbiFunctionAddParamUInt16');
+  late final _TWEthereumAbiFunctionAddParamUInt16_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUInt16>>('TWEthereumAbiFunctionAddParamUInt16');
   late final _dart_TWEthereumAbiFunctionAddParamUInt16 _TWEthereumAbiFunctionAddParamUInt16 =
       _TWEthereumAbiFunctionAddParamUInt16_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUInt16>();
 
@@ -93,7 +93,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamUInt32_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUInt32>>('TWEthereumAbiFunctionAddParamUInt32');
+  late final _TWEthereumAbiFunctionAddParamUInt32_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUInt32>>('TWEthereumAbiFunctionAddParamUInt32');
   late final _dart_TWEthereumAbiFunctionAddParamUInt32 _TWEthereumAbiFunctionAddParamUInt32 =
       _TWEthereumAbiFunctionAddParamUInt32_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUInt32>();
 
@@ -109,7 +109,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamUInt64_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUInt64>>('TWEthereumAbiFunctionAddParamUInt64');
+  late final _TWEthereumAbiFunctionAddParamUInt64_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUInt64>>('TWEthereumAbiFunctionAddParamUInt64');
   late final _dart_TWEthereumAbiFunctionAddParamUInt64 _TWEthereumAbiFunctionAddParamUInt64 =
       _TWEthereumAbiFunctionAddParamUInt64_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUInt64>();
 
@@ -125,7 +125,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamUInt256_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUInt256>>('TWEthereumAbiFunctionAddParamUInt256');
+  late final _TWEthereumAbiFunctionAddParamUInt256_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUInt256>>('TWEthereumAbiFunctionAddParamUInt256');
   late final _dart_TWEthereumAbiFunctionAddParamUInt256 _TWEthereumAbiFunctionAddParamUInt256 =
       _TWEthereumAbiFunctionAddParamUInt256_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUInt256>();
 
@@ -143,7 +143,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamUIntN_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUIntN>>('TWEthereumAbiFunctionAddParamUIntN');
+  late final _TWEthereumAbiFunctionAddParamUIntN_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamUIntN>>('TWEthereumAbiFunctionAddParamUIntN');
   late final _dart_TWEthereumAbiFunctionAddParamUIntN _TWEthereumAbiFunctionAddParamUIntN =
       _TWEthereumAbiFunctionAddParamUIntN_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUIntN>();
 
@@ -159,7 +159,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamInt8_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamInt8>>('TWEthereumAbiFunctionAddParamInt8');
+  late final _TWEthereumAbiFunctionAddParamInt8_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamInt8>>('TWEthereumAbiFunctionAddParamInt8');
   late final _dart_TWEthereumAbiFunctionAddParamInt8 _TWEthereumAbiFunctionAddParamInt8 =
       _TWEthereumAbiFunctionAddParamInt8_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamInt8>();
 
@@ -175,7 +175,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamInt16_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamInt16>>('TWEthereumAbiFunctionAddParamInt16');
+  late final _TWEthereumAbiFunctionAddParamInt16_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamInt16>>('TWEthereumAbiFunctionAddParamInt16');
   late final _dart_TWEthereumAbiFunctionAddParamInt16 _TWEthereumAbiFunctionAddParamInt16 =
       _TWEthereumAbiFunctionAddParamInt16_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamInt16>();
 
@@ -191,7 +191,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamInt32_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamInt32>>('TWEthereumAbiFunctionAddParamInt32');
+  late final _TWEthereumAbiFunctionAddParamInt32_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamInt32>>('TWEthereumAbiFunctionAddParamInt32');
   late final _dart_TWEthereumAbiFunctionAddParamInt32 _TWEthereumAbiFunctionAddParamInt32 =
       _TWEthereumAbiFunctionAddParamInt32_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamInt32>();
 
@@ -207,7 +207,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamInt64_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamInt64>>('TWEthereumAbiFunctionAddParamInt64');
+  late final _TWEthereumAbiFunctionAddParamInt64_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamInt64>>('TWEthereumAbiFunctionAddParamInt64');
   late final _dart_TWEthereumAbiFunctionAddParamInt64 _TWEthereumAbiFunctionAddParamInt64 =
       _TWEthereumAbiFunctionAddParamInt64_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamInt64>();
 
@@ -223,7 +223,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamInt256_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamInt256>>('TWEthereumAbiFunctionAddParamInt256');
+  late final _TWEthereumAbiFunctionAddParamInt256_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamInt256>>('TWEthereumAbiFunctionAddParamInt256');
   late final _dart_TWEthereumAbiFunctionAddParamInt256 _TWEthereumAbiFunctionAddParamInt256 =
       _TWEthereumAbiFunctionAddParamInt256_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamInt256>();
 
@@ -241,7 +241,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamIntN_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamIntN>>('TWEthereumAbiFunctionAddParamIntN');
+  late final _TWEthereumAbiFunctionAddParamIntN_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamIntN>>('TWEthereumAbiFunctionAddParamIntN');
   late final _dart_TWEthereumAbiFunctionAddParamIntN _TWEthereumAbiFunctionAddParamIntN =
       _TWEthereumAbiFunctionAddParamIntN_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamIntN>();
 
@@ -257,7 +257,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamBool_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamBool>>('TWEthereumAbiFunctionAddParamBool');
+  late final _TWEthereumAbiFunctionAddParamBool_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamBool>>('TWEthereumAbiFunctionAddParamBool');
   late final _dart_TWEthereumAbiFunctionAddParamBool _TWEthereumAbiFunctionAddParamBool =
       _TWEthereumAbiFunctionAddParamBool_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamBool>();
 
@@ -273,7 +273,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamString_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamString>>('TWEthereumAbiFunctionAddParamString');
+  late final _TWEthereumAbiFunctionAddParamString_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamString>>('TWEthereumAbiFunctionAddParamString');
   late final _dart_TWEthereumAbiFunctionAddParamString _TWEthereumAbiFunctionAddParamString =
       _TWEthereumAbiFunctionAddParamString_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamString>();
 
@@ -289,7 +289,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamAddress_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamAddress>>('TWEthereumAbiFunctionAddParamAddress');
+  late final _TWEthereumAbiFunctionAddParamAddress_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamAddress>>('TWEthereumAbiFunctionAddParamAddress');
   late final _dart_TWEthereumAbiFunctionAddParamAddress _TWEthereumAbiFunctionAddParamAddress =
       _TWEthereumAbiFunctionAddParamAddress_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamAddress>();
 
@@ -305,7 +305,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamBytes_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamBytes>>('TWEthereumAbiFunctionAddParamBytes');
+  late final _TWEthereumAbiFunctionAddParamBytes_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamBytes>>('TWEthereumAbiFunctionAddParamBytes');
   late final _dart_TWEthereumAbiFunctionAddParamBytes _TWEthereumAbiFunctionAddParamBytes =
       _TWEthereumAbiFunctionAddParamBytes_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamBytes>();
 
@@ -323,7 +323,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamBytesFix_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamBytesFix>>('TWEthereumAbiFunctionAddParamBytesFix');
+  late final _TWEthereumAbiFunctionAddParamBytesFix_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamBytesFix>>('TWEthereumAbiFunctionAddParamBytesFix');
   late final _dart_TWEthereumAbiFunctionAddParamBytesFix _TWEthereumAbiFunctionAddParamBytesFix =
       _TWEthereumAbiFunctionAddParamBytesFix_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamBytesFix>();
 
@@ -337,30 +337,30 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddParamArray_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamArray>>('TWEthereumAbiFunctionAddParamArray');
+  late final _TWEthereumAbiFunctionAddParamArray_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddParamArray>>('TWEthereumAbiFunctionAddParamArray');
   late final _dart_TWEthereumAbiFunctionAddParamArray _TWEthereumAbiFunctionAddParamArray =
       _TWEthereumAbiFunctionAddParamArray_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamArray>();
 
   /// Methods for accessing the value of an output or input parameter, of different types.
-  late final Pointer<Int32> _uint8_t = lookup<Int32>('uint8_t');
+  late final Pointer<Int32> _uint8_t = _lookup<Int32>('uint8_t');
 
   int get uint8_t => _uint8_t.value;
 
   set uint8_t(int value) => _uint8_t.value = value;
 
-  late final Pointer<Int32> _uint64_t = lookup<Int32>('uint64_t');
+  late final Pointer<Int32> _uint64_t = _lookup<Int32>('uint64_t');
 
   int get uint64_t => _uint64_t.value;
 
   set uint64_t(int value) => _uint64_t.value = value;
 
-  late final Pointer<Int32> _TWData = lookup<Int32>('TWData');
+  late final Pointer<Int32> _TWData = _lookup<Int32>('TWData');
 
   int get TWData => _TWData.value;
 
   set TWData(int value) => _TWData.value = value;
 
-  late final Pointer<Int32> _bool = lookup<Int32>('bool');
+  late final Pointer<Int32> _bool = _lookup<Int32>('bool');
 
   int get bool => _bool.value;
 
@@ -380,7 +380,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamUInt8_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUInt8>>('TWEthereumAbiFunctionAddInArrayParamUInt8');
+  late final _TWEthereumAbiFunctionAddInArrayParamUInt8_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUInt8>>('TWEthereumAbiFunctionAddInArrayParamUInt8');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamUInt8 _TWEthereumAbiFunctionAddInArrayParamUInt8 =
       _TWEthereumAbiFunctionAddInArrayParamUInt8_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUInt8>();
 
@@ -396,7 +396,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamUInt16_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUInt16>>('TWEthereumAbiFunctionAddInArrayParamUInt16');
+  late final _TWEthereumAbiFunctionAddInArrayParamUInt16_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUInt16>>('TWEthereumAbiFunctionAddInArrayParamUInt16');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamUInt16 _TWEthereumAbiFunctionAddInArrayParamUInt16 =
       _TWEthereumAbiFunctionAddInArrayParamUInt16_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUInt16>();
 
@@ -412,7 +412,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamUInt32_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUInt32>>('TWEthereumAbiFunctionAddInArrayParamUInt32');
+  late final _TWEthereumAbiFunctionAddInArrayParamUInt32_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUInt32>>('TWEthereumAbiFunctionAddInArrayParamUInt32');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamUInt32 _TWEthereumAbiFunctionAddInArrayParamUInt32 =
       _TWEthereumAbiFunctionAddInArrayParamUInt32_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUInt32>();
 
@@ -428,7 +428,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamUInt64_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUInt64>>('TWEthereumAbiFunctionAddInArrayParamUInt64');
+  late final _TWEthereumAbiFunctionAddInArrayParamUInt64_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUInt64>>('TWEthereumAbiFunctionAddInArrayParamUInt64');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamUInt64 _TWEthereumAbiFunctionAddInArrayParamUInt64 =
       _TWEthereumAbiFunctionAddInArrayParamUInt64_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUInt64>();
 
@@ -445,7 +445,7 @@ class TWEthereumAbiFunction extends Opaque {
   }
 
   late final _TWEthereumAbiFunctionAddInArrayParamUInt256_ptr =
-      lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUInt256>>('TWEthereumAbiFunctionAddInArrayParamUInt256');
+      _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUInt256>>('TWEthereumAbiFunctionAddInArrayParamUInt256');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamUInt256 _TWEthereumAbiFunctionAddInArrayParamUInt256 =
       _TWEthereumAbiFunctionAddInArrayParamUInt256_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUInt256>();
 
@@ -463,7 +463,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamUIntN_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUIntN>>('TWEthereumAbiFunctionAddInArrayParamUIntN');
+  late final _TWEthereumAbiFunctionAddInArrayParamUIntN_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamUIntN>>('TWEthereumAbiFunctionAddInArrayParamUIntN');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamUIntN _TWEthereumAbiFunctionAddInArrayParamUIntN =
       _TWEthereumAbiFunctionAddInArrayParamUIntN_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUIntN>();
 
@@ -479,7 +479,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamInt8_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamInt8>>('TWEthereumAbiFunctionAddInArrayParamInt8');
+  late final _TWEthereumAbiFunctionAddInArrayParamInt8_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamInt8>>('TWEthereumAbiFunctionAddInArrayParamInt8');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamInt8 _TWEthereumAbiFunctionAddInArrayParamInt8 =
       _TWEthereumAbiFunctionAddInArrayParamInt8_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamInt8>();
 
@@ -495,7 +495,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamInt16_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamInt16>>('TWEthereumAbiFunctionAddInArrayParamInt16');
+  late final _TWEthereumAbiFunctionAddInArrayParamInt16_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamInt16>>('TWEthereumAbiFunctionAddInArrayParamInt16');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamInt16 _TWEthereumAbiFunctionAddInArrayParamInt16 =
       _TWEthereumAbiFunctionAddInArrayParamInt16_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamInt16>();
 
@@ -511,7 +511,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamInt32_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamInt32>>('TWEthereumAbiFunctionAddInArrayParamInt32');
+  late final _TWEthereumAbiFunctionAddInArrayParamInt32_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamInt32>>('TWEthereumAbiFunctionAddInArrayParamInt32');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamInt32 _TWEthereumAbiFunctionAddInArrayParamInt32 =
       _TWEthereumAbiFunctionAddInArrayParamInt32_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamInt32>();
 
@@ -527,7 +527,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamInt64_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamInt64>>('TWEthereumAbiFunctionAddInArrayParamInt64');
+  late final _TWEthereumAbiFunctionAddInArrayParamInt64_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamInt64>>('TWEthereumAbiFunctionAddInArrayParamInt64');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamInt64 _TWEthereumAbiFunctionAddInArrayParamInt64 =
       _TWEthereumAbiFunctionAddInArrayParamInt64_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamInt64>();
 
@@ -543,7 +543,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamInt256_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamInt256>>('TWEthereumAbiFunctionAddInArrayParamInt256');
+  late final _TWEthereumAbiFunctionAddInArrayParamInt256_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamInt256>>('TWEthereumAbiFunctionAddInArrayParamInt256');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamInt256 _TWEthereumAbiFunctionAddInArrayParamInt256 =
       _TWEthereumAbiFunctionAddInArrayParamInt256_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamInt256>();
 
@@ -561,7 +561,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamIntN_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamIntN>>('TWEthereumAbiFunctionAddInArrayParamIntN');
+  late final _TWEthereumAbiFunctionAddInArrayParamIntN_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamIntN>>('TWEthereumAbiFunctionAddInArrayParamIntN');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamIntN _TWEthereumAbiFunctionAddInArrayParamIntN =
       _TWEthereumAbiFunctionAddInArrayParamIntN_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamIntN>();
 
@@ -577,7 +577,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamBool_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamBool>>('TWEthereumAbiFunctionAddInArrayParamBool');
+  late final _TWEthereumAbiFunctionAddInArrayParamBool_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamBool>>('TWEthereumAbiFunctionAddInArrayParamBool');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamBool _TWEthereumAbiFunctionAddInArrayParamBool =
       _TWEthereumAbiFunctionAddInArrayParamBool_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamBool>();
 
@@ -593,7 +593,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamString_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamString>>('TWEthereumAbiFunctionAddInArrayParamString');
+  late final _TWEthereumAbiFunctionAddInArrayParamString_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamString>>('TWEthereumAbiFunctionAddInArrayParamString');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamString _TWEthereumAbiFunctionAddInArrayParamString =
       _TWEthereumAbiFunctionAddInArrayParamString_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamString>();
 
@@ -610,7 +610,7 @@ class TWEthereumAbiFunction extends Opaque {
   }
 
   late final _TWEthereumAbiFunctionAddInArrayParamAddress_ptr =
-      lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamAddress>>('TWEthereumAbiFunctionAddInArrayParamAddress');
+      _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamAddress>>('TWEthereumAbiFunctionAddInArrayParamAddress');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamAddress _TWEthereumAbiFunctionAddInArrayParamAddress =
       _TWEthereumAbiFunctionAddInArrayParamAddress_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamAddress>();
 
@@ -626,7 +626,7 @@ class TWEthereumAbiFunction extends Opaque {
     );
   }
 
-  late final _TWEthereumAbiFunctionAddInArrayParamBytes_ptr = lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamBytes>>('TWEthereumAbiFunctionAddInArrayParamBytes');
+  late final _TWEthereumAbiFunctionAddInArrayParamBytes_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamBytes>>('TWEthereumAbiFunctionAddInArrayParamBytes');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamBytes _TWEthereumAbiFunctionAddInArrayParamBytes =
       _TWEthereumAbiFunctionAddInArrayParamBytes_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamBytes>();
 
@@ -645,7 +645,7 @@ class TWEthereumAbiFunction extends Opaque {
   }
 
   late final _TWEthereumAbiFunctionAddInArrayParamBytesFix_ptr =
-      lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamBytesFix>>('TWEthereumAbiFunctionAddInArrayParamBytesFix');
+      _lookup<NativeFunction<_c_TWEthereumAbiFunctionAddInArrayParamBytesFix>>('TWEthereumAbiFunctionAddInArrayParamBytesFix');
   late final _dart_TWEthereumAbiFunctionAddInArrayParamBytesFix _TWEthereumAbiFunctionAddInArrayParamBytesFix =
       _TWEthereumAbiFunctionAddInArrayParamBytesFix_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamBytesFix>();
 }

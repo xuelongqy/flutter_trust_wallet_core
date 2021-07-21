@@ -2,13 +2,13 @@ part of trust_wallet_core;
 
 /// trust wallet core
 class TWPublicKey extends Opaque {
-  late final Pointer<Int32> _size_t = lookup<Int32>('size_t');
+  late final Pointer<Int32> _size_t = _lookup<Int32>('size_t');
 
   int get size_t => _size_t.value;
 
   set size_t(int value) => _size_t.value = value;
 
-  late final Pointer<Int32> _TWPublicKeyUncompressedSize = lookup<Int32>('TWPublicKeyUncompressedSize');
+  late final Pointer<Int32> _TWPublicKeyUncompressedSize = _lookup<Int32>('TWPublicKeyUncompressedSize');
 
   int get TWPublicKeyUncompressedSize => _TWPublicKeyUncompressedSize.value;
 
@@ -24,7 +24,7 @@ class TWPublicKey extends Opaque {
     );
   }
 
-  late final _TWPublicKeyCreateWithData_ptr = lookup<NativeFunction<_c_TWPublicKeyCreateWithData>>('TWPublicKeyCreateWithData');
+  late final _TWPublicKeyCreateWithData_ptr = _lookup<NativeFunction<_c_TWPublicKeyCreateWithData>>('TWPublicKeyCreateWithData');
   late final _dart_TWPublicKeyCreateWithData _TWPublicKeyCreateWithData = _TWPublicKeyCreateWithData_ptr.asFunction<_dart_TWPublicKeyCreateWithData>();
 
   int TWPublicKeyDelete(
@@ -35,10 +35,10 @@ class TWPublicKey extends Opaque {
     );
   }
 
-  late final _TWPublicKeyDelete_ptr = lookup<NativeFunction<_c_TWPublicKeyDelete>>('TWPublicKeyDelete');
+  late final _TWPublicKeyDelete_ptr = _lookup<NativeFunction<_c_TWPublicKeyDelete>>('TWPublicKeyDelete');
   late final _dart_TWPublicKeyDelete _TWPublicKeyDelete = _TWPublicKeyDelete_ptr.asFunction<_dart_TWPublicKeyDelete>();
 
-  late final Pointer<Int32> _bool = lookup<Int32>('bool');
+  late final Pointer<Int32> _bool = _lookup<Int32>('bool');
 
   int get bool => _bool.value;
 
@@ -52,7 +52,7 @@ class TWPublicKey extends Opaque {
     );
   }
 
-  late final _TWPublicKeyCompressed_ptr = lookup<NativeFunction<_c_TWPublicKeyCompressed>>('TWPublicKeyCompressed');
+  late final _TWPublicKeyCompressed_ptr = _lookup<NativeFunction<_c_TWPublicKeyCompressed>>('TWPublicKeyCompressed');
   late final _dart_TWPublicKeyCompressed _TWPublicKeyCompressed = _TWPublicKeyCompressed_ptr.asFunction<_dart_TWPublicKeyCompressed>();
 
   Pointer<Int32> TWPublicKeyUncompressed(
@@ -63,10 +63,10 @@ class TWPublicKey extends Opaque {
     );
   }
 
-  late final _TWPublicKeyUncompressed_ptr = lookup<NativeFunction<_c_TWPublicKeyUncompressed>>('TWPublicKeyUncompressed');
+  late final _TWPublicKeyUncompressed_ptr = _lookup<NativeFunction<_c_TWPublicKeyUncompressed>>('TWPublicKeyUncompressed');
   late final _dart_TWPublicKeyUncompressed _TWPublicKeyUncompressed = _TWPublicKeyUncompressed_ptr.asFunction<_dart_TWPublicKeyUncompressed>();
 
-  late final Pointer<Int32> _TWData = lookup<Int32>('TWData');
+  late final Pointer<Int32> _TWData = _lookup<Int32>('TWData');
 
   int get TWData => _TWData.value;
 
@@ -80,10 +80,10 @@ class TWPublicKey extends Opaque {
     );
   }
 
-  late final _TWPublicKeyKeyType_ptr = lookup<NativeFunction<_c_TWPublicKeyKeyType>>('TWPublicKeyKeyType');
+  late final _TWPublicKeyKeyType_ptr = _lookup<NativeFunction<_c_TWPublicKeyKeyType>>('TWPublicKeyKeyType');
   late final _dart_TWPublicKeyKeyType _TWPublicKeyKeyType = _TWPublicKeyKeyType_ptr.asFunction<_dart_TWPublicKeyKeyType>();
 
-  late final Pointer<Int32> _TWString = lookup<Int32>('TWString');
+  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
 
   int get TWString => _TWString.value;
 
@@ -99,7 +99,7 @@ class TWPublicKey extends Opaque {
     );
   }
 
-  late final _TWPublicKeyRecover_ptr = lookup<NativeFunction<_c_TWPublicKeyRecover>>('TWPublicKeyRecover');
+  late final _TWPublicKeyRecover_ptr = _lookup<NativeFunction<_c_TWPublicKeyRecover>>('TWPublicKeyRecover');
   late final _dart_TWPublicKeyRecover _TWPublicKeyRecover = _TWPublicKeyRecover_ptr.asFunction<_dart_TWPublicKeyRecover>();
 }
 

@@ -16,7 +16,7 @@ abstract class TWAccount extends Opaque {
     );
   }
 
-  static late final _TWAccountCreate_ptr = lookup<NativeFunction<_c_TWAccountCreate>>('TWAccountCreate');
+  static late final _TWAccountCreate_ptr = _lookup<NativeFunction<_c_TWAccountCreate>>('TWAccountCreate');
   static late final _dart_TWAccountCreate _TWAccountCreate = _TWAccountCreate_ptr.asFunction<_dart_TWAccountCreate>();
 
   void TWAccountDelete(
@@ -27,7 +27,7 @@ abstract class TWAccount extends Opaque {
     );
   }
 
-  late final _TWAccountDelete_ptr = lookup<NativeFunction<_c_TWAccountDelete>>('TWAccountDelete');
+  late final _TWAccountDelete_ptr = _lookup<NativeFunction<_c_TWAccountDelete>>('TWAccountDelete');
   late final _dart_TWAccountDelete _TWAccountDelete = _TWAccountDelete_ptr.asFunction<_dart_TWAccountDelete>();
 
   Pointer<Utf8> TWAccountAddress(
@@ -38,7 +38,7 @@ abstract class TWAccount extends Opaque {
     );
   }
 
-  late final _TWAccountAddress_ptr = lookup<NativeFunction<_c_TWAccountAddress>>('TWAccountAddress');
+  late final _TWAccountAddress_ptr = _lookup<NativeFunction<_c_TWAccountAddress>>('TWAccountAddress');
   late final _dart_TWAccountAddress _TWAccountAddress = _TWAccountAddress_ptr.asFunction<_dart_TWAccountAddress>();
 
   Pointer<Utf8> TWAccountDerivationPath(
@@ -49,7 +49,7 @@ abstract class TWAccount extends Opaque {
     );
   }
 
-  late final _TWAccountDerivationPath_ptr = lookup<NativeFunction<_c_TWAccountDerivationPath>>('TWAccountDerivationPath');
+  late final _TWAccountDerivationPath_ptr = _lookup<NativeFunction<_c_TWAccountDerivationPath>>('TWAccountDerivationPath');
   late final _dart_TWAccountDerivationPath _TWAccountDerivationPath = _TWAccountDerivationPath_ptr.asFunction<_dart_TWAccountDerivationPath>();
 
   Pointer<Utf8> TWAccountExtendedPublicKey(
@@ -60,7 +60,7 @@ abstract class TWAccount extends Opaque {
     );
   }
 
-  late final _TWAccountExtendedPublicKey_ptr = lookup<NativeFunction<_c_TWAccountExtendedPublicKey>>('TWAccountExtendedPublicKey');
+  late final _TWAccountExtendedPublicKey_ptr = _lookup<NativeFunction<_c_TWAccountExtendedPublicKey>>('TWAccountExtendedPublicKey');
   late final _dart_TWAccountExtendedPublicKey _TWAccountExtendedPublicKey = _TWAccountExtendedPublicKey_ptr.asFunction<_dart_TWAccountExtendedPublicKey>();
 
   int TWAccountCoin(
@@ -71,7 +71,7 @@ abstract class TWAccount extends Opaque {
     );
   }
 
-  late final _TWAccountCoin_ptr = lookup<NativeFunction<_c_TWAccountCoin>>('TWAccountCoin');
+  late final _TWAccountCoin_ptr = _lookup<NativeFunction<_c_TWAccountCoin>>('TWAccountCoin');
   late final _dart_TWAccountCoin _TWAccountCoin = _TWAccountCoin_ptr.asFunction<_dart_TWAccountCoin>();
 }
 

@@ -2,14 +2,14 @@ part of trust_wallet_core;
 
 /// trust wallet core
 class TWCoinTypeConfiguration extends Opaque {
-  late final Pointer<Int32> _TW_EXPORT_STRUCT = lookup<Int32>('TW_EXPORT_STRUCT');
+  late final Pointer<Int32> _TW_EXPORT_STRUCT = _lookup<Int32>('TW_EXPORT_STRUCT');
 
   int get TW_EXPORT_STRUCT => _TW_EXPORT_STRUCT.value;
 
   set TW_EXPORT_STRUCT(int value) => _TW_EXPORT_STRUCT.value = value;
 
   /// Returns stock symbol of coin
-  late final Pointer<Int32> _TWString = lookup<Int32>('TWString');
+  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
 
   int get TWString => _TWString.value;
 
@@ -24,7 +24,7 @@ class TWCoinTypeConfiguration extends Opaque {
     );
   }
 
-  late final _TWCoinTypeConfigurationGetDecimals_ptr = lookup<NativeFunction<_c_TWCoinTypeConfigurationGetDecimals>>('TWCoinTypeConfigurationGetDecimals');
+  late final _TWCoinTypeConfigurationGetDecimals_ptr = _lookup<NativeFunction<_c_TWCoinTypeConfigurationGetDecimals>>('TWCoinTypeConfigurationGetDecimals');
   late final _dart_TWCoinTypeConfigurationGetDecimals _TWCoinTypeConfigurationGetDecimals =
       _TWCoinTypeConfigurationGetDecimals_ptr.asFunction<_dart_TWCoinTypeConfigurationGetDecimals>();
 }

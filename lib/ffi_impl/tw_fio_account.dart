@@ -3,7 +3,7 @@ part of trust_wallet_core;
 /// trust wallet core
 class TWFIOAccount extends Opaque {
   /// Represents a FIO Account name
-  late final Pointer<Int32> _TW_EXPORT_CLASS = lookup<Int32>('TW_EXPORT_CLASS');
+  late final Pointer<Int32> _TW_EXPORT_CLASS = _lookup<Int32>('TW_EXPORT_CLASS');
 
   int get TW_EXPORT_CLASS => _TW_EXPORT_CLASS.value;
 
@@ -17,7 +17,7 @@ class TWFIOAccount extends Opaque {
     );
   }
 
-  late final _TWFIOAccountCreateWithString_ptr = lookup<NativeFunction<_c_TWFIOAccountCreateWithString>>('TWFIOAccountCreateWithString');
+  late final _TWFIOAccountCreateWithString_ptr = _lookup<NativeFunction<_c_TWFIOAccountCreateWithString>>('TWFIOAccountCreateWithString');
   late final _dart_TWFIOAccountCreateWithString _TWFIOAccountCreateWithString = _TWFIOAccountCreateWithString_ptr.asFunction<_dart_TWFIOAccountCreateWithString>();
 
   int TWFIOAccountDelete(
@@ -28,11 +28,11 @@ class TWFIOAccount extends Opaque {
     );
   }
 
-  late final _TWFIOAccountDelete_ptr = lookup<NativeFunction<_c_TWFIOAccountDelete>>('TWFIOAccountDelete');
+  late final _TWFIOAccountDelete_ptr = _lookup<NativeFunction<_c_TWFIOAccountDelete>>('TWFIOAccountDelete');
   late final _dart_TWFIOAccountDelete _TWFIOAccountDelete = _TWFIOAccountDelete_ptr.asFunction<_dart_TWFIOAccountDelete>();
 
   /// Returns the short account string representation.
-  late final Pointer<Int32> _TWString = lookup<Int32>('TWString');
+  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
 
   int get TWString => _TWString.value;
 

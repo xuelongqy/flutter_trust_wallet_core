@@ -2,7 +2,7 @@ part of trust_wallet_core;
 
 /// trust wallet core
 class TWBitcoinScript extends Opaque {
-  late final Pointer<Int32> _TW_EXPORT_CLASS = lookup<Int32>('TW_EXPORT_CLASS');
+  late final Pointer<Int32> _TW_EXPORT_CLASS = _lookup<Int32>('TW_EXPORT_CLASS');
 
   int get TW_EXPORT_CLASS => _TW_EXPORT_CLASS.value;
 
@@ -13,7 +13,7 @@ class TWBitcoinScript extends Opaque {
     return _TWBitcoinScriptCreate();
   }
 
-  late final _TWBitcoinScriptCreate_ptr = lookup<NativeFunction<_c_TWBitcoinScriptCreate>>('TWBitcoinScriptCreate');
+  late final _TWBitcoinScriptCreate_ptr = _lookup<NativeFunction<_c_TWBitcoinScriptCreate>>('TWBitcoinScriptCreate');
   late final _dart_TWBitcoinScriptCreate _TWBitcoinScriptCreate = _TWBitcoinScriptCreate_ptr.asFunction<_dart_TWBitcoinScriptCreate>();
 
   /// Creates a script from a raw data representation.
@@ -25,7 +25,7 @@ class TWBitcoinScript extends Opaque {
     );
   }
 
-  late final _TWBitcoinScriptCreateWithData_ptr = lookup<NativeFunction<_c_TWBitcoinScriptCreateWithData>>('TWBitcoinScriptCreateWithData');
+  late final _TWBitcoinScriptCreateWithData_ptr = _lookup<NativeFunction<_c_TWBitcoinScriptCreateWithData>>('TWBitcoinScriptCreateWithData');
   late final _dart_TWBitcoinScriptCreateWithData _TWBitcoinScriptCreateWithData = _TWBitcoinScriptCreateWithData_ptr.asFunction<_dart_TWBitcoinScriptCreateWithData>();
 
   Pointer<TWBitcoinScript> TWBitcoinScriptCreateWithBytes(
@@ -38,7 +38,7 @@ class TWBitcoinScript extends Opaque {
     );
   }
 
-  late final _TWBitcoinScriptCreateWithBytes_ptr = lookup<NativeFunction<_c_TWBitcoinScriptCreateWithBytes>>('TWBitcoinScriptCreateWithBytes');
+  late final _TWBitcoinScriptCreateWithBytes_ptr = _lookup<NativeFunction<_c_TWBitcoinScriptCreateWithBytes>>('TWBitcoinScriptCreateWithBytes');
   late final _dart_TWBitcoinScriptCreateWithBytes _TWBitcoinScriptCreateWithBytes = _TWBitcoinScriptCreateWithBytes_ptr.asFunction<_dart_TWBitcoinScriptCreateWithBytes>();
 
   /// Creates a script by copying an existring script.
@@ -50,7 +50,7 @@ class TWBitcoinScript extends Opaque {
     );
   }
 
-  late final _TWBitcoinScriptCreateCopy_ptr = lookup<NativeFunction<_c_TWBitcoinScriptCreateCopy>>('TWBitcoinScriptCreateCopy');
+  late final _TWBitcoinScriptCreateCopy_ptr = _lookup<NativeFunction<_c_TWBitcoinScriptCreateCopy>>('TWBitcoinScriptCreateCopy');
   late final _dart_TWBitcoinScriptCreateCopy _TWBitcoinScriptCreateCopy = _TWBitcoinScriptCreateCopy_ptr.asFunction<_dart_TWBitcoinScriptCreateCopy>();
 
   int TWBitcoinScriptDelete(
@@ -61,23 +61,23 @@ class TWBitcoinScript extends Opaque {
     );
   }
 
-  late final _TWBitcoinScriptDelete_ptr = lookup<NativeFunction<_c_TWBitcoinScriptDelete>>('TWBitcoinScriptDelete');
+  late final _TWBitcoinScriptDelete_ptr = _lookup<NativeFunction<_c_TWBitcoinScriptDelete>>('TWBitcoinScriptDelete');
   late final _dart_TWBitcoinScriptDelete _TWBitcoinScriptDelete = _TWBitcoinScriptDelete_ptr.asFunction<_dart_TWBitcoinScriptDelete>();
 
-  late final Pointer<Int32> _size_t = lookup<Int32>('size_t');
+  late final Pointer<Int32> _size_t = _lookup<Int32>('size_t');
 
   int get size_t => _size_t.value;
 
   set size_t(int value) => _size_t.value = value;
 
-  late final Pointer<Int32> _TWData = lookup<Int32>('TWData');
+  late final Pointer<Int32> _TWData = _lookup<Int32>('TWData');
 
   int get TWData => _TWData.value;
 
   set TWData(int value) => _TWData.value = value;
 
   /// Determines whether this is a pay-to-script-hash (P2SH) script.
-  late final Pointer<Int32> _bool = lookup<Int32>('bool');
+  late final Pointer<Int32> _bool = _lookup<Int32>('bool');
 
   int get bool => _bool.value;
 
@@ -92,7 +92,7 @@ class TWBitcoinScript extends Opaque {
     );
   }
 
-  late final _TWBitcoinScriptBuildPayToPublicKeyHash_ptr = lookup<NativeFunction<_c_TWBitcoinScriptBuildPayToPublicKeyHash>>('TWBitcoinScriptBuildPayToPublicKeyHash');
+  late final _TWBitcoinScriptBuildPayToPublicKeyHash_ptr = _lookup<NativeFunction<_c_TWBitcoinScriptBuildPayToPublicKeyHash>>('TWBitcoinScriptBuildPayToPublicKeyHash');
   late final _dart_TWBitcoinScriptBuildPayToPublicKeyHash _TWBitcoinScriptBuildPayToPublicKeyHash =
       _TWBitcoinScriptBuildPayToPublicKeyHash_ptr.asFunction<_dart_TWBitcoinScriptBuildPayToPublicKeyHash>();
 
@@ -105,7 +105,7 @@ class TWBitcoinScript extends Opaque {
     );
   }
 
-  late final _TWBitcoinScriptBuildPayToScriptHash_ptr = lookup<NativeFunction<_c_TWBitcoinScriptBuildPayToScriptHash>>('TWBitcoinScriptBuildPayToScriptHash');
+  late final _TWBitcoinScriptBuildPayToScriptHash_ptr = _lookup<NativeFunction<_c_TWBitcoinScriptBuildPayToScriptHash>>('TWBitcoinScriptBuildPayToScriptHash');
   late final _dart_TWBitcoinScriptBuildPayToScriptHash _TWBitcoinScriptBuildPayToScriptHash =
       _TWBitcoinScriptBuildPayToScriptHash_ptr.asFunction<_dart_TWBitcoinScriptBuildPayToScriptHash>();
 
@@ -118,7 +118,7 @@ class TWBitcoinScript extends Opaque {
     );
   }
 
-  late final _TWBitcoinScriptBuildPayToWitnessPubkeyHash_ptr = lookup<NativeFunction<_c_TWBitcoinScriptBuildPayToWitnessPubkeyHash>>('TWBitcoinScriptBuildPayToWitnessPubkeyHash');
+  late final _TWBitcoinScriptBuildPayToWitnessPubkeyHash_ptr = _lookup<NativeFunction<_c_TWBitcoinScriptBuildPayToWitnessPubkeyHash>>('TWBitcoinScriptBuildPayToWitnessPubkeyHash');
   late final _dart_TWBitcoinScriptBuildPayToWitnessPubkeyHash _TWBitcoinScriptBuildPayToWitnessPubkeyHash =
       _TWBitcoinScriptBuildPayToWitnessPubkeyHash_ptr.asFunction<_dart_TWBitcoinScriptBuildPayToWitnessPubkeyHash>();
 
@@ -131,7 +131,7 @@ class TWBitcoinScript extends Opaque {
     );
   }
 
-  late final _TWBitcoinScriptBuildPayToWitnessScriptHash_ptr = lookup<NativeFunction<_c_TWBitcoinScriptBuildPayToWitnessScriptHash>>('TWBitcoinScriptBuildPayToWitnessScriptHash');
+  late final _TWBitcoinScriptBuildPayToWitnessScriptHash_ptr = _lookup<NativeFunction<_c_TWBitcoinScriptBuildPayToWitnessScriptHash>>('TWBitcoinScriptBuildPayToWitnessScriptHash');
   late final _dart_TWBitcoinScriptBuildPayToWitnessScriptHash _TWBitcoinScriptBuildPayToWitnessScriptHash =
       _TWBitcoinScriptBuildPayToWitnessScriptHash_ptr.asFunction<_dart_TWBitcoinScriptBuildPayToWitnessScriptHash>();
 
@@ -146,11 +146,11 @@ class TWBitcoinScript extends Opaque {
     );
   }
 
-  late final _TWBitcoinScriptLockScriptForAddress_ptr = lookup<NativeFunction<_c_TWBitcoinScriptLockScriptForAddress>>('TWBitcoinScriptLockScriptForAddress');
+  late final _TWBitcoinScriptLockScriptForAddress_ptr = _lookup<NativeFunction<_c_TWBitcoinScriptLockScriptForAddress>>('TWBitcoinScriptLockScriptForAddress');
   late final _dart_TWBitcoinScriptLockScriptForAddress _TWBitcoinScriptLockScriptForAddress =
       _TWBitcoinScriptLockScriptForAddress_ptr.asFunction<_dart_TWBitcoinScriptLockScriptForAddress>();
 
-  late final Pointer<Int32> _uint32_t = lookup<Int32>('uint32_t');
+  late final Pointer<Int32> _uint32_t = _lookup<Int32>('uint32_t');
 
   int get uint32_t => _uint32_t.value;
 

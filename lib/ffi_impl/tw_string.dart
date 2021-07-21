@@ -11,7 +11,7 @@ abstract class TWString extends Opaque {
     );
   }
 
-  late final _TWStringCreateWithUTF8Bytes_ptr = lookup<NativeFunction<_c_TWStringCreateWithUTF8Bytes>>('TWStringCreateWithUTF8Bytes');
+  late final _TWStringCreateWithUTF8Bytes_ptr = _lookup<NativeFunction<_c_TWStringCreateWithUTF8Bytes>>('TWStringCreateWithUTF8Bytes');
   late final _dart_TWStringCreateWithUTF8Bytes _TWStringCreateWithUTF8Bytes = _TWStringCreateWithUTF8Bytes_ptr.asFunction<_dart_TWStringCreateWithUTF8Bytes>();
 
   /// Creates a string from a raw byte array and size.
@@ -25,7 +25,7 @@ abstract class TWString extends Opaque {
     );
   }
 
-  late final _TWStringCreateWithRawBytes_ptr = lookup<NativeFunction<_c_TWStringCreateWithRawBytes>>('TWStringCreateWithRawBytes');
+  late final _TWStringCreateWithRawBytes_ptr = _lookup<NativeFunction<_c_TWStringCreateWithRawBytes>>('TWStringCreateWithRawBytes');
   late final _dart_TWStringCreateWithRawBytes _TWStringCreateWithRawBytes = _TWStringCreateWithRawBytes_ptr.asFunction<_dart_TWStringCreateWithRawBytes>();
 
   /// Creates a hexadecimal string from a block of data. It must be deleted at the end.
@@ -37,7 +37,7 @@ abstract class TWString extends Opaque {
     );
   }
 
-  late final _TWStringCreateWithHexData_ptr = lookup<NativeFunction<_c_TWStringCreateWithHexData>>('TWStringCreateWithHexData');
+  late final _TWStringCreateWithHexData_ptr = _lookup<NativeFunction<_c_TWStringCreateWithHexData>>('TWStringCreateWithHexData');
   late final _dart_TWStringCreateWithHexData _TWStringCreateWithHexData = _TWStringCreateWithHexData_ptr.asFunction<_dart_TWStringCreateWithHexData>();
 
   /// Returns the string size in bytes.
@@ -49,7 +49,7 @@ abstract class TWString extends Opaque {
     );
   }
 
-  late final _TWStringSize_ptr = lookup<NativeFunction<_c_TWStringSize>>('TWStringSize');
+  late final _TWStringSize_ptr = _lookup<NativeFunction<_c_TWStringSize>>('TWStringSize');
   late final _dart_TWStringSize _TWStringSize = _TWStringSize_ptr.asFunction<_dart_TWStringSize>();
 
   /// Returns the byte at the provided index.
@@ -63,7 +63,7 @@ abstract class TWString extends Opaque {
     );
   }
 
-  late final _TWStringGet_ptr = lookup<NativeFunction<_c_TWStringGet>>('TWStringGet');
+  late final _TWStringGet_ptr = _lookup<NativeFunction<_c_TWStringGet>>('TWStringGet');
   late final _dart_TWStringGet _TWStringGet = _TWStringGet_ptr.asFunction<_dart_TWStringGet>();
 
   /// Returns the raw pointer to the string's UTF8 bytes (null-terminated).
@@ -75,7 +75,7 @@ abstract class TWString extends Opaque {
     );
   }
 
-  late final _TWStringUTF8Bytes_ptr = lookup<NativeFunction<_c_TWStringUTF8Bytes>>('TWStringUTF8Bytes');
+  late final _TWStringUTF8Bytes_ptr = _lookup<NativeFunction<_c_TWStringUTF8Bytes>>('TWStringUTF8Bytes');
   late final _dart_TWStringUTF8Bytes _TWStringUTF8Bytes = _TWStringUTF8Bytes_ptr.asFunction<_dart_TWStringUTF8Bytes>();
 
   /// Deletes a string created with a `TWStringCreate*` method.  After delete it must not be used (can segfault)!
@@ -87,7 +87,7 @@ abstract class TWString extends Opaque {
     );
   }
 
-  late final _TWStringDelete_ptr = lookup<NativeFunction<_c_TWStringDelete>>('TWStringDelete');
+  late final _TWStringDelete_ptr = _lookup<NativeFunction<_c_TWStringDelete>>('TWStringDelete');
   late final _dart_TWStringDelete _TWStringDelete = _TWStringDelete_ptr.asFunction<_dart_TWStringDelete>();
 
   /// Determines whether two string blocks are equal.
@@ -101,7 +101,7 @@ abstract class TWString extends Opaque {
     );
   }
 
-  late final _TWStringEqual_ptr = lookup<NativeFunction<_c_TWStringEqual>>('TWStringEqual');
+  late final _TWStringEqual_ptr = _lookup<NativeFunction<_c_TWStringEqual>>('TWStringEqual');
   late final _dart_TWStringEqual _TWStringEqual = _TWStringEqual_ptr.asFunction<_dart_TWStringEqual>();
 }
 
