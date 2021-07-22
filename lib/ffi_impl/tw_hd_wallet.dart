@@ -1,6 +1,23 @@
 part of trust_wallet_core;
 
 abstract class TWHDWallet extends Opaque {
+
+
+  /// Deprecated; use TWMnemonicIsValid().  Determines if a mnemonic phrase is valid.
+  static int TWHDWalletIsValid(
+      Pointer<Utf8> mnemonic,
+      ) {
+    return _TWHDWalletIsValid(
+      mnemonic,
+    );
+  }
+
+  static late final _TWHDWalletIsValid_ptr =
+  _lookup<NativeFunction<_c_TWHDWalletIsValid>>('TWHDWalletIsValid');
+  static late final _dart_TWHDWalletIsValid _TWHDWalletIsValid =
+  _TWHDWalletIsValid_ptr.asFunction<_dart_TWHDWalletIsValid>();
+  
+
   /// Creates a new random HDWallet with the provided strength in bits.  Returned object needs to be deleted.
   static Pointer<Void> TWHDWalletCreate(
     int strength,
@@ -212,6 +229,13 @@ abstract class TWHDWallet extends Opaque {
   static late final _dart_TWHDWalletGetPublicKeyFromExtended _TWHDWalletGetPublicKeyFromExtended =
       _TWHDWalletGetPublicKeyFromExtended_ptr.asFunction<_dart_TWHDWalletGetPublicKeyFromExtended>();
 }
+typedef _c_TWHDWalletIsValid = Int32 Function(
+    Pointer<Utf8> mnemonic,
+    );
+
+typedef _dart_TWHDWalletIsValid = int Function(
+    Pointer<Utf8> mnemonic,
+    );
 
 typedef _c_TWHDWalletCreate = Pointer<Void> Function(
   Int32 strength,
