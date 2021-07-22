@@ -1,8 +1,6 @@
 part of trust_wallet_core;
 
 abstract class TWHDWallet extends Opaque {
-
-
   /// Creates a new random HDWallet with the provided strength in bits.  Returned object needs to be deleted.
   static Pointer<Void> TWHDWalletCreate(
     int strength,
@@ -161,15 +159,13 @@ abstract class TWHDWallet extends Opaque {
   late final _TWHDWalletGetDerivedKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetDerivedKey>>('TWHDWalletGetDerivedKey');
   late final _dart_TWHDWalletGetDerivedKey _TWHDWalletGetDerivedKey = _TWHDWalletGetDerivedKey_ptr.asFunction<_dart_TWHDWalletGetDerivedKey>();
 
-
-
   /// Returns the extended private key.
   Pointer<Utf8> TWHDWalletGetExtendedPrivateKey(
-      Pointer<Void> wallet,
-      int purpose,
-      int coin,
-      int version,
-      ) {
+    Pointer<Void> wallet,
+    int purpose,
+    int coin,
+    int version,
+  ) {
     return _TWHDWalletGetExtendedPrivateKey(
       wallet,
       purpose,
@@ -178,20 +174,16 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  late final _TWHDWalletGetExtendedPrivateKey_ptr =
-  _lookup<NativeFunction<_c_TWHDWalletGetExtendedPrivateKey>>(
-      'TWHDWalletGetExtendedPrivateKey');
-  late final _dart_TWHDWalletGetExtendedPrivateKey
-  _TWHDWalletGetExtendedPrivateKey = _TWHDWalletGetExtendedPrivateKey_ptr
-      .asFunction<_dart_TWHDWalletGetExtendedPrivateKey>();
+  late final _TWHDWalletGetExtendedPrivateKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetExtendedPrivateKey>>('TWHDWalletGetExtendedPrivateKey');
+  late final _dart_TWHDWalletGetExtendedPrivateKey _TWHDWalletGetExtendedPrivateKey = _TWHDWalletGetExtendedPrivateKey_ptr.asFunction<_dart_TWHDWalletGetExtendedPrivateKey>();
 
   /// Returns the exteded public key.  Returned object needs to be deleted.
   Pointer<Utf8> TWHDWalletGetExtendedPublicKey(
-      Pointer<Void> wallet,
-      int purpose,
-      int coin,
-      int version,
-      ) {
+    Pointer<Void> wallet,
+    int purpose,
+    int coin,
+    int version,
+  ) {
     return _TWHDWalletGetExtendedPublicKey(
       wallet,
       purpose,
@@ -200,12 +192,8 @@ abstract class TWHDWallet extends Opaque {
     );
   }
 
-  late final _TWHDWalletGetExtendedPublicKey_ptr =
-  _lookup<NativeFunction<_c_TWHDWalletGetExtendedPublicKey>>(
-      'TWHDWalletGetExtendedPublicKey');
-  late final _dart_TWHDWalletGetExtendedPublicKey
-  _TWHDWalletGetExtendedPublicKey = _TWHDWalletGetExtendedPublicKey_ptr
-      .asFunction<_dart_TWHDWalletGetExtendedPublicKey>();
+  late final _TWHDWalletGetExtendedPublicKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetExtendedPublicKey>>('TWHDWalletGetExtendedPublicKey');
+  late final _dart_TWHDWalletGetExtendedPublicKey _TWHDWalletGetExtendedPublicKey = _TWHDWalletGetExtendedPublicKey_ptr.asFunction<_dart_TWHDWalletGetExtendedPublicKey>();
 
   /// Computes the public key from an exteded public key representation.  Returned object needs to be deleted.
   static Pointer<Void> TWHDWalletGetPublicKeyFromExtended(
@@ -224,7 +212,6 @@ abstract class TWHDWallet extends Opaque {
   static late final _dart_TWHDWalletGetPublicKeyFromExtended _TWHDWalletGetPublicKeyFromExtended =
       _TWHDWalletGetPublicKeyFromExtended_ptr.asFunction<_dart_TWHDWalletGetPublicKeyFromExtended>();
 }
-
 
 typedef _c_TWHDWalletCreate = Pointer<Void> Function(
   Int32 strength,
@@ -338,34 +325,33 @@ typedef _dart_TWHDWalletGetDerivedKey = Pointer<Void> Function(
   int address,
 );
 
-
 typedef _c_TWHDWalletGetExtendedPrivateKey = Pointer<Utf8> Function(
-    Pointer<Void> wallet,
-    Int32 purpose,
-    Int32 coin,
-    Int32 version,
-    );
+  Pointer<Void> wallet,
+  Int32 purpose,
+  Int32 coin,
+  Int32 version,
+);
 
 typedef _dart_TWHDWalletGetExtendedPrivateKey = Pointer<Utf8> Function(
-    Pointer<Void> wallet,
-    int purpose,
-    int coin,
-    int version,
-    );
+  Pointer<Void> wallet,
+  int purpose,
+  int coin,
+  int version,
+);
 
 typedef _c_TWHDWalletGetExtendedPublicKey = Pointer<Utf8> Function(
-    Pointer<Void> wallet,
-    Int32 purpose,
-    Int32 coin,
-    Int32 version,
-    );
+  Pointer<Void> wallet,
+  Int32 purpose,
+  Int32 coin,
+  Int32 version,
+);
 
 typedef _dart_TWHDWalletGetExtendedPublicKey = Pointer<Utf8> Function(
-    Pointer<Void> wallet,
-    int purpose,
-    int coin,
-    int version,
-    );
+  Pointer<Void> wallet,
+  int purpose,
+  int coin,
+  int version,
+);
 
 typedef _c_TWHDWalletGetPublicKeyFromExtended = Pointer<Void> Function(
   Pointer<Utf8> extended,

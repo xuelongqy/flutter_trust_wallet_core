@@ -1,29 +1,23 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWEthereumAbiFunction extends Opaque {
-  late final Pointer<Int32> _TW_EXPORT_CLASS = _lookup<Int32>('TW_EXPORT_CLASS');
-
-  int get TW_EXPORT_CLASS => _TW_EXPORT_CLASS.value;
-
-  set TW_EXPORT_CLASS(int value) => _TW_EXPORT_CLASS.value = value;
-
+class TWEthereumAbiFunction {
   /// Creates a function object, with the given name and empty parameter list.  It must be deleted at the end.
-  Pointer<Int32> TWEthereumAbiFunctionCreateWithString(
-    Pointer<Int32> name,
+  static Pointer<Void> TWEthereumAbiFunctionCreateWithString(
+    Pointer<Utf8> name,
   ) {
     return _TWEthereumAbiFunctionCreateWithString(
       name,
     );
   }
 
-  late final _TWEthereumAbiFunctionCreateWithString_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionCreateWithString>>('TWEthereumAbiFunctionCreateWithString');
-  late final _dart_TWEthereumAbiFunctionCreateWithString _TWEthereumAbiFunctionCreateWithString =
+  static late final _TWEthereumAbiFunctionCreateWithString_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionCreateWithString>>('TWEthereumAbiFunctionCreateWithString');
+  static late final _dart_TWEthereumAbiFunctionCreateWithString _TWEthereumAbiFunctionCreateWithString =
       _TWEthereumAbiFunctionCreateWithString_ptr.asFunction<_dart_TWEthereumAbiFunctionCreateWithString>();
 
   /// Deletes a function object created with a 'TWEthereumAbiFunctionCreateWithString' method.
-  int TWEthereumAbiFunctionDelete(
-    Pointer<TWEthereumAbiFunction> fn,
+  void TWEthereumAbiFunctionDelete(
+    Pointer<Void> fn,
   ) {
     return _TWEthereumAbiFunctionDelete(
       fn,
@@ -34,23 +28,22 @@ class TWEthereumAbiFunction extends Opaque {
   late final _dart_TWEthereumAbiFunctionDelete _TWEthereumAbiFunctionDelete = _TWEthereumAbiFunctionDelete_ptr.asFunction<_dart_TWEthereumAbiFunctionDelete>();
 
   /// Return the function type signature, of the form "baz(int32,uint256)"
-  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
+  Pointer<Utf8> TWEthereumAbiFunctionGetType(
+    Pointer<Void> fn,
+  ) {
+    return _TWEthereumAbiFunctionGetType(
+      fn,
+    );
+  }
 
-  int get TWString => _TWString.value;
-
-  set TWString(int value) => _TWString.value = value;
+  late final _TWEthereumAbiFunctionGetType_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionGetType>>('TWEthereumAbiFunctionGetType');
+  late final _dart_TWEthereumAbiFunctionGetType _TWEthereumAbiFunctionGetType = _TWEthereumAbiFunctionGetType_ptr.asFunction<_dart_TWEthereumAbiFunctionGetType>();
 
   /// Methods for adding parameters of the given type (input or output).
   /// For output parameters (isOutput=true) a value has to be specified, although usually not needd.
   /// Returns the index of the parameter (0-based).
-  late final Pointer<Int32> _TW_METHOD_DISCARDABLE_RESULT = _lookup<Int32>('TW_METHOD_DISCARDABLE_RESULT');
-
-  int get TW_METHOD_DISCARDABLE_RESULT => _TW_METHOD_DISCARDABLE_RESULT.value;
-
-  set TW_METHOD_DISCARDABLE_RESULT(int value) => _TW_METHOD_DISCARDABLE_RESULT.value = value;
-
   int TWEthereumAbiFunctionAddParamUInt8(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int val,
     int isOutput,
   ) {
@@ -66,7 +59,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamUInt8_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUInt8>();
 
   int TWEthereumAbiFunctionAddParamUInt16(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int val,
     int isOutput,
   ) {
@@ -82,7 +75,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamUInt16_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUInt16>();
 
   int TWEthereumAbiFunctionAddParamUInt32(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int val,
     int isOutput,
   ) {
@@ -98,7 +91,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamUInt32_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUInt32>();
 
   int TWEthereumAbiFunctionAddParamUInt64(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int val,
     int isOutput,
   ) {
@@ -114,8 +107,8 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamUInt64_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUInt64>();
 
   int TWEthereumAbiFunctionAddParamUInt256(
-    Pointer<TWEthereumAbiFunction> fn,
-    Pointer<Int32> val,
+    Pointer<Void> fn,
+    Pointer<Void> val,
     int isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamUInt256(
@@ -130,9 +123,9 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamUInt256_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUInt256>();
 
   int TWEthereumAbiFunctionAddParamUIntN(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int bits,
-    Pointer<Int32> val,
+    Pointer<Void> val,
     int isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamUIntN(
@@ -148,7 +141,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamUIntN_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamUIntN>();
 
   int TWEthereumAbiFunctionAddParamInt8(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int val,
     int isOutput,
   ) {
@@ -164,7 +157,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamInt8_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamInt8>();
 
   int TWEthereumAbiFunctionAddParamInt16(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int val,
     int isOutput,
   ) {
@@ -180,7 +173,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamInt16_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamInt16>();
 
   int TWEthereumAbiFunctionAddParamInt32(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int val,
     int isOutput,
   ) {
@@ -196,7 +189,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamInt32_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamInt32>();
 
   int TWEthereumAbiFunctionAddParamInt64(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int val,
     int isOutput,
   ) {
@@ -212,8 +205,8 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamInt64_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamInt64>();
 
   int TWEthereumAbiFunctionAddParamInt256(
-    Pointer<TWEthereumAbiFunction> fn,
-    Pointer<Int32> val,
+    Pointer<Void> fn,
+    Pointer<Void> val,
     int isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamInt256(
@@ -228,9 +221,9 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamInt256_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamInt256>();
 
   int TWEthereumAbiFunctionAddParamIntN(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int bits,
-    Pointer<Int32> val,
+    Pointer<Void> val,
     int isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamIntN(
@@ -246,7 +239,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamIntN_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamIntN>();
 
   int TWEthereumAbiFunctionAddParamBool(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int val,
     int isOutput,
   ) {
@@ -262,8 +255,8 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamBool_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamBool>();
 
   int TWEthereumAbiFunctionAddParamString(
-    Pointer<TWEthereumAbiFunction> fn,
-    Pointer<Int32> val,
+    Pointer<Void> fn,
+    Pointer<Utf8> val,
     int isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamString(
@@ -278,8 +271,8 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamString_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamString>();
 
   int TWEthereumAbiFunctionAddParamAddress(
-    Pointer<TWEthereumAbiFunction> fn,
-    Pointer<Int32> val,
+    Pointer<Void> fn,
+    Pointer<Void> val,
     int isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamAddress(
@@ -294,8 +287,8 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamAddress_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamAddress>();
 
   int TWEthereumAbiFunctionAddParamBytes(
-    Pointer<TWEthereumAbiFunction> fn,
-    Pointer<Int32> val,
+    Pointer<Void> fn,
+    Pointer<Void> val,
     int isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamBytes(
@@ -310,9 +303,9 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamBytes_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamBytes>();
 
   int TWEthereumAbiFunctionAddParamBytesFix(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int size,
-    Pointer<Int32> val,
+    Pointer<Void> val,
     int isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamBytesFix(
@@ -328,7 +321,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamBytesFix_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamBytesFix>();
 
   int TWEthereumAbiFunctionAddParamArray(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamArray(
@@ -342,34 +335,106 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddParamArray_ptr.asFunction<_dart_TWEthereumAbiFunctionAddParamArray>();
 
   /// Methods for accessing the value of an output or input parameter, of different types.
-  late final Pointer<Int32> _uint8_t = _lookup<Int32>('uint8_t');
+  int TWEthereumAbiFunctionGetParamUInt8(
+    Pointer<Void> fn,
+    int idx,
+    int isOutput,
+  ) {
+    return _TWEthereumAbiFunctionGetParamUInt8(
+      fn,
+      idx,
+      isOutput,
+    );
+  }
 
-  int get uint8_t => _uint8_t.value;
+  late final _TWEthereumAbiFunctionGetParamUInt8_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionGetParamUInt8>>('TWEthereumAbiFunctionGetParamUInt8');
+  late final _dart_TWEthereumAbiFunctionGetParamUInt8 _TWEthereumAbiFunctionGetParamUInt8 =
+      _TWEthereumAbiFunctionGetParamUInt8_ptr.asFunction<_dart_TWEthereumAbiFunctionGetParamUInt8>();
 
-  set uint8_t(int value) => _uint8_t.value = value;
+  int TWEthereumAbiFunctionGetParamUInt64(
+    Pointer<Void> fn,
+    int idx,
+    int isOutput,
+  ) {
+    return _TWEthereumAbiFunctionGetParamUInt64(
+      fn,
+      idx,
+      isOutput,
+    );
+  }
 
-  late final Pointer<Int32> _uint64_t = _lookup<Int32>('uint64_t');
+  late final _TWEthereumAbiFunctionGetParamUInt64_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionGetParamUInt64>>('TWEthereumAbiFunctionGetParamUInt64');
+  late final _dart_TWEthereumAbiFunctionGetParamUInt64 _TWEthereumAbiFunctionGetParamUInt64 =
+      _TWEthereumAbiFunctionGetParamUInt64_ptr.asFunction<_dart_TWEthereumAbiFunctionGetParamUInt64>();
 
-  int get uint64_t => _uint64_t.value;
+  Pointer<Int32> TWEthereumAbiFunctionGetParamUInt256(
+    Pointer<Void> fn,
+    int idx,
+    int isOutput,
+  ) {
+    return _TWEthereumAbiFunctionGetParamUInt256(
+      fn,
+      idx,
+      isOutput,
+    );
+  }
 
-  set uint64_t(int value) => _uint64_t.value = value;
+  late final _TWEthereumAbiFunctionGetParamUInt256_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionGetParamUInt256>>('TWEthereumAbiFunctionGetParamUInt256');
+  late final _dart_TWEthereumAbiFunctionGetParamUInt256 _TWEthereumAbiFunctionGetParamUInt256 =
+      _TWEthereumAbiFunctionGetParamUInt256_ptr.asFunction<_dart_TWEthereumAbiFunctionGetParamUInt256>();
 
-  late final Pointer<Int32> _TWData = _lookup<Int32>('TWData');
+  int TWEthereumAbiFunctionGetParamBool(
+    Pointer<Void> fn,
+    int idx,
+    int isOutput,
+  ) {
+    return _TWEthereumAbiFunctionGetParamBool(
+      fn,
+      idx,
+      isOutput,
+    );
+  }
 
-  int get TWData => _TWData.value;
+  late final _TWEthereumAbiFunctionGetParamBool_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionGetParamBool>>('TWEthereumAbiFunctionGetParamBool');
+  late final _dart_TWEthereumAbiFunctionGetParamBool _TWEthereumAbiFunctionGetParamBool =
+      _TWEthereumAbiFunctionGetParamBool_ptr.asFunction<_dart_TWEthereumAbiFunctionGetParamBool>();
 
-  set TWData(int value) => _TWData.value = value;
+  Pointer<Int32> TWEthereumAbiFunctionGetParamString(
+    Pointer<Void> fn,
+    int idx,
+    int isOutput,
+  ) {
+    return _TWEthereumAbiFunctionGetParamString(
+      fn,
+      idx,
+      isOutput,
+    );
+  }
 
-  late final Pointer<Int32> _bool = _lookup<Int32>('bool');
+  late final _TWEthereumAbiFunctionGetParamString_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionGetParamString>>('TWEthereumAbiFunctionGetParamString');
+  late final _dart_TWEthereumAbiFunctionGetParamString _TWEthereumAbiFunctionGetParamString =
+      _TWEthereumAbiFunctionGetParamString_ptr.asFunction<_dart_TWEthereumAbiFunctionGetParamString>();
 
-  int get bool => _bool.value;
+  Pointer<Int32> TWEthereumAbiFunctionGetParamAddress(
+    Pointer<Void> fn,
+    int idx,
+    int isOutput,
+  ) {
+    return _TWEthereumAbiFunctionGetParamAddress(
+      fn,
+      idx,
+      isOutput,
+    );
+  }
 
-  set bool(int value) => _bool.value = value;
+  late final _TWEthereumAbiFunctionGetParamAddress_ptr = _lookup<NativeFunction<_c_TWEthereumAbiFunctionGetParamAddress>>('TWEthereumAbiFunctionGetParamAddress');
+  late final _dart_TWEthereumAbiFunctionGetParamAddress _TWEthereumAbiFunctionGetParamAddress =
+      _TWEthereumAbiFunctionGetParamAddress_ptr.asFunction<_dart_TWEthereumAbiFunctionGetParamAddress>();
 
   /// Methods for adding a parameter of the given type to a top-level input parameter array.  Returns the index of the parameter (0-based).
   /// Note that nested ParamArrays are not possible through this API, could be done by using index paths like "1/0"
   int TWEthereumAbiFunctionAddInArrayParamUInt8(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int val,
   ) {
@@ -385,7 +450,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamUInt8_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUInt8>();
 
   int TWEthereumAbiFunctionAddInArrayParamUInt16(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int val,
   ) {
@@ -401,7 +466,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamUInt16_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUInt16>();
 
   int TWEthereumAbiFunctionAddInArrayParamUInt32(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int val,
   ) {
@@ -417,7 +482,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamUInt32_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUInt32>();
 
   int TWEthereumAbiFunctionAddInArrayParamUInt64(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int val,
   ) {
@@ -433,9 +498,9 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamUInt64_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUInt64>();
 
   int TWEthereumAbiFunctionAddInArrayParamUInt256(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
-    Pointer<Int32> val,
+    Pointer<Void> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamUInt256(
       fn,
@@ -450,10 +515,10 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamUInt256_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUInt256>();
 
   int TWEthereumAbiFunctionAddInArrayParamUIntN(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int bits,
-    Pointer<Int32> val,
+    Pointer<Void> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamUIntN(
       fn,
@@ -468,7 +533,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamUIntN_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamUIntN>();
 
   int TWEthereumAbiFunctionAddInArrayParamInt8(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int val,
   ) {
@@ -484,7 +549,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamInt8_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamInt8>();
 
   int TWEthereumAbiFunctionAddInArrayParamInt16(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int val,
   ) {
@@ -500,7 +565,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamInt16_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamInt16>();
 
   int TWEthereumAbiFunctionAddInArrayParamInt32(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int val,
   ) {
@@ -516,7 +581,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamInt32_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamInt32>();
 
   int TWEthereumAbiFunctionAddInArrayParamInt64(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int val,
   ) {
@@ -532,9 +597,9 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamInt64_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamInt64>();
 
   int TWEthereumAbiFunctionAddInArrayParamInt256(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
-    Pointer<Int32> val,
+    Pointer<Void> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamInt256(
       fn,
@@ -548,10 +613,10 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamInt256_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamInt256>();
 
   int TWEthereumAbiFunctionAddInArrayParamIntN(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int bits,
-    Pointer<Int32> val,
+    Pointer<Void> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamIntN(
       fn,
@@ -566,7 +631,7 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamIntN_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamIntN>();
 
   int TWEthereumAbiFunctionAddInArrayParamBool(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int val,
   ) {
@@ -582,9 +647,9 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamBool_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamBool>();
 
   int TWEthereumAbiFunctionAddInArrayParamString(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
-    Pointer<Int32> val,
+    Pointer<Utf8> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamString(
       fn,
@@ -598,9 +663,9 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamString_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamString>();
 
   int TWEthereumAbiFunctionAddInArrayParamAddress(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
-    Pointer<Int32> val,
+    Pointer<Void> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamAddress(
       fn,
@@ -615,9 +680,9 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamAddress_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamAddress>();
 
   int TWEthereumAbiFunctionAddInArrayParamBytes(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
-    Pointer<Int32> val,
+    Pointer<Void> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamBytes(
       fn,
@@ -631,10 +696,10 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamBytes_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamBytes>();
 
   int TWEthereumAbiFunctionAddInArrayParamBytesFix(
-    Pointer<TWEthereumAbiFunction> fn,
+    Pointer<Void> fn,
     int arrayIdx,
     int size,
-    Pointer<Int32> val,
+    Pointer<Void> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamBytesFix(
       fn,
@@ -650,448 +715,528 @@ class TWEthereumAbiFunction extends Opaque {
       _TWEthereumAbiFunctionAddInArrayParamBytesFix_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamBytesFix>();
 }
 
-typedef _c_TWEthereumAbiFunctionCreateWithString = Pointer<Int32> Function(
-  Pointer<Int32> name,
+typedef _c_TWEthereumAbiFunctionCreateWithString = Pointer<Void> Function(
+  Pointer<Utf8> name,
 );
 
-typedef _dart_TWEthereumAbiFunctionCreateWithString = Pointer<Int32> Function(
-  Pointer<Int32> name,
+typedef _dart_TWEthereumAbiFunctionCreateWithString = Pointer<Void> Function(
+  Pointer<Utf8> name,
 );
 
-typedef _c_TWEthereumAbiFunctionDelete = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+typedef _c_TWEthereumAbiFunctionDelete = Void Function(
+  Pointer<Void> fn,
 );
 
-typedef _dart_TWEthereumAbiFunctionDelete = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+typedef _dart_TWEthereumAbiFunctionDelete = void Function(
+  Pointer<Void> fn,
+);
+
+typedef _c_TWEthereumAbiFunctionGetType = Pointer<Utf8> Function(
+  Pointer<Void> fn,
+);
+
+typedef _dart_TWEthereumAbiFunctionGetType = Pointer<Utf8> Function(
+  Pointer<Void> fn,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamUInt8 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamUInt8 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamUInt16 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamUInt16 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamUInt32 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamUInt32 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamUInt64 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamUInt64 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamUInt256 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
-  Pointer<Int32> val,
+  Pointer<Void> fn,
+  Pointer<Void> val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamUInt256 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
-  Pointer<Int32> val,
+  Pointer<Void> fn,
+  Pointer<Void> val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamUIntN = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 bits,
-  Pointer<Int32> val,
+  Pointer<Void> val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamUIntN = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int bits,
-  Pointer<Int32> val,
+  Pointer<Void> val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamInt8 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamInt8 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamInt16 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamInt16 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamInt32 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamInt32 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamInt64 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamInt64 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamInt256 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
-  Pointer<Int32> val,
+  Pointer<Void> fn,
+  Pointer<Void> val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamInt256 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
-  Pointer<Int32> val,
+  Pointer<Void> fn,
+  Pointer<Void> val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamIntN = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 bits,
-  Pointer<Int32> val,
+  Pointer<Void> val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamIntN = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int bits,
-  Pointer<Int32> val,
+  Pointer<Void> val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamBool = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamBool = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamString = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
-  Pointer<Int32> val,
+  Pointer<Void> fn,
+  Pointer<Utf8> val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamString = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
-  Pointer<Int32> val,
+  Pointer<Void> fn,
+  Pointer<Utf8> val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamAddress = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
-  Pointer<Int32> val,
+  Pointer<Void> fn,
+  Pointer<Void> val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamAddress = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
-  Pointer<Int32> val,
+  Pointer<Void> fn,
+  Pointer<Void> val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamBytes = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
-  Pointer<Int32> val,
+  Pointer<Void> fn,
+  Pointer<Void> val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamBytes = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
-  Pointer<Int32> val,
+  Pointer<Void> fn,
+  Pointer<Void> val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamBytesFix = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 size,
-  Pointer<Int32> val,
+  Pointer<Void> val,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamBytesFix = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int size,
-  Pointer<Int32> val,
+  Pointer<Void> val,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddParamArray = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 isOutput,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddParamArray = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
+  int isOutput,
+);
+
+typedef _c_TWEthereumAbiFunctionGetParamUInt8 = Int32 Function(
+  Pointer<Void> fn,
+  Int32 idx,
+  Int32 isOutput,
+);
+
+typedef _dart_TWEthereumAbiFunctionGetParamUInt8 = int Function(
+  Pointer<Void> fn,
+  int idx,
+  int isOutput,
+);
+
+typedef _c_TWEthereumAbiFunctionGetParamUInt64 = Int32 Function(
+  Pointer<Void> fn,
+  Int32 idx,
+  Int32 isOutput,
+);
+
+typedef _dart_TWEthereumAbiFunctionGetParamUInt64 = int Function(
+  Pointer<Void> fn,
+  int idx,
+  int isOutput,
+);
+
+typedef _c_TWEthereumAbiFunctionGetParamUInt256 = Pointer<Int32> Function(
+  Pointer<Void> fn,
+  Int32 idx,
+  Int32 isOutput,
+);
+
+typedef _dart_TWEthereumAbiFunctionGetParamUInt256 = Pointer<Int32> Function(
+  Pointer<Void> fn,
+  int idx,
+  int isOutput,
+);
+
+typedef _c_TWEthereumAbiFunctionGetParamBool = Int32 Function(
+  Pointer<Void> fn,
+  Int32 idx,
+  Int32 isOutput,
+);
+
+typedef _dart_TWEthereumAbiFunctionGetParamBool = int Function(
+  Pointer<Void> fn,
+  int idx,
+  int isOutput,
+);
+
+typedef _c_TWEthereumAbiFunctionGetParamString = Pointer<Int32> Function(
+  Pointer<Void> fn,
+  Int32 idx,
+  Int32 isOutput,
+);
+
+typedef _dart_TWEthereumAbiFunctionGetParamString = Pointer<Int32> Function(
+  Pointer<Void> fn,
+  int idx,
+  int isOutput,
+);
+
+typedef _c_TWEthereumAbiFunctionGetParamAddress = Pointer<Int32> Function(
+  Pointer<Void> fn,
+  Int32 idx,
+  Int32 isOutput,
+);
+
+typedef _dart_TWEthereumAbiFunctionGetParamAddress = Pointer<Int32> Function(
+  Pointer<Void> fn,
+  int idx,
   int isOutput,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamUInt8 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamUInt8 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamUInt16 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamUInt16 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamUInt32 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamUInt32 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamUInt64 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamUInt64 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamUInt256 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamUInt256 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamUIntN = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 bits,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamUIntN = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int bits,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamInt8 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamInt8 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamInt16 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamInt16 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamInt32 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamInt32 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamInt64 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamInt64 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamInt256 = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamInt256 = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamIntN = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 bits,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamIntN = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int bits,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamBool = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamBool = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamString = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
-  Pointer<Int32> val,
+  Pointer<Utf8> val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamString = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
-  Pointer<Int32> val,
+  Pointer<Utf8> val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamAddress = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamAddress = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamBytes = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamBytes = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _c_TWEthereumAbiFunctionAddInArrayParamBytesFix = Int32 Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   Int32 arrayIdx,
   Int32 size,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
 
 typedef _dart_TWEthereumAbiFunctionAddInArrayParamBytesFix = int Function(
-  Pointer<TWEthereumAbiFunction> fn,
+  Pointer<Void> fn,
   int arrayIdx,
   int size,
-  Pointer<Int32> val,
+  Pointer<Void> val,
 );
