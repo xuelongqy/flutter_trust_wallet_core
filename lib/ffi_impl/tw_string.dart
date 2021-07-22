@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-abstract class TWString extends Opaque {
+abstract class TWString  {
   /// Creates a string from a null-terminated UTF8 byte array. It must be deleted at the end.
   Pointer<Utf8> TWStringCreateWithUTF8Bytes(
     Pointer<Utf8> bytes,

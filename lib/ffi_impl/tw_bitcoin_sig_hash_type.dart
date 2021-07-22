@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-abstract class TWBitcoinSigHashType extends Opaque {
+abstract class TWBitcoinSigHashType  {
   static const int TWBitcoinSigHashTypeAll = 0x01;
   static const int TWBitcoinSigHashTypeNone = 0x02;
   static const int TWBitcoinSigHashTypeSingle = 0x03;

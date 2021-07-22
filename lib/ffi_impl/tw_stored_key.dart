@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWStoredKey extends Opaque {
+abstract class TWStoredKey  {
 
   /// Loads a key from a file.  Returned object needs to be deleted.
    static Pointer<Void> TWStoredKeyLoad(

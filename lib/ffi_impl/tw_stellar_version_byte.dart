@@ -4,8 +4,8 @@
 import 'dart:ffi' as ffi;
 
  class TWStellarVersionByte {
-  static const int TWStellarVersionByteAccountID = 48;
-  static const int TWStellarVersionByteSeed = 192;
-  static const int TWStellarVersionBytePreAuthTX = 200;
-  static const int TWStellarVersionByteSHA256Hash = 280;
+  static const int TWStellarVersionByteAccountID = 0x30; // G
+  static const int TWStellarVersionByteSeed = 0xc0; // S
+  static const int TWStellarVersionBytePreAuthTX = 0xc8; // T
+  static const int TWStellarVersionByteSHA256Hash = 0x118; // X
 }

@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWCurve {
+abstract class TWCurve {
   static const int TWCurveSECP256k1 = 0;
   static const int TWCurveED25519 = 1;
   static const int TWCurveED25519Blake2bNano = 2;

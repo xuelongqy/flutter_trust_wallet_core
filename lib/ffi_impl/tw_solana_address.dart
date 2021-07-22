@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWSolanaAddress extends Opaque {
+abstract class TWSolanaAddress  {
 
   /// Creates an address from a string representaion.
   static Pointer<Void> TWSolanaAddressCreateWithString(

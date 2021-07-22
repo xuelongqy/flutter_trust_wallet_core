@@ -1,6 +1,6 @@
 part of trust_wallet_core;
 
-class TWEthereumAbi extends Opaque {
+abstract class TWEthereumAbi  {
   /// Encode function to Eth ABI binary
   static Pointer<Void> TWEthereumAbiEncode(
     Pointer<Void> fn,

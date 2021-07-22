@@ -1,6 +1,7 @@
 part of trust_wallet_core;
 
-class TWAES extends Opaque {
+abstract class TWAES  {
+
   /// Encrypts a block of data using AES in Cipher Block Chaining (CBC) mode.
   ///
   /// \param key encryption key, must be 16, 24, or 32 bytes long.

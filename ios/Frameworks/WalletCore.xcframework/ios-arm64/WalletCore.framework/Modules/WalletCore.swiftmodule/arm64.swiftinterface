@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name WalletCore
 import Foundation
 import Swift
@@ -1175,7 +1175,6 @@ public enum Blockchain : Swift.UInt32, Swift.CaseIterable {
   case harmony
   case near
   case algorand
-  case ton
   case polkadot
   case cardano
   case neo
@@ -1268,7 +1267,6 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   case xrp
   case solana
   case stellar
-  case ton
   case tezos
   case theta
   case thunderToken
@@ -1298,6 +1296,9 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   case polygon
   case thorchain
   case bluzelle
+  case optimism
+  case arbitrum
+  case ecochain
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.CoinType]
   public typealias RawValue = Swift.UInt32
@@ -2157,6 +2158,7 @@ extension TW_Ethereum_Proto_SigningOutput : SwiftProtobuf.Message, SwiftProtobuf
   public static func encode(fn: WalletCore.EthereumAbiFunction) -> Foundation.Data
   public static func decodeOutput(fn: WalletCore.EthereumAbiFunction, encoded: Foundation.Data) -> Swift.Bool
   public static func decodeCall(data: Foundation.Data, abi: Swift.String) -> Swift.String?
+  public static func encodeTyped(messageJson: Swift.String) -> Foundation.Data
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class EthereumAbiFunction {
@@ -2267,6 +2269,9 @@ public enum EthereumChainID : Swift.UInt32, Swift.CaseIterable {
   case binanceSmartChain
   case polygon
   case wanchain
+  case optimism
+  case arbitrum
+  case heco
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.EthereumChainID]
   public typealias RawValue = Swift.UInt32
@@ -2620,9 +2625,9 @@ public enum HDVersion : Swift.UInt32, Swift.CaseIterable {
   final public var mnemonic: Swift.String {
     get
   }
-  public init?(strength: Swift.Int32, passphrase: Swift.String)
-  public init?(mnemonic: Swift.String, passphrase: Swift.String)
-  public init?(data: Foundation.Data, passphrase: Swift.String)
+  public init(strength: Swift.Int32, passphrase: Swift.String)
+  public init(mnemonic: Swift.String, passphrase: Swift.String)
+  public init(data: Foundation.Data, passphrase: Swift.String)
   @objc deinit
   final public func getMasterKey(curve: WalletCore.Curve) -> WalletCore.PrivateKey
   final public func getKeyForCoin(coin: WalletCore.CoinType) -> WalletCore.PrivateKey

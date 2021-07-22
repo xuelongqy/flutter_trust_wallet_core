@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWNEARAccount extends Opaque {
+abstract class TWNEARAccount  {
   /// Represents a NEAR Account name
   static Pointer<Void> TWNEARAccountCreateWithString(
     Pointer<Utf8> string,

@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWFIOAccount extends Opaque {
+abstract class TWFIOAccount  {
   static Pointer<Void> TWFIOAccountCreateWithString(
     Pointer<Utf8> string,
   ) {

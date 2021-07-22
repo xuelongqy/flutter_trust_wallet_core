@@ -1,6 +1,6 @@
 part of trust_wallet_core;
 
-class TWEthereumAbiValue extends Opaque {
+abstract class TWEthereumAbiValue  {
   /// Returned data must be deleted (hint: use WRAPD() macro).
   /// Encode a type according to Ethereum ABI, into 32 bytes. Values are padded by 0 on the left, unless specified otherwise.
   static Pointer<Void> TWEthereumAbiValueEncodeBool(

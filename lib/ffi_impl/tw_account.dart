@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
-/// trust wallet core
-abstract class TWAccount extends Opaque {
+/// Account for a particular coin within a wallet.
+abstract class TWAccount  {
   static Pointer<Void> TWAccountCreate(
     Pointer<Utf8> address,
     int coin,

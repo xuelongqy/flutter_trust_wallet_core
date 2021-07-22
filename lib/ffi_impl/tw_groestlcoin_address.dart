@@ -1,6 +1,6 @@
 part of trust_wallet_core;
 
-class TWGroestlcoinAddress {
+abstract class TWGroestlcoinAddress {
   /// Compares two addresses for equality.
   static int TWGroestlcoinAddressEqual(
     Pointer<Void> lhs,

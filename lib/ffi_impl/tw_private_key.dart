@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWPrivateKey extends Opaque {
+abstract class TWPrivateKey  {
   static const int TWPrivateKeySize = 32;
 
   static Pointer<Void> TWPrivateKeyCreate() {

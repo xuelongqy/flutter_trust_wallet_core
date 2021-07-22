@@ -1,6 +1,6 @@
 part of trust_wallet_core;
 
-class TWCoinTypeConfiguration {
+abstract class TWCoinTypeConfiguration {
   /// Returns stock symbol of coin
   static Pointer<Utf8> TWCoinTypeConfigurationGetSymbol(
     int type,

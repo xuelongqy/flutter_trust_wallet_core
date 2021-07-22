@@ -32,8 +32,6 @@ part 'ffi_impl/tw_aes.dart';
 
 part 'ffi_impl/tw_aes_padding_mode.dart';
 
-part 'ffi_impl/tw_aeternity_proto.dart';
-
 part 'ffi_impl/tw_any_address.dart';
 
 part 'ffi_impl/tw_any_signer.dart';
@@ -75,8 +73,6 @@ part 'ffi_impl/tw_hash.dart';
 part 'ffi_impl/tw_hd_version.dart';
 
 part 'ffi_impl/tw_hd_wallet.dart';
-
-part 'ffi_impl/tw_hrp.dart';
 
 part 'ffi_impl/tw_mnemonic.dart';
 

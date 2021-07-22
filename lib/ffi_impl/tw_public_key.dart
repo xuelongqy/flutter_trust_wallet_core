@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWPublicKey extends Opaque {
+abstract class TWPublicKey  {
 
   static const int TWPublicKeyCompressedSize = 33;
   static const int TWPublicKeyUncompressedSize = 65;

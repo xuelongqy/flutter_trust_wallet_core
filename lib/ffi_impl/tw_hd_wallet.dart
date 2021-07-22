@@ -1,6 +1,6 @@
 part of trust_wallet_core;
 
-abstract class TWHDWallet extends Opaque {
+abstract class TWHDWallet  {
 
 
   /// Deprecated; use TWMnemonicIsValid().  Determines if a mnemonic phrase is valid.

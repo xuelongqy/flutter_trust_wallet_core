@@ -80,6 +80,9 @@ class _MyAppState extends State<MyApp> {
                         logger.log(Level.debug, " TWHDWallet.create(128)");
                         logger.log(Level.debug, DartTWHDWallet.create(128).mnemonic());
 
+                        logger.log(Level.debug, "DartTWHDWallet.createWithMnemonic('stove brush palm ridge stairs village van era drama column style assist',"");");
+                        logger.log(Level.debug, DartTWHDWallet.createWithMnemonic("stove brush palm ridge stairs village van era drama column style assist","")?.getAddressForCoin(60));
+
                         setState(() {});
                       },
                       child: Text("gen")),

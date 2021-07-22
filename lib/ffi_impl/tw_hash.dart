@@ -1,6 +1,6 @@
 part of trust_wallet_core;
 
-class TWHash extends Opaque {
+abstract class TWHash  {
   static const int TWHashSHA1Length = 20;
   static const int TWHashSHA256Length = 32;
   static const int TWHashSHA512Length = 64;

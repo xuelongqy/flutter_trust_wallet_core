@@ -1,6 +1,6 @@
 part of trust_wallet_core;
 
-class TWBase58 extends Opaque {
+abstract class TWBase58  {
   /// Encodes data as a Base58 string, including the checksum.
   static Pointer<Utf8> TWBase58Encode(
     Pointer<Void> data,

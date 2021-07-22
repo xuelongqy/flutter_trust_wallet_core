@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWRippleXAddress extends Opaque {
+abstract class TWRippleXAddress  {
   /// Compares two addresses for equality.
   static int TWRippleXAddressEqual(
     Pointer<Void> lhs,

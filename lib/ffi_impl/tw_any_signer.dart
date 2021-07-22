@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWAnySigner extends Opaque {
+abstract class TWAnySigner  {
   /// Signs a transaction.
   Pointer<Void> TWAnySignerSign(
     Pointer<Void> input,

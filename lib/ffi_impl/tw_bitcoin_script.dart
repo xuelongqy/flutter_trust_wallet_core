@@ -1,6 +1,6 @@
 part of trust_wallet_core;
 
-class TWBitcoinScript {
+abstract class TWBitcoinScript {
   /// Creates an empty script.
   static Pointer<Void> TWBitcoinScriptCreate() {
     return _TWBitcoinScriptCreate();

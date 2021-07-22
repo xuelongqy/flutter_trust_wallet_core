@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWMnemonic extends Opaque {
+abstract class TWMnemonic  {
 
   /// Determines whether a mnemonic phrase is valid.
   static int TWMnemonicIsValid(

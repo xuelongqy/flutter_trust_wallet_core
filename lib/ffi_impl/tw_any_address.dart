@@ -1,7 +1,6 @@
 part of trust_wallet_core;
 
-/// trust wallet core
-class TWAnyAddress {
+abstract class TWAnyAddress {
   /// Compares two addresses for equality.
   static int TWAnyAddressEqual(
     Pointer<Void> lhs,

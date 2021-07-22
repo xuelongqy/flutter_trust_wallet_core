@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWSegwitAddress extends Opaque {
+abstract class TWSegwitAddress  {
   /// Compares two addresses for equality.
   static int TWSegwitAddressEqual(
       Pointer<Void> lhs,

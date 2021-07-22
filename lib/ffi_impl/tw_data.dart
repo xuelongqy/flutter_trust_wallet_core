@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-abstract class TWData extends Opaque {
+abstract class TWData  {
   /// Creates a block of data from a byte array.
   Pointer<Void> TWDataCreateWithBytes(
     Pointer<Uint8> bytes,

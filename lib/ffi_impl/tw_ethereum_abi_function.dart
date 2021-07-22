@@ -1,7 +1,7 @@
 part of trust_wallet_core;
 
 /// trust wallet core
-class TWEthereumAbiFunction {
+abstract class TWEthereumAbiFunction {
   /// Creates a function object, with the given name and empty parameter list.  It must be deleted at the end.
   static Pointer<Void> TWEthereumAbiFunctionCreateWithString(
     Pointer<Utf8> name,
