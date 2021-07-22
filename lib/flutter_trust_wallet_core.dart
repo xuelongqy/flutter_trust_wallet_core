@@ -8,24 +8,6 @@ import 'package:ffi/ffi.dart';
 
 import 'extensions.dart';
 
-part 'impl/demo_tw_hd_wallet.dart';
-
-part 'impl/demo_tw_mnemonic.dart';
-
-part 'impl/demo_tw_string.dart';
-
-part 'impl/demo_tw_data.dart';
-
-part 'impl/demo_tw_coin_type.dart';
-
-part 'impl/demo_tw_blockchain.dart';
-
-part 'impl/demo_tw_curve.dart';
-
-part 'impl/demo_tw_purpose.dart';
-
-part 'impl/demo_tw_hd_version.dart';
-
 part 'ffi_impl/tw_account.dart';
 
 part 'ffi_impl/tw_aes.dart';
@@ -96,9 +78,31 @@ part 'ffi_impl/tw_ss_58_address_type.dart';
 
 part 'ffi_impl/tw_stellar_memo_type.dart';
 
+part 'ffi_impl/tw_stellar_passphrase.dart';
+
+part 'ffi_impl/tw_stellar_version_byte.dart';
+
 part 'ffi_impl/tw_stored_key.dart';
 
 part 'ffi_impl/tw_string.dart';
+
+part 'impl/demo_tw_blockchain.dart';
+
+part 'impl/demo_tw_coin_type.dart';
+
+part 'impl/demo_tw_curve.dart';
+
+part 'impl/demo_tw_data.dart';
+
+part 'impl/demo_tw_hd_version.dart';
+
+part 'impl/demo_tw_hd_wallet.dart';
+
+part 'impl/demo_tw_mnemonic.dart';
+
+part 'impl/demo_tw_purpose.dart';
+
+part 'impl/demo_tw_string.dart';
 
 late DynamicLibrary walletCoreLib;
 
