@@ -1,24 +1,83 @@
 part of trust_wallet_core;
 
-/// trust wallet core
 class TWBase58 extends Opaque {
-  late final Pointer<Int32> _TW_EXPORT_STRUCT = _lookup<Int32>('TW_EXPORT_STRUCT');
-
-  int get TW_EXPORT_STRUCT => _TW_EXPORT_STRUCT.value;
-
-  set TW_EXPORT_STRUCT(int value) => _TW_EXPORT_STRUCT.value = value;
-
   /// Encodes data as a Base58 string, including the checksum.
-  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
+  static Pointer<Utf8> TWBase58Encode(
+    Pointer<Void> data,
+  ) {
+    return _TWBase58Encode(
+      data,
+    );
+  }
 
-  int get TWString => _TWString.value;
+  static late final _TWBase58Encode_ptr = _lookup<NativeFunction<_c_TWBase58Encode>>('TWBase58Encode');
+  static late final _dart_TWBase58Encode _TWBase58Encode = _TWBase58Encode_ptr.asFunction<_dart_TWBase58Encode>();
 
-  set TWString(int value) => _TWString.value = value;
+  /// Encodes data as a Base58 string, not including the checksum.
+  static Pointer<Utf8> TWBase58EncodeNoCheck(
+    Pointer<Void> data,
+  ) {
+    return _TWBase58EncodeNoCheck(
+      data,
+    );
+  }
+
+  static late final _TWBase58EncodeNoCheck_ptr = _lookup<NativeFunction<_c_TWBase58EncodeNoCheck>>('TWBase58EncodeNoCheck');
+  static late final _dart_TWBase58EncodeNoCheck _TWBase58EncodeNoCheck = _TWBase58EncodeNoCheck_ptr.asFunction<_dart_TWBase58EncodeNoCheck>();
 
   /// Decodes a Base58 string checking the checksum.
-  late final Pointer<Int32> _TWData = _lookup<Int32>('TWData');
+  static Pointer<Void> TWBase58Decode(
+    Pointer<Utf8> string,
+  ) {
+    return _TWBase58Decode(
+      string,
+    );
+  }
 
-  int get TWData => _TWData.value;
+  static late final _TWBase58Decode_ptr = _lookup<NativeFunction<_c_TWBase58Decode>>('TWBase58Decode');
+  static late final _dart_TWBase58Decode _TWBase58Decode = _TWBase58Decode_ptr.asFunction<_dart_TWBase58Decode>();
 
-  set TWData(int value) => _TWData.value = value;
+  /// Decodes a Base58 string with no checksum.
+  static Pointer<Void> TWBase58DecodeNoCheck(
+    Pointer<Utf8> string,
+  ) {
+    return _TWBase58DecodeNoCheck(
+      string,
+    );
+  }
+
+  static late final _TWBase58DecodeNoCheck_ptr = _lookup<NativeFunction<_c_TWBase58DecodeNoCheck>>('TWBase58DecodeNoCheck');
+  static late final _dart_TWBase58DecodeNoCheck _TWBase58DecodeNoCheck = _TWBase58DecodeNoCheck_ptr.asFunction<_dart_TWBase58DecodeNoCheck>();
 }
+
+typedef _c_TWBase58Encode = Pointer<Utf8> Function(
+  Pointer<Void> data,
+);
+
+typedef _dart_TWBase58Encode = Pointer<Utf8> Function(
+  Pointer<Void> data,
+);
+
+typedef _c_TWBase58EncodeNoCheck = Pointer<Utf8> Function(
+  Pointer<Void> data,
+);
+
+typedef _dart_TWBase58EncodeNoCheck = Pointer<Utf8> Function(
+  Pointer<Void> data,
+);
+
+typedef _c_TWBase58Decode = Pointer<Void> Function(
+  Pointer<Utf8> string,
+);
+
+typedef _dart_TWBase58Decode = Pointer<Void> Function(
+  Pointer<Utf8> string,
+);
+
+typedef _c_TWBase58DecodeNoCheck = Pointer<Void> Function(
+  Pointer<Utf8> string,
+);
+
+typedef _dart_TWBase58DecodeNoCheck = Pointer<Void> Function(
+  Pointer<Utf8> string,
+);

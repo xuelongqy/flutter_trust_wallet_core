@@ -5,18 +5,64 @@ part of trust_wallet_core;
 /// - SeeAlso: https://github.com/satoshilabs/slips/blob/master/slip-0132.md
 abstract class TWHDVersion {
   static const int TWHDVersionNone = 0;
-  static const int TWHDVersionXPUB = 76067358;
-  static const int TWHDVersionXPRV = 76066276;
-  static const int TWHDVersionYPUB = 77429938;
-  static const int TWHDVersionYPRV = 77428856;
-  static const int TWHDVersionZPUB = 78792518;
-  static const int TWHDVersionZPRV = 78791436;
-  static const int TWHDVersionLTUB = 27108450;
-  static const int TWHDVersionLTPV = 27106558;
-  static const int TWHDVersionMTUB = 28471030;
-  static const int TWHDVersionMTPV = 28469138;
-  static const int TWHDVersionDPUB = 50178342;
-  static const int TWHDVersionDPRV = 50177256;
-  static const int TWHDVersionDGUB = 49990397;
-  static const int TWHDVersionDGPV = 49988504;
+
+  // Bitcoin
+  static const int TWHDVersionXPUB = 0x0488b21e;
+  static const int TWHDVersionXPRV = 0x0488ade4;
+  static const int TWHDVersionYPUB = 0x049d7cb2;
+  static const int TWHDVersionYPRV = 0x049d7878;
+  static const int TWHDVersionZPUB = 0x04b24746;
+  static const int TWHDVersionZPRV = 0x04b2430c;
+
+  // Litecoin
+  static const int TWHDVersionLTUB = 0x019da462;
+  static const int TWHDVersionLTPV = 0x019d9cfe;
+  static const int TWHDVersionMTUB = 0x01b26ef6;
+  static const int TWHDVersionMTPV = 0x01b26792;
+
+  // Decred
+  static const int TWHDVersionDPUB = 0x2fda926;
+  static const int TWHDVersionDPRV = 0x2fda4e8;
+
+  // Dogecoin
+  static const int TWHDVersionDGUB = 0x02facafd;
+  static const int TWHDVersionDGPV = 0x02fac398;
+
+  int TWHDVersionIsPublic(
+    int version,
+  ) {
+    return _TWHDVersionIsPublic(
+      version,
+    );
+  }
+
+  late final _TWHDVersionIsPublic_ptr = _lookup<NativeFunction<_c_TWHDVersionIsPublic>>('TWHDVersionIsPublic');
+  late final _dart_TWHDVersionIsPublic _TWHDVersionIsPublic = _TWHDVersionIsPublic_ptr.asFunction<_dart_TWHDVersionIsPublic>();
+
+  int TWHDVersionIsPrivate(
+    int version,
+  ) {
+    return _TWHDVersionIsPrivate(
+      version,
+    );
+  }
+
+  late final _TWHDVersionIsPrivate_ptr = _lookup<NativeFunction<_c_TWHDVersionIsPrivate>>('TWHDVersionIsPrivate');
+  late final _dart_TWHDVersionIsPrivate _TWHDVersionIsPrivate = _TWHDVersionIsPrivate_ptr.asFunction<_dart_TWHDVersionIsPrivate>();
 }
+
+typedef _c_TWHDVersionIsPublic = Int32 Function(
+  Int32 version,
+);
+
+typedef _dart_TWHDVersionIsPublic = int Function(
+  int version,
+);
+
+typedef _c_TWHDVersionIsPrivate = Int32 Function(
+  Int32 version,
+);
+
+typedef _dart_TWHDVersionIsPrivate = int Function(
+  int version,
+);

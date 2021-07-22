@@ -3,8 +3,8 @@ part of trust_wallet_core;
 /// trust wallet core
 class TWAnySigner extends Opaque {
   /// Signs a transaction.
-  Pointer<Int32> TWAnySignerSign(
-    Pointer<Int32> input,
+  Pointer<Void> TWAnySignerSign(
+    Pointer<Void> input,
     int coin,
   ) {
     return _TWAnySignerSign(
@@ -17,9 +17,9 @@ class TWAnySigner extends Opaque {
   late final _dart_TWAnySignerSign _TWAnySignerSign = _TWAnySignerSign_ptr.asFunction<_dart_TWAnySignerSign>();
 
   /// Signs a json transaction with private key.
-  Pointer<Int32> TWAnySignerSignJSON(
-    Pointer<Int32> json,
-    Pointer<Int32> key,
+  Pointer<Utf8> TWAnySignerSignJSON(
+    Pointer<Utf8> json,
+    Pointer<Void> key,
     int coin,
   ) {
     return _TWAnySignerSignJSON(
@@ -44,8 +44,8 @@ class TWAnySigner extends Opaque {
   late final _dart_TWAnySignerSupportsJSON _TWAnySignerSupportsJSON = _TWAnySignerSupportsJSON_ptr.asFunction<_dart_TWAnySignerSupportsJSON>();
 
   /// Plan a transaction (for UTXO chains).
-  Pointer<Int32> TWAnySignerPlan(
-    Pointer<Int32> input,
+  Pointer<Void> TWAnySignerPlan(
+    Pointer<Void> input,
     int coin,
   ) {
     return _TWAnySignerPlan(
@@ -58,25 +58,25 @@ class TWAnySigner extends Opaque {
   late final _dart_TWAnySignerPlan _TWAnySignerPlan = _TWAnySignerPlan_ptr.asFunction<_dart_TWAnySignerPlan>();
 }
 
-typedef _c_TWAnySignerSign = Pointer<Int32> Function(
-  Pointer<Int32> input,
+typedef _c_TWAnySignerSign = Pointer<Void> Function(
+  Pointer<Void> input,
   Int32 coin,
 );
 
-typedef _dart_TWAnySignerSign = Pointer<Int32> Function(
-  Pointer<Int32> input,
+typedef _dart_TWAnySignerSign = Pointer<Void> Function(
+  Pointer<Void> input,
   int coin,
 );
 
-typedef _c_TWAnySignerSignJSON = Pointer<Int32> Function(
-  Pointer<Int32> json,
-  Pointer<Int32> key,
+typedef _c_TWAnySignerSignJSON = Pointer<Utf8> Function(
+  Pointer<Utf8> json,
+  Pointer<Void> key,
   Int32 coin,
 );
 
-typedef _dart_TWAnySignerSignJSON = Pointer<Int32> Function(
-  Pointer<Int32> json,
-  Pointer<Int32> key,
+typedef _dart_TWAnySignerSignJSON = Pointer<Utf8> Function(
+  Pointer<Utf8> json,
+  Pointer<Void> key,
   int coin,
 );
 
@@ -88,12 +88,12 @@ typedef _dart_TWAnySignerSupportsJSON = int Function(
   int coin,
 );
 
-typedef _c_TWAnySignerPlan = Pointer<Int32> Function(
-  Pointer<Int32> input,
+typedef _c_TWAnySignerPlan = Pointer<Void> Function(
+  Pointer<Void> input,
   Int32 coin,
 );
 
-typedef _dart_TWAnySignerPlan = Pointer<Int32> Function(
-  Pointer<Int32> input,
+typedef _dart_TWAnySignerPlan = Pointer<Void> Function(
+  Pointer<Void> input,
   int coin,
 );
