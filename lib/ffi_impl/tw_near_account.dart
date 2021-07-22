@@ -3,54 +3,71 @@ part of trust_wallet_core;
 /// trust wallet core
 class TWNEARAccount extends Opaque {
   /// Represents a NEAR Account name
-  late final Pointer<Int32> _TW_EXPORT_CLASS = _lookup<Int32>('TW_EXPORT_CLASS');
-
-  int get TW_EXPORT_CLASS => _TW_EXPORT_CLASS.value;
-
-  set TW_EXPORT_CLASS(int value) => _TW_EXPORT_CLASS.value = value;
-
-  Pointer<Int32> TWNEARAccountCreateWithString(
-    Pointer<Int32> string,
+  static Pointer<Void> TWNEARAccountCreateWithString(
+    Pointer<Utf8> string,
   ) {
     return _TWNEARAccountCreateWithString(
       string,
     );
   }
 
-  late final _TWNEARAccountCreateWithString_ptr = _lookup<NativeFunction<_c_TWNEARAccountCreateWithString>>('TWNEARAccountCreateWithString');
-  late final _dart_TWNEARAccountCreateWithString _TWNEARAccountCreateWithString = _TWNEARAccountCreateWithString_ptr.asFunction<_dart_TWNEARAccountCreateWithString>();
+  static late final _TWNEARAccountCreateWithString_ptr =
+      _lookup<NativeFunction<_c_TWNEARAccountCreateWithString>>(
+          'TWNEARAccountCreateWithString');
+  static late final _dart_TWNEARAccountCreateWithString
+      _TWNEARAccountCreateWithString = _TWNEARAccountCreateWithString_ptr
+          .asFunction<_dart_TWNEARAccountCreateWithString>();
 
-  int TWNEARAccountDelete(
-    Pointer<TWNEARAccount> account,
+  void TWNEARAccountDelete(
+    Pointer<Void> account,
   ) {
     return _TWNEARAccountDelete(
       account,
     );
   }
 
-  late final _TWNEARAccountDelete_ptr = _lookup<NativeFunction<_c_TWNEARAccountDelete>>('TWNEARAccountDelete');
-  late final _dart_TWNEARAccountDelete _TWNEARAccountDelete = _TWNEARAccountDelete_ptr.asFunction<_dart_TWNEARAccountDelete>();
+  late final _TWNEARAccountDelete_ptr =
+      _lookup<NativeFunction<_c_TWNEARAccountDelete>>('TWNEARAccountDelete');
+  late final _dart_TWNEARAccountDelete _TWNEARAccountDelete =
+      _TWNEARAccountDelete_ptr.asFunction<_dart_TWNEARAccountDelete>();
 
   /// Returns the user friendly string representation.
-  late final Pointer<Int32> _TWString = _lookup<Int32>('TWString');
+  Pointer<Utf8> TWNEARAccountDescription(
+    Pointer<Void> account,
+  ) {
+    return _TWNEARAccountDescription(
+      account,
+    );
+  }
 
-  int get TWString => _TWString.value;
-
-  set TWString(int value) => _TWString.value = value;
+  late final _TWNEARAccountDescription_ptr =
+      _lookup<NativeFunction<_c_TWNEARAccountDescription>>(
+          'TWNEARAccountDescription');
+  late final _dart_TWNEARAccountDescription _TWNEARAccountDescription =
+      _TWNEARAccountDescription_ptr.asFunction<
+          _dart_TWNEARAccountDescription>();
 }
 
-typedef _c_TWNEARAccountCreateWithString = Pointer<Int32> Function(
-  Pointer<Int32> string,
+typedef _c_TWNEARAccountCreateWithString = Pointer<Void> Function(
+  Pointer<Utf8> string,
 );
 
-typedef _dart_TWNEARAccountCreateWithString = Pointer<Int32> Function(
-  Pointer<Int32> string,
+typedef _dart_TWNEARAccountCreateWithString = Pointer<Void> Function(
+  Pointer<Utf8> string,
 );
 
-typedef _c_TWNEARAccountDelete = Int32 Function(
-  Pointer<TWNEARAccount> account,
+typedef _c_TWNEARAccountDelete = Void Function(
+  Pointer<Void> account,
 );
 
-typedef _dart_TWNEARAccountDelete = int Function(
-  Pointer<TWNEARAccount> account,
+typedef _dart_TWNEARAccountDelete = void Function(
+  Pointer<Void> account,
+);
+
+typedef _c_TWNEARAccountDescription = Pointer<Utf8> Function(
+  Pointer<Void> account,
+);
+
+typedef _dart_TWNEARAccountDescription = Pointer<Utf8> Function(
+  Pointer<Void> account,
 );
