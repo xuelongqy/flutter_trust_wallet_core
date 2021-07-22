@@ -1,6 +1,6 @@
 part of trust_wallet_core;
 
-abstract class TWStellarMemoType {
+ class TWStellarMemoType {
   static const int TWStellarMemoTypeNone = 0;
   static const int TWStellarMemoTypeText = 1;
   static const int TWStellarMemoTypeId = 2;
