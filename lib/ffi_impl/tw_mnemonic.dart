@@ -1,4 +1,4 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 /// trust wallet core
 abstract class TWMnemonic  {
@@ -19,7 +19,7 @@ abstract class TWMnemonic  {
 
   /// Determines whether word is a valid menemonic word.
   static int TWMnemonicIsValidWord(
-    Pointer<Int32> word,
+    Pointer<Utf8> word,
   ) {
     return _TWMnemonicIsValidWord(
       word,
@@ -52,11 +52,11 @@ typedef _dart_TWMnemonicIsValid = int Function(
     );
 
 typedef _c_TWMnemonicIsValidWord = Int32 Function(
-  Pointer<Int32> word,
+  Pointer<Utf8> word,
 );
 
 typedef _dart_TWMnemonicIsValidWord = int Function(
-  Pointer<Int32> word,
+  Pointer<Utf8> word,
 );
 
 typedef _c_TWMnemonicSuggest = Pointer<Utf8> Function(

@@ -1,4 +1,4 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 abstract class TWHash  {
   static const int TWHashSHA1Length = 20;

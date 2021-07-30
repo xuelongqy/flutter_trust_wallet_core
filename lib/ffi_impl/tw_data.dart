@@ -1,9 +1,9 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 /// trust wallet core
-abstract class TWData  {
+class TWData  {
   /// Creates a block of data from a byte array.
-  Pointer<Void> TWDataCreateWithBytes(
+  static Pointer<Void> TWDataCreateWithBytes(
     Pointer<Uint8> bytes,
     int size,
   ) {
@@ -13,8 +13,8 @@ abstract class TWData  {
     );
   }
 
-  late final _TWDataCreateWithBytes_ptr = _lookup<NativeFunction<_c_TWDataCreateWithBytes>>('TWDataCreateWithBytes');
-  late final _dart_TWDataCreateWithBytes _TWDataCreateWithBytes = _TWDataCreateWithBytes_ptr.asFunction<_dart_TWDataCreateWithBytes>();
+  static late final _TWDataCreateWithBytes_ptr = _lookup<NativeFunction<_c_TWDataCreateWithBytes>>('TWDataCreateWithBytes');
+  static late final _dart_TWDataCreateWithBytes _TWDataCreateWithBytes = _TWDataCreateWithBytes_ptr.asFunction<_dart_TWDataCreateWithBytes>();
 
   /// Creates an uninitialized block of data with the provided size.
   Pointer<Void> TWDataCreateWithSize(
@@ -29,7 +29,7 @@ abstract class TWData  {
   late final _dart_TWDataCreateWithSize _TWDataCreateWithSize = _TWDataCreateWithSize_ptr.asFunction<_dart_TWDataCreateWithSize>();
 
   /// Creates a block of data by copying another block of data.
-  Pointer<Void> TWDataCreateWithData(
+static  Pointer<Void> TWDataCreateWithData(
     Pointer<Void> data,
   ) {
     return _TWDataCreateWithData(
@@ -37,8 +37,8 @@ abstract class TWData  {
     );
   }
 
-  late final _TWDataCreateWithData_ptr = _lookup<NativeFunction<_c_TWDataCreateWithData>>('TWDataCreateWithData');
-  late final _dart_TWDataCreateWithData _TWDataCreateWithData = _TWDataCreateWithData_ptr.asFunction<_dart_TWDataCreateWithData>();
+  static late final _TWDataCreateWithData_ptr = _lookup<NativeFunction<_c_TWDataCreateWithData>>('TWDataCreateWithData');
+  static late final _dart_TWDataCreateWithData _TWDataCreateWithData = _TWDataCreateWithData_ptr.asFunction<_dart_TWDataCreateWithData>();
 
   /// Creates a block of data from a hexadecimal string.  Odd length is invalid (intended grouping to bytes is not obvious).
   Pointer<Void> TWDataCreateWithHexString(
@@ -53,7 +53,7 @@ abstract class TWData  {
   late final _dart_TWDataCreateWithHexString _TWDataCreateWithHexString = _TWDataCreateWithHexString_ptr.asFunction<_dart_TWDataCreateWithHexString>();
 
   /// Returns the size in bytes.
-  int TWDataSize(
+ static int TWDataSize(
     Pointer<Void> data,
   ) {
     return _TWDataSize(
@@ -61,11 +61,11 @@ abstract class TWData  {
     );
   }
 
-  late final _TWDataSize_ptr = _lookup<NativeFunction<_c_TWDataSize>>('TWDataSize');
-  late final _dart_TWDataSize _TWDataSize = _TWDataSize_ptr.asFunction<_dart_TWDataSize>();
+  static  late final _TWDataSize_ptr = _lookup<NativeFunction<_c_TWDataSize>>('TWDataSize');
+  static late final _dart_TWDataSize _TWDataSize = _TWDataSize_ptr.asFunction<_dart_TWDataSize>();
 
   /// Returns the raw pointer to the contents of data.
-  Pointer<Uint8> TWDataBytes(
+ static Pointer<Uint8> TWDataBytes(
     Pointer<Void> data,
   ) {
     return _TWDataBytes(
@@ -73,8 +73,8 @@ abstract class TWData  {
     );
   }
 
-  late final _TWDataBytes_ptr = _lookup<NativeFunction<_c_TWDataBytes>>('TWDataBytes');
-  late final _dart_TWDataBytes _TWDataBytes = _TWDataBytes_ptr.asFunction<_dart_TWDataBytes>();
+  static late final _TWDataBytes_ptr = _lookup<NativeFunction<_c_TWDataBytes>>('TWDataBytes');
+  static late final _dart_TWDataBytes _TWDataBytes = _TWDataBytes_ptr.asFunction<_dart_TWDataBytes>();
 
   /// Returns the byte at the provided index.
   int TWDataGet(
@@ -210,7 +210,7 @@ abstract class TWData  {
   late final _dart_TWDataReset _TWDataReset = _TWDataReset_ptr.asFunction<_dart_TWDataReset>();
 
   /// Deletes a block of data created with a `TWDataCreate*` method.
-  void TWDataDelete(
+  static void TWDataDelete(
     Pointer<Void> data,
   ) {
     return _TWDataDelete(
@@ -218,8 +218,8 @@ abstract class TWData  {
     );
   }
 
-  late final _TWDataDelete_ptr = _lookup<NativeFunction<_c_TWDataDelete>>('TWDataDelete');
-  late final _dart_TWDataDelete _TWDataDelete = _TWDataDelete_ptr.asFunction<_dart_TWDataDelete>();
+  static late final _TWDataDelete_ptr = _lookup<NativeFunction<_c_TWDataDelete>>('TWDataDelete');
+  static late final _dart_TWDataDelete _TWDataDelete = _TWDataDelete_ptr.asFunction<_dart_TWDataDelete>();
 
   /// Determines whether two data blocks are equal.
   int TWDataEqual(

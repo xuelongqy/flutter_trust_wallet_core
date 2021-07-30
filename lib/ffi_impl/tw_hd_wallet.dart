@@ -1,4 +1,4 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 abstract class TWHDWallet  {
 
@@ -61,7 +61,7 @@ abstract class TWHDWallet  {
   static late final _dart_TWHDWalletCreateWithData _TWHDWalletCreateWithData = _TWHDWalletCreateWithData_ptr.asFunction<_dart_TWHDWalletCreateWithData>();
 
   /// Deletes a wallet.
-  void TWHDWalletDelete(
+  static void TWHDWalletDelete(
     Pointer<Void> wallet,
   ) {
     return _TWHDWalletDelete(
@@ -69,11 +69,11 @@ abstract class TWHDWallet  {
     );
   }
 
-  late final _TWHDWalletDelete_ptr = _lookup<NativeFunction<_c_TWHDWalletDelete>>('TWHDWalletDelete');
-  late final _dart_TWHDWalletDelete _TWHDWalletDelete = _TWHDWalletDelete_ptr.asFunction<_dart_TWHDWalletDelete>();
+  static late final _TWHDWalletDelete_ptr = _lookup<NativeFunction<_c_TWHDWalletDelete>>('TWHDWalletDelete');
+  static late final _dart_TWHDWalletDelete _TWHDWalletDelete = _TWHDWalletDelete_ptr.asFunction<_dart_TWHDWalletDelete>();
 
   /// Wallet seed.
-  Pointer<Void> TWHDWalletSeed(
+ static Pointer<Void> TWHDWalletSeed(
     Pointer<Void> wallet,
   ) {
     return _TWHDWalletSeed(
@@ -81,11 +81,11 @@ abstract class TWHDWallet  {
     );
   }
 
-  late final _TWHDWalletSeed_ptr = _lookup<NativeFunction<_c_TWHDWalletSeed>>('TWHDWalletSeed');
-  late final _dart_TWHDWalletSeed _TWHDWalletSeed = _TWHDWalletSeed_ptr.asFunction<_dart_TWHDWalletSeed>();
+  static late final _TWHDWalletSeed_ptr = _lookup<NativeFunction<_c_TWHDWalletSeed>>('TWHDWalletSeed');
+  static late final _dart_TWHDWalletSeed _TWHDWalletSeed = _TWHDWalletSeed_ptr.asFunction<_dart_TWHDWalletSeed>();
 
   /// Wallet Mnemonic
-  Pointer<Utf8> TWHDWalletMnemonic(
+ static Pointer<Utf8> TWHDWalletMnemonic(
     Pointer<Void> wallet,
   ) {
     return _TWHDWalletMnemonic(
@@ -93,11 +93,11 @@ abstract class TWHDWallet  {
     );
   }
 
-  late final _TWHDWalletMnemonic_ptr = _lookup<NativeFunction<_c_TWHDWalletMnemonic>>('TWHDWalletMnemonic');
-  late final _dart_TWHDWalletMnemonic _TWHDWalletMnemonic = _TWHDWalletMnemonic_ptr.asFunction<_dart_TWHDWalletMnemonic>();
+  static late final _TWHDWalletMnemonic_ptr = _lookup<NativeFunction<_c_TWHDWalletMnemonic>>('TWHDWalletMnemonic');
+  static late final _dart_TWHDWalletMnemonic _TWHDWalletMnemonic = _TWHDWalletMnemonic_ptr.asFunction<_dart_TWHDWalletMnemonic>();
 
   /// Returns master key.  Returned object needs to be deleted.
-  Pointer<Void> TWHDWalletGetMasterKey(
+  static Pointer<Void> TWHDWalletGetMasterKey(
     Pointer<Void> wallet,
     int curve,
   ) {
@@ -107,11 +107,11 @@ abstract class TWHDWallet  {
     );
   }
 
-  late final _TWHDWalletGetMasterKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetMasterKey>>('TWHDWalletGetMasterKey');
-  late final _dart_TWHDWalletGetMasterKey _TWHDWalletGetMasterKey = _TWHDWalletGetMasterKey_ptr.asFunction<_dart_TWHDWalletGetMasterKey>();
+  static late final _TWHDWalletGetMasterKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetMasterKey>>('TWHDWalletGetMasterKey');
+  static late final _dart_TWHDWalletGetMasterKey _TWHDWalletGetMasterKey = _TWHDWalletGetMasterKey_ptr.asFunction<_dart_TWHDWalletGetMasterKey>();
 
   /// Generates the default private key for the specified coin.  Returned object needs to be deleted.
-  Pointer<Void> TWHDWalletGetKeyForCoin(
+  static Pointer<Void> TWHDWalletGetKeyForCoin(
     Pointer<Void> wallet,
     int coin,
   ) {
@@ -121,11 +121,11 @@ abstract class TWHDWallet  {
     );
   }
 
-  late final _TWHDWalletGetKeyForCoin_ptr = _lookup<NativeFunction<_c_TWHDWalletGetKeyForCoin>>('TWHDWalletGetKeyForCoin');
-  late final _dart_TWHDWalletGetKeyForCoin _TWHDWalletGetKeyForCoin = _TWHDWalletGetKeyForCoin_ptr.asFunction<_dart_TWHDWalletGetKeyForCoin>();
+  static late final _TWHDWalletGetKeyForCoin_ptr = _lookup<NativeFunction<_c_TWHDWalletGetKeyForCoin>>('TWHDWalletGetKeyForCoin');
+  static late final _dart_TWHDWalletGetKeyForCoin _TWHDWalletGetKeyForCoin = _TWHDWalletGetKeyForCoin_ptr.asFunction<_dart_TWHDWalletGetKeyForCoin>();
 
   /// Generates the default address for the specified coin (without exposing intermediary private key).
-  Pointer<Utf8> TWHDWalletGetAddressForCoin(
+ static Pointer<Utf8> TWHDWalletGetAddressForCoin(
     Pointer<Void> wallet,
     int coin,
   ) {
@@ -135,8 +135,8 @@ abstract class TWHDWallet  {
     );
   }
 
-  late final _TWHDWalletGetAddressForCoin_ptr = _lookup<NativeFunction<_c_TWHDWalletGetAddressForCoin>>('TWHDWalletGetAddressForCoin');
-  late final _dart_TWHDWalletGetAddressForCoin _TWHDWalletGetAddressForCoin = _TWHDWalletGetAddressForCoin_ptr.asFunction<_dart_TWHDWalletGetAddressForCoin>();
+  static late final _TWHDWalletGetAddressForCoin_ptr = _lookup<NativeFunction<_c_TWHDWalletGetAddressForCoin>>('TWHDWalletGetAddressForCoin');
+  static late final _dart_TWHDWalletGetAddressForCoin _TWHDWalletGetAddressForCoin = _TWHDWalletGetAddressForCoin_ptr.asFunction<_dart_TWHDWalletGetAddressForCoin>();
 
   /// Generates the private key for the specified derivation path.  Returned object needs to be deleted.
   Pointer<Void> TWHDWalletGetKey(
@@ -157,7 +157,7 @@ abstract class TWHDWallet  {
   /// Shortcut method to generate private key with the specified account/change/address (bip44 standard). Returned object needs to be deleted.
   ///
   /// @see https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki
-  Pointer<Void> TWHDWalletGetDerivedKey(
+  static Pointer<Void> TWHDWalletGetDerivedKey(
     Pointer<Void> wallet,
     int coin,
     int account,
@@ -173,8 +173,8 @@ abstract class TWHDWallet  {
     );
   }
 
-  late final _TWHDWalletGetDerivedKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetDerivedKey>>('TWHDWalletGetDerivedKey');
-  late final _dart_TWHDWalletGetDerivedKey _TWHDWalletGetDerivedKey = _TWHDWalletGetDerivedKey_ptr.asFunction<_dart_TWHDWalletGetDerivedKey>();
+  static late final _TWHDWalletGetDerivedKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetDerivedKey>>('TWHDWalletGetDerivedKey');
+  static late final _dart_TWHDWalletGetDerivedKey _TWHDWalletGetDerivedKey = _TWHDWalletGetDerivedKey_ptr.asFunction<_dart_TWHDWalletGetDerivedKey>();
 
   /// Returns the extended private key.
   Pointer<Utf8> TWHDWalletGetExtendedPrivateKey(

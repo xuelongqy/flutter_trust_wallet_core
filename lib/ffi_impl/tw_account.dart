@@ -1,5 +1,4 @@
-part of trust_wallet_core;
-
+part of trust_wallet_core_ffi;
 /// Account for a particular coin within a wallet.
 abstract class TWAccount  {
   static Pointer<Void> TWAccountCreate(

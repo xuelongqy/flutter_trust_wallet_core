@@ -1,4 +1,4 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 abstract class TWBase58  {
   /// Encodes data as a Base58 string, including the checksum.

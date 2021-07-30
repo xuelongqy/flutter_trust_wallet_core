@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+
+import 'package:convert/convert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
 import 'package:logger/logger.dart';
@@ -65,23 +68,23 @@ class _MyAppState extends State<MyApp> {
                         itemCount: logs.length),
                   ),
                   ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         logs.clear();
 
-                        logger.log(Level.debug, "TWMnemonic.isValid('digital reward jar vehicle globe crunch quality cattle marble lawn rotate will)");
-                        logger.log(Level.debug, DartTWMnemonic.isValid('digital reward jar vehicle globe crunch quality cattle marble lawn rotate will'));
+                        HDWallet wallet  = HDWallet();
+                        logger.d("address ${wallet.getAddressForCoin(60)}");
+                        logger.d("mnemonic = ${wallet.mnemonic()}");
+                        print(wallet.mnemonic());
+                        String privateKeyhex = hex.encode(wallet.getKeyForCoin(60).data());
+                        // String privateKey0 = hex.encode(wallet.getDerivedKey(60,0,0,0).data());
+                        // String privateKey1 = hex.encode(wallet.getDerivedKey(60,0,0,1).data());
+                        logger.d("privateKeyhex = $privateKeyhex");
+                        // logger.d("privateKeyhex0 = $privateKey0");
+                        // logger.d("privateKeyhex1 = $privateKey1");
+                        logger.d("seed = ${hex.encode(wallet.seed())}");
+                        final a  = StoredKey.importPrivateKey(wallet.getKeyForCoin(60).data(), "", Uint8List.fromList("123aaa".codeUnits),60);
 
-                        logger.log(Level.debug, "TWMnemonic.isValidWord('glob')");
-                        logger.log(Level.debug, DartTWMnemonic.isValidWord('glob'));
-
-                        logger.log(Level.debug, "TWMnemonic.suggest('ja')");
-                        logger.log(Level.debug, DartTWMnemonic.suggest('ja'));
-
-                        logger.log(Level.debug, " TWHDWallet.create(128)");
-                        logger.log(Level.debug, DartTWHDWallet.create(128).mnemonic());
-
-                        logger.log(Level.debug, "DartTWHDWallet.createWithMnemonic('stove brush palm ridge stairs village van era drama column style assist',"");");
-                        logger.log(Level.debug, DartTWHDWallet.createWithMnemonic("stove brush palm ridge stairs village van era drama column style assist","")?.getAddressForCoin(60));
+                        logger.d("keystore = ${a.exportJson()}");
 
                         setState(() {});
                       },

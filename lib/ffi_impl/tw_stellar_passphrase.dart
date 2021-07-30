@@ -1,4 +1,4 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 class TWStellarPassphrase {
   static const int TWStellarPassphraseStellar = 0;   /* "Public Global Stellar Network ; September 2015" */

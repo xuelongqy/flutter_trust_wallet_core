@@ -1,11 +1,11 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 /// trust wallet core
 
 /// Coin type for Level 2 of BIP44.
 ///
 /// - SeeAlso: https://github.com/satoshilabs/slips/blob/master/slip-0044.md
-abstract class TWCoinType {
+ class TWCoinType {
   static const int TWCoinTypeAeternity = 457;
   static const int TWCoinTypeAion = 425;
   static const int TWCoinTypeBinance = 714;

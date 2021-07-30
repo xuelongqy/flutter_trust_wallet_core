@@ -1,4 +1,4 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 /// trust wallet core
 abstract class TWPrivateKey  {
@@ -22,7 +22,7 @@ abstract class TWPrivateKey  {
   static late final _TWPrivateKeyCreateWithData_ptr = _lookup<NativeFunction<_c_TWPrivateKeyCreateWithData>>('TWPrivateKeyCreateWithData');
   static late final _dart_TWPrivateKeyCreateWithData _TWPrivateKeyCreateWithData = _TWPrivateKeyCreateWithData_ptr.asFunction<_dart_TWPrivateKeyCreateWithData>();
 
-  Pointer<Void> TWPrivateKeyCreateCopy(
+  static Pointer<Void> TWPrivateKeyCreateCopy(
     Pointer<Void> key,
   ) {
     return _TWPrivateKeyCreateCopy(
@@ -30,10 +30,10 @@ abstract class TWPrivateKey  {
     );
   }
 
-  late final _TWPrivateKeyCreateCopy_ptr = _lookup<NativeFunction<_c_TWPrivateKeyCreateCopy>>('TWPrivateKeyCreateCopy');
-  late final _dart_TWPrivateKeyCreateCopy _TWPrivateKeyCreateCopy = _TWPrivateKeyCreateCopy_ptr.asFunction<_dart_TWPrivateKeyCreateCopy>();
+  static late final _TWPrivateKeyCreateCopy_ptr = _lookup<NativeFunction<_c_TWPrivateKeyCreateCopy>>('TWPrivateKeyCreateCopy');
+  static late final _dart_TWPrivateKeyCreateCopy _TWPrivateKeyCreateCopy = _TWPrivateKeyCreateCopy_ptr.asFunction<_dart_TWPrivateKeyCreateCopy>();
 
-  void TWPrivateKeyDelete(
+ static void TWPrivateKeyDelete(
     Pointer<Void> pk,
   ) {
     return _TWPrivateKeyDelete(
@@ -41,8 +41,8 @@ abstract class TWPrivateKey  {
     );
   }
 
-  late final _TWPrivateKeyDelete_ptr = _lookup<NativeFunction<_c_TWPrivateKeyDelete>>('TWPrivateKeyDelete');
-  late final _dart_TWPrivateKeyDelete _TWPrivateKeyDelete = _TWPrivateKeyDelete_ptr.asFunction<_dart_TWPrivateKeyDelete>();
+  static late final _TWPrivateKeyDelete_ptr = _lookup<NativeFunction<_c_TWPrivateKeyDelete>>('TWPrivateKeyDelete');
+  static late final _dart_TWPrivateKeyDelete _TWPrivateKeyDelete = _TWPrivateKeyDelete_ptr.asFunction<_dart_TWPrivateKeyDelete>();
 
   static int TWPrivateKeyIsValid(
     Pointer<Void> data,
@@ -57,7 +57,7 @@ abstract class TWPrivateKey  {
   static late final _TWPrivateKeyIsValid_ptr = _lookup<NativeFunction<_c_TWPrivateKeyIsValid>>('TWPrivateKeyIsValid');
   static late final _dart_TWPrivateKeyIsValid _TWPrivateKeyIsValid = _TWPrivateKeyIsValid_ptr.asFunction<_dart_TWPrivateKeyIsValid>();
 
-  Pointer<Void> TWPrivateKeyData(
+ static Pointer<Void> TWPrivateKeyData(
     Pointer<Void> pk,
   ) {
     return _TWPrivateKeyData(
@@ -65,8 +65,8 @@ abstract class TWPrivateKey  {
     );
   }
 
-  late final _TWPrivateKeyData_ptr = _lookup<NativeFunction<_c_TWPrivateKeyData>>('TWPrivateKeyData');
-  late final _dart_TWPrivateKeyData _TWPrivateKeyData = _TWPrivateKeyData_ptr.asFunction<_dart_TWPrivateKeyData>();
+ static late final _TWPrivateKeyData_ptr = _lookup<NativeFunction<_c_TWPrivateKeyData>>('TWPrivateKeyData');
+  static late final _dart_TWPrivateKeyData _TWPrivateKeyData = _TWPrivateKeyData_ptr.asFunction<_dart_TWPrivateKeyData>();
 
   Pointer<Void> TWPrivateKeyGetPublicKeySecp256k1(
     Pointer<Void> pk,

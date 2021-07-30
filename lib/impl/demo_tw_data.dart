@@ -1,4 +1,4 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 class DartTWData {
   late Pointer<Void> _twData;
@@ -9,7 +9,7 @@ class DartTWData {
         'TWDataCreateWithBytes')
         .asFunction();
 
-    this._twData = func(bytes.allocatePointer(), bytes.length);
+    this._twData = func(bytes.toPointerUint8(), bytes.length);
     return this;
   }
 

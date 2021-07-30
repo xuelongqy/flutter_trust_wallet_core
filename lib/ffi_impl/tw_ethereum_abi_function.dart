@@ -1,4 +1,4 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 /// trust wallet core
 abstract class TWEthereumAbiFunction {

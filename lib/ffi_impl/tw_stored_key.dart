@@ -1,4 +1,4 @@
-part of trust_wallet_core;
+part of trust_wallet_core_ffi;
 
 /// trust wallet core
 abstract class TWStoredKey  {
@@ -231,7 +231,7 @@ abstract class TWStoredKey  {
    _TWStoredKeyStore_ptr.asFunction<_dart_TWStoredKeyStore>();
 
    /// Decrypts the private key.
-   Pointer<Void> TWStoredKeyDecryptPrivateKey(
+   static Pointer<Void> TWStoredKeyDecryptPrivateKey(
        Pointer<Void> key,
        Pointer<Void> password,
        ) {
@@ -241,15 +241,15 @@ abstract class TWStoredKey  {
      );
    }
 
-   late final _TWStoredKeyDecryptPrivateKey_ptr =
+   static late final _TWStoredKeyDecryptPrivateKey_ptr =
    _lookup<NativeFunction<_c_TWStoredKeyDecryptPrivateKey>>(
        'TWStoredKeyDecryptPrivateKey');
-   late final _dart_TWStoredKeyDecryptPrivateKey _TWStoredKeyDecryptPrivateKey =
+   static late final _dart_TWStoredKeyDecryptPrivateKey _TWStoredKeyDecryptPrivateKey =
    _TWStoredKeyDecryptPrivateKey_ptr.asFunction<
        _dart_TWStoredKeyDecryptPrivateKey>();
 
    /// Decrypts the mnemonic phrase.
-   Pointer<Utf8> TWStoredKeyDecryptMnemonic(
+   static Pointer<Utf8> TWStoredKeyDecryptMnemonic(
        Pointer<Void> key,
        Pointer<Void> password,
        ) {
@@ -259,15 +259,15 @@ abstract class TWStoredKey  {
      );
    }
 
-   late final _TWStoredKeyDecryptMnemonic_ptr =
+   static late final _TWStoredKeyDecryptMnemonic_ptr =
    _lookup<NativeFunction<_c_TWStoredKeyDecryptMnemonic>>(
        'TWStoredKeyDecryptMnemonic');
-   late final _dart_TWStoredKeyDecryptMnemonic _TWStoredKeyDecryptMnemonic =
+   static late final _dart_TWStoredKeyDecryptMnemonic _TWStoredKeyDecryptMnemonic =
    _TWStoredKeyDecryptMnemonic_ptr.asFunction<
        _dart_TWStoredKeyDecryptMnemonic>();
 
 
-  Pointer<Void> TWStoredKeyPrivateKey(
+ static Pointer<Void> TWStoredKeyPrivateKey(
     Pointer<Void> key,
     int coin,
     Pointer<Void> password,
@@ -279,10 +279,10 @@ abstract class TWStoredKey  {
     );
   }
 
-  late final _TWStoredKeyPrivateKey_ptr = _lookup<NativeFunction<_c_TWStoredKeyPrivateKey>>('TWStoredKeyPrivateKey');
-  late final _dart_TWStoredKeyPrivateKey _TWStoredKeyPrivateKey = _TWStoredKeyPrivateKey_ptr.asFunction<_dart_TWStoredKeyPrivateKey>();
+   static late final _TWStoredKeyPrivateKey_ptr = _lookup<NativeFunction<_c_TWStoredKeyPrivateKey>>('TWStoredKeyPrivateKey');
+   static late final _dart_TWStoredKeyPrivateKey _TWStoredKeyPrivateKey = _TWStoredKeyPrivateKey_ptr.asFunction<_dart_TWStoredKeyPrivateKey>();
 
-  Pointer<Void> TWStoredKeyWallet(
+   static  Pointer<Void> TWStoredKeyWallet(
     Pointer<Void> key,
     Pointer<Void> password,
   ) {
@@ -292,11 +292,11 @@ abstract class TWStoredKey  {
     );
   }
 
-  late final _TWStoredKeyWallet_ptr = _lookup<NativeFunction<_c_TWStoredKeyWallet>>('TWStoredKeyWallet');
-  late final _dart_TWStoredKeyWallet _TWStoredKeyWallet = _TWStoredKeyWallet_ptr.asFunction<_dart_TWStoredKeyWallet>();
+   static late final _TWStoredKeyWallet_ptr = _lookup<NativeFunction<_c_TWStoredKeyWallet>>('TWStoredKeyWallet');
+   static late final _dart_TWStoredKeyWallet _TWStoredKeyWallet = _TWStoredKeyWallet_ptr.asFunction<_dart_TWStoredKeyWallet>();
 
    /// Exports the key as JSON
-   Pointer<Void> TWStoredKeyExportJSON(
+ static  Pointer<Void> TWStoredKeyExportJSON(
        Pointer<Void> key,
        ) {
      return _TWStoredKeyExportJSON(
@@ -304,10 +304,10 @@ abstract class TWStoredKey  {
      );
    }
 
-   late final _TWStoredKeyExportJSON_ptr =
+   static  late final _TWStoredKeyExportJSON_ptr =
    _lookup<NativeFunction<_c_TWStoredKeyExportJSON>>(
        'TWStoredKeyExportJSON');
-   late final _dart_TWStoredKeyExportJSON _TWStoredKeyExportJSON =
+   static  late final _dart_TWStoredKeyExportJSON _TWStoredKeyExportJSON =
    _TWStoredKeyExportJSON_ptr.asFunction<_dart_TWStoredKeyExportJSON>();
 
    /// Fills in empty and invalid addresses.
