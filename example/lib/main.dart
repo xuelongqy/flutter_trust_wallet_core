@@ -22,6 +22,13 @@ class MyConsoleOutput extends LogOutput {
   }
 }
 
+class MylogFilter extends LogFilter{
+  @override
+  bool shouldLog(LogEvent event) {
+    return true;
+  }
+}
+
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -34,6 +41,7 @@ void showLog(String log) {
 class _MyAppState extends State<MyApp> {
   var logger = Logger(
     output: MyConsoleOutput(showLog),
+    filter: MylogFilter(),
     printer: PrettyPrinter(
       methodCount: 0,
       errorMethodCount: 2,
@@ -72,19 +80,19 @@ class _MyAppState extends State<MyApp> {
                         logs.clear();
 
                         HDWallet wallet  = HDWallet();
-                        logger.d("address ${wallet.getAddressForCoin(60)}");
-                        logger.d("mnemonic = ${wallet.mnemonic()}");
+                        logger.i("address ${wallet.getAddressForCoin(60)}");
+                        logger.i("mnemonic = ${wallet.mnemonic()}");
                         print(wallet.mnemonic());
                         String privateKeyhex = hex.encode(wallet.getKeyForCoin(60).data());
                         // String privateKey0 = hex.encode(wallet.getDerivedKey(60,0,0,0).data());
                         // String privateKey1 = hex.encode(wallet.getDerivedKey(60,0,0,1).data());
-                        logger.d("privateKeyhex = $privateKeyhex");
+                        logger.i("privateKeyhex = $privateKeyhex");
                         // logger.d("privateKeyhex0 = $privateKey0");
                         // logger.d("privateKeyhex1 = $privateKey1");
-                        logger.d("seed = ${hex.encode(wallet.seed())}");
+                        logger.i("seed = ${hex.encode(wallet.seed())}");
                         final a  = StoredKey.importPrivateKey(wallet.getKeyForCoin(60).data(), "", Uint8List.fromList("123aaa".codeUnits),60);
 
-                        logger.d("keystore = ${a.exportJson()}");
+                        logger.i("keystore = ${a.exportJson()}");
 
                         setState(() {});
                       },
