@@ -93,9 +93,6 @@ class _MyAppState extends State<MyApp> {
                         final a  = StoredKey.importPrivateKey(wallet.getKeyForCoin(60).data(), "", Uint8List.fromList("123aaa".codeUnits),60);
                         logger.d("keystore a = ${a.exportJson()}");
 
-                        final b = StoredKey.create("laa",  Uint8List.fromList("123aaa".codeUnits));
-                        logger.d("keystore b = ${b.exportJson()}");
-
                         setState(() {});
                       },
                       child: Text("gen")),
