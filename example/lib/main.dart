@@ -71,7 +71,7 @@ class _MyAppState extends State<MyApp> {
                   Expanded(
                     child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return Text(logs[index]);
+                          return Text(logs[index],style: TextStyle(fontSize: 12),);
                         },
                         itemCount: logs.length),
                   ),
@@ -80,19 +80,21 @@ class _MyAppState extends State<MyApp> {
                         logs.clear();
 
                         HDWallet wallet  = HDWallet();
-                        logger.i("address ${wallet.getAddressForCoin(60)}");
-                        logger.i("mnemonic = ${wallet.mnemonic()}");
+                        logger.d("address ${wallet.getAddressForCoin(60)}");
+                        logger.d("mnemonic = ${wallet.mnemonic()}");
                         print(wallet.mnemonic());
                         String privateKeyhex = hex.encode(wallet.getKeyForCoin(60).data());
                         // String privateKey0 = hex.encode(wallet.getDerivedKey(60,0,0,0).data());
                         // String privateKey1 = hex.encode(wallet.getDerivedKey(60,0,0,1).data());
-                        logger.i("privateKeyhex = $privateKeyhex");
+                        logger.d("privateKeyhex = $privateKeyhex");
                         // logger.d("privateKeyhex0 = $privateKey0");
                         // logger.d("privateKeyhex1 = $privateKey1");
-                        logger.i("seed = ${hex.encode(wallet.seed())}");
+                        logger.d("seed = ${hex.encode(wallet.seed())}");
                         final a  = StoredKey.importPrivateKey(wallet.getKeyForCoin(60).data(), "", Uint8List.fromList("123aaa".codeUnits),60);
+                        logger.d("keystore a = ${a.exportJson()}");
 
-                        logger.i("keystore = ${a.exportJson()}");
+                        final b = StoredKey.create("laa",  Uint8List.fromList("123aaa".codeUnits));
+                        logger.d("keystore b = ${b.exportJson()}");
 
                         setState(() {});
                       },
