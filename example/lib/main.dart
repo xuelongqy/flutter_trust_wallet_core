@@ -44,9 +44,8 @@ class _MyAppState extends State<MyApp> {
     filter: MylogFilter(),
     printer: PrettyPrinter(
       methodCount: 0,
-      errorMethodCount: 2,
-      lineLength: 20,
-      colors: true,
+      errorMethodCount: 0,
+      lineLength: 30,
       printEmojis: true,
       printTime: false,
     ),
