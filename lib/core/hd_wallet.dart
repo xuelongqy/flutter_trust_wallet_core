@@ -37,6 +37,8 @@ class HDWallet {
     return PrivateKey._(pointer);
   }
 
+
+
   void delete() {
     TWHDWalletImpl.delete(_nativehandle);
   }

@@ -11,7 +11,10 @@ import 'extensions.dart';
 part 'core/mnemonic.dart';
 part 'core/hd_wallet.dart';
 part 'core/private_key.dart';
+part 'core/public_key.dart';
 part 'core/stored_key.dart';
+part 'core/any_address.dart';
+
 
 
 

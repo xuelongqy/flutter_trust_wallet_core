@@ -1,7 +1,7 @@
 part of trust_wallet_core_ffi;
 
 /// trust wallet core
-abstract class TWPrivateKey  {
+abstract class TWPrivateKey {
   static const int TWPrivateKeySize = 32;
 
   static Pointer<Void> TWPrivateKeyCreate() {
@@ -33,7 +33,7 @@ abstract class TWPrivateKey  {
   static late final _TWPrivateKeyCreateCopy_ptr = _lookup<NativeFunction<_c_TWPrivateKeyCreateCopy>>('TWPrivateKeyCreateCopy');
   static late final _dart_TWPrivateKeyCreateCopy _TWPrivateKeyCreateCopy = _TWPrivateKeyCreateCopy_ptr.asFunction<_dart_TWPrivateKeyCreateCopy>();
 
- static void TWPrivateKeyDelete(
+  static void TWPrivateKeyDelete(
     Pointer<Void> pk,
   ) {
     return _TWPrivateKeyDelete(
@@ -57,7 +57,7 @@ abstract class TWPrivateKey  {
   static late final _TWPrivateKeyIsValid_ptr = _lookup<NativeFunction<_c_TWPrivateKeyIsValid>>('TWPrivateKeyIsValid');
   static late final _dart_TWPrivateKeyIsValid _TWPrivateKeyIsValid = _TWPrivateKeyIsValid_ptr.asFunction<_dart_TWPrivateKeyIsValid>();
 
- static Pointer<Void> TWPrivateKeyData(
+  static Pointer<Void> TWPrivateKeyData(
     Pointer<Void> pk,
   ) {
     return _TWPrivateKeyData(
@@ -65,10 +65,10 @@ abstract class TWPrivateKey  {
     );
   }
 
- static late final _TWPrivateKeyData_ptr = _lookup<NativeFunction<_c_TWPrivateKeyData>>('TWPrivateKeyData');
+  static late final _TWPrivateKeyData_ptr = _lookup<NativeFunction<_c_TWPrivateKeyData>>('TWPrivateKeyData');
   static late final _dart_TWPrivateKeyData _TWPrivateKeyData = _TWPrivateKeyData_ptr.asFunction<_dart_TWPrivateKeyData>();
 
-  Pointer<Void> TWPrivateKeyGetPublicKeySecp256k1(
+  static Pointer<Void> TWPrivateKeyGetPublicKeySecp256k1(
     Pointer<Void> pk,
     int compressed,
   ) {
@@ -78,8 +78,8 @@ abstract class TWPrivateKey  {
     );
   }
 
-  late final _TWPrivateKeyGetPublicKeySecp256k1_ptr = _lookup<NativeFunction<_c_TWPrivateKeyGetPublicKeySecp256k1>>('TWPrivateKeyGetPublicKeySecp256k1');
-  late final _dart_TWPrivateKeyGetPublicKeySecp256k1 _TWPrivateKeyGetPublicKeySecp256k1 =
+  static late final _TWPrivateKeyGetPublicKeySecp256k1_ptr = _lookup<NativeFunction<_c_TWPrivateKeyGetPublicKeySecp256k1>>('TWPrivateKeyGetPublicKeySecp256k1');
+  static late final _dart_TWPrivateKeyGetPublicKeySecp256k1 _TWPrivateKeyGetPublicKeySecp256k1 =
       _TWPrivateKeyGetPublicKeySecp256k1_ptr.asFunction<_dart_TWPrivateKeyGetPublicKeySecp256k1>();
 
   /// Returns the public key associated with this private key.

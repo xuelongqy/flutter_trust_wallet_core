@@ -107,7 +107,10 @@ part 'dart_impl/tw_string_impl.dart';
 part 'dart_impl/tw_mnemonic_impl.dart';
 part 'dart_impl/tw_hd_wallet_impl.dart';
 part 'dart_impl/tw_private_key_impl.dart';
+part 'dart_impl/tw_public_key_impl.dart';
 part 'dart_impl/tw_stored_key_impl.dart';
+part 'dart_impl/tw_any_address.dart';
+part 'dart_impl/tw_hash.dart';
 
 
 

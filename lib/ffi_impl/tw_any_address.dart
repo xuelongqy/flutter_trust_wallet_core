@@ -30,7 +30,7 @@ abstract class TWAnyAddress {
   static late final _dart_TWAnyAddressIsValid _TWAnyAddressIsValid = _TWAnyAddressIsValid_ptr.asFunction<_dart_TWAnyAddressIsValid>();
 
   /// Creates an address from a string representaion.
-  Pointer<Void> TWAnyAddressCreateWithString(
+  static Pointer<Void> TWAnyAddressCreateWithString(
     Pointer<Utf8> string,
     int coin,
   ) {
@@ -40,11 +40,11 @@ abstract class TWAnyAddress {
     );
   }
 
-  late final _TWAnyAddressCreateWithString_ptr = _lookup<NativeFunction<_c_TWAnyAddressCreateWithString>>('TWAnyAddressCreateWithString');
-  late final _dart_TWAnyAddressCreateWithString _TWAnyAddressCreateWithString = _TWAnyAddressCreateWithString_ptr.asFunction<_dart_TWAnyAddressCreateWithString>();
+  static late final _TWAnyAddressCreateWithString_ptr = _lookup<NativeFunction<_c_TWAnyAddressCreateWithString>>('TWAnyAddressCreateWithString');
+  static late final _dart_TWAnyAddressCreateWithString _TWAnyAddressCreateWithString = _TWAnyAddressCreateWithString_ptr.asFunction<_dart_TWAnyAddressCreateWithString>();
 
   /// Creates an address from a public key.
-  Pointer<Void> TWAnyAddressCreateWithPublicKey(
+  static Pointer<Void> TWAnyAddressCreateWithPublicKey(
     Pointer<Void> publicKey,
     int coin,
   ) {
@@ -54,10 +54,10 @@ abstract class TWAnyAddress {
     );
   }
 
-  late final _TWAnyAddressCreateWithPublicKey_ptr = _lookup<NativeFunction<_c_TWAnyAddressCreateWithPublicKey>>('TWAnyAddressCreateWithPublicKey');
-  late final _dart_TWAnyAddressCreateWithPublicKey _TWAnyAddressCreateWithPublicKey = _TWAnyAddressCreateWithPublicKey_ptr.asFunction<_dart_TWAnyAddressCreateWithPublicKey>();
+  static late final _TWAnyAddressCreateWithPublicKey_ptr = _lookup<NativeFunction<_c_TWAnyAddressCreateWithPublicKey>>('TWAnyAddressCreateWithPublicKey');
+  static late final _dart_TWAnyAddressCreateWithPublicKey _TWAnyAddressCreateWithPublicKey = _TWAnyAddressCreateWithPublicKey_ptr.asFunction<_dart_TWAnyAddressCreateWithPublicKey>();
 
-  void TWAnyAddressDelete(
+  static void TWAnyAddressDelete(
     Pointer<Void> address,
   ) {
     return _TWAnyAddressDelete(
@@ -65,8 +65,8 @@ abstract class TWAnyAddress {
     );
   }
 
-  late final _TWAnyAddressDelete_ptr = _lookup<NativeFunction<_c_TWAnyAddressDelete>>('TWAnyAddressDelete');
-  late final _dart_TWAnyAddressDelete _TWAnyAddressDelete = _TWAnyAddressDelete_ptr.asFunction<_dart_TWAnyAddressDelete>();
+  static late final _TWAnyAddressDelete_ptr = _lookup<NativeFunction<_c_TWAnyAddressDelete>>('TWAnyAddressDelete');
+  static late final _dart_TWAnyAddressDelete _TWAnyAddressDelete = _TWAnyAddressDelete_ptr.asFunction<_dart_TWAnyAddressDelete>();
 
   /// Returns the address string representation.
   Pointer<Utf8> TWAnyAddressDescription(
@@ -81,7 +81,7 @@ abstract class TWAnyAddress {
   late final _dart_TWAnyAddressDescription _TWAnyAddressDescription = _TWAnyAddressDescription_ptr.asFunction<_dart_TWAnyAddressDescription>();
 
   /// Returns coin type of address.
-  int TWAnyAddressCoin(
+  static int TWAnyAddressCoin(
     Pointer<Void> address,
   ) {
     return _TWAnyAddressCoin(
@@ -89,11 +89,11 @@ abstract class TWAnyAddress {
     );
   }
 
-  late final _TWAnyAddressCoin_ptr = _lookup<NativeFunction<_c_TWAnyAddressCoin>>('TWAnyAddressCoin');
-  late final _dart_TWAnyAddressCoin _TWAnyAddressCoin = _TWAnyAddressCoin_ptr.asFunction<_dart_TWAnyAddressCoin>();
+  static late final _TWAnyAddressCoin_ptr = _lookup<NativeFunction<_c_TWAnyAddressCoin>>('TWAnyAddressCoin');
+  static late final _dart_TWAnyAddressCoin _TWAnyAddressCoin = _TWAnyAddressCoin_ptr.asFunction<_dart_TWAnyAddressCoin>();
 
   /// Returns underlaying data (public key or key hash)
-  Pointer<Void> TWAnyAddressData(
+  static Pointer<Void> TWAnyAddressData(
     Pointer<Void> address,
   ) {
     return _TWAnyAddressData(
@@ -101,8 +101,8 @@ abstract class TWAnyAddress {
     );
   }
 
-  late final _TWAnyAddressData_ptr = _lookup<NativeFunction<_c_TWAnyAddressData>>('TWAnyAddressData');
-  late final _dart_TWAnyAddressData _TWAnyAddressData = _TWAnyAddressData_ptr.asFunction<_dart_TWAnyAddressData>();
+  static late final _TWAnyAddressData_ptr = _lookup<NativeFunction<_c_TWAnyAddressData>>('TWAnyAddressData');
+  static late final _dart_TWAnyAddressData _TWAnyAddressData = _TWAnyAddressData_ptr.asFunction<_dart_TWAnyAddressData>();
 }
 
 typedef _c_TWAnyAddressEqual = Int32 Function(

@@ -25,4 +25,8 @@ class TWPrivateKeyImpl extends TWPrivateKey {
   static void delete(Pointer<Void> pk) {
     TWPrivateKey.TWPrivateKeyDelete(pk);
   }
+
+  static Pointer<Void> getPublicKeySecp256k1(Pointer<Void> pk, bool compressed) {
+    return TWPrivateKey.TWPrivateKeyGetPublicKeySecp256k1(pk, compressed ? 1 : 0);
+  }
 }

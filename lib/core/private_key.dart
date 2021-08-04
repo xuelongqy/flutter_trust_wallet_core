@@ -30,4 +30,9 @@ class PrivateKey {
     final data = TWPrivateKeyImpl.data(_nativehandle);
     return TWData.TWDataBytes(data).asTypedList(TWData.TWDataSize(data));
   }
+
+  PublicKey getPublicKeySecp256k1(bool compressed) {
+    final data = TWPrivateKeyImpl.getPublicKeySecp256k1(_nativehandle, compressed);
+    return PublicKey._(data);
+  }
 }

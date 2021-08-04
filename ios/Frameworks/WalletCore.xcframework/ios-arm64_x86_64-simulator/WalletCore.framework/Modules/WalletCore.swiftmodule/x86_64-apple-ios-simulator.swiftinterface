@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name WalletCore
 import Foundation
 import Swift
@@ -1089,6 +1089,7 @@ extension BitcoinAddress : Swift.Equatable {
 }
 @_hasMissingDesignatedInitializers final public class BitcoinScript {
   public static func == (lhs: WalletCore.BitcoinScript, rhs: WalletCore.BitcoinScript) -> Swift.Bool
+  public static func buildPayToPublicKey(pubkey: Foundation.Data) -> WalletCore.BitcoinScript
   public static func buildPayToPublicKeyHash(hash: Foundation.Data) -> WalletCore.BitcoinScript
   public static func buildPayToScriptHash(scriptHash: Foundation.Data) -> WalletCore.BitcoinScript
   public static func buildPayToWitnessPubkeyHash(hash: Foundation.Data) -> WalletCore.BitcoinScript
@@ -2617,7 +2618,6 @@ public enum HDVersion : Swift.UInt32, Swift.CaseIterable {
   }
 }
 @_hasMissingDesignatedInitializers final public class HDWallet {
-  public static func isValid(mnemonic: Swift.String) -> Swift.Bool
   public static func getPublicKeyFromExtended(extended: Swift.String, coin: WalletCore.CoinType, derivationPath: Swift.String) -> WalletCore.PublicKey?
   final public var seed: Foundation.Data {
     get
@@ -2625,9 +2625,12 @@ public enum HDVersion : Swift.UInt32, Swift.CaseIterable {
   final public var mnemonic: Swift.String {
     get
   }
-  public init(strength: Swift.Int32, passphrase: Swift.String)
-  public init(mnemonic: Swift.String, passphrase: Swift.String)
-  public init(data: Foundation.Data, passphrase: Swift.String)
+  final public var entropy: Foundation.Data {
+    get
+  }
+  public init?(strength: Swift.Int32, passphrase: Swift.String)
+  public init?(mnemonic: Swift.String, passphrase: Swift.String)
+  public init?(entropy: Foundation.Data, passphrase: Swift.String)
   @objc deinit
   final public func getMasterKey(curve: WalletCore.Curve) -> WalletCore.PrivateKey
   final public func getKeyForCoin(coin: WalletCore.CoinType) -> WalletCore.PrivateKey

@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:convert/convert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
+import 'package:flutter_trust_wallet_core/trust_wallet_core_ffi.dart';
 import 'package:logger/logger.dart';
 
 List<String> logs = [];
@@ -91,6 +92,13 @@ class _MyAppState extends State<MyApp> {
                         logger.d("seed = ${hex.encode(wallet.seed())}");
                         final a  = StoredKey.importPrivateKey(wallet.getKeyForCoin(60).data(), "", Uint8List.fromList("123aaa".codeUnits),60);
                         logger.d("keystore a = ${a.exportJson()}");
+                        final ppp = PrivateKey.createWithData(wallet.getKeyForCoin(60).data());
+
+                        final publicKey = ppp.getPublicKeySecp256k1(false);
+                        final anyAddress= AnyAddress.createWithPublicKey(publicKey, 60);
+
+                        logger.d("address = ${hex.encode(anyAddress.data())}");
+
 
                         setState(() {});
                       },
