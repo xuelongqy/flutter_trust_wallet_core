@@ -20,6 +20,10 @@ class AnyAddress {
 
 
   Uint8List data() {
-    return TWAnyAddressImpl.addressData(_pointer);
+    return TWAnyAddressImpl.data(_pointer);
+  }
+
+  String description() {
+    return TWAnyAddressImpl.description(_pointer);
   }
 }

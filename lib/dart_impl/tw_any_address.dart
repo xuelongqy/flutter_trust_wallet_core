@@ -20,10 +20,15 @@ class TWAnyAddressImpl extends TWAnyAddress {
     return result;
   }
 
-  static Uint8List addressData(Pointer<Void> anyAddress) {
+  static Uint8List data(Pointer<Void> anyAddress) {
     final addressData = TWAnyAddress.TWAnyAddressData(anyAddress);
 
     final result = TWData.TWDataBytes(addressData).asTypedList(TWData.TWDataSize(addressData));
     return result;
+  }
+
+  static String description(Pointer<Void> anyAddress) {
+    final twString = TWAnyAddress.TWAnyAddressDescription(anyAddress);
+    return TWStringImpl.toDartString(twString);
   }
 }

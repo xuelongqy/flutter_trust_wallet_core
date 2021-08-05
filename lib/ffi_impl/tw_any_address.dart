@@ -68,8 +68,8 @@ abstract class TWAnyAddress {
   static late final _TWAnyAddressDelete_ptr = _lookup<NativeFunction<_c_TWAnyAddressDelete>>('TWAnyAddressDelete');
   static late final _dart_TWAnyAddressDelete _TWAnyAddressDelete = _TWAnyAddressDelete_ptr.asFunction<_dart_TWAnyAddressDelete>();
 
-  /// Returns the address string representation.
-  Pointer<Utf8> TWAnyAddressDescription(
+  /// Returns the address string representation. eip55
+  static Pointer<Utf8> TWAnyAddressDescription(
     Pointer<Void> address,
   ) {
     return _TWAnyAddressDescription(
@@ -77,8 +77,8 @@ abstract class TWAnyAddress {
     );
   }
 
-  late final _TWAnyAddressDescription_ptr = _lookup<NativeFunction<_c_TWAnyAddressDescription>>('TWAnyAddressDescription');
-  late final _dart_TWAnyAddressDescription _TWAnyAddressDescription = _TWAnyAddressDescription_ptr.asFunction<_dart_TWAnyAddressDescription>();
+  static late final _TWAnyAddressDescription_ptr = _lookup<NativeFunction<_c_TWAnyAddressDescription>>('TWAnyAddressDescription');
+  static late final _dart_TWAnyAddressDescription _TWAnyAddressDescription = _TWAnyAddressDescription_ptr.asFunction<_dart_TWAnyAddressDescription>();
 
   /// Returns coin type of address.
   static int TWAnyAddressCoin(

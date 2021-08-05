@@ -92,12 +92,16 @@ class _MyAppState extends State<MyApp> {
                         logger.d("seed = ${hex.encode(wallet.seed())}");
                         final a  = StoredKey.importPrivateKey(wallet.getKeyForCoin(60).data(), "", Uint8List.fromList("123aaa".codeUnits),60);
                         logger.d("keystore a = ${a.exportJson()}");
-                        final ppp = PrivateKey.createWithData(wallet.getKeyForCoin(60).data());
 
-                        final publicKey = ppp.getPublicKeySecp256k1(false);
+                        final publicKey = wallet.getKeyForCoin(60).getPublicKeySecp256k1(false);
                         final anyAddress= AnyAddress.createWithPublicKey(publicKey, 60);
 
                         logger.d("address = ${hex.encode(anyAddress.data())}");
+                        logger.d("address des= ${anyAddress.description()}");
+
+                        logger.d("1 = ${AnyAddress.isValid("0xfaC5482fffe86d33c3b8ADB24F839F5e60aF99d4", DartTWCoinType.TWCoinTypeEthereum)}");
+                        logger.d("2 = ${AnyAddress.isValid("0xfaC5482fffe86d33c3b8ADB24F839F5e60af99d4", DartTWCoinType.TWCoinTypeEthereum)}");
+                        logger.d("3 = ${AnyAddress.isValid("faC5482fffe86d33c3b8ADB24F839F5e60af99d4", DartTWCoinType.TWCoinTypeEthereum)}");
 
 
                         setState(() {});
