@@ -109,8 +109,9 @@ part 'dart_impl/tw_hd_wallet_impl.dart';
 part 'dart_impl/tw_private_key_impl.dart';
 part 'dart_impl/tw_public_key_impl.dart';
 part 'dart_impl/tw_stored_key_impl.dart';
-part 'dart_impl/tw_any_address.dart';
-part 'dart_impl/tw_hash.dart';
+part 'dart_impl/tw_any_address_impl.dart';
+part 'dart_impl/tw_hash_impl.dart';
+part 'dart_impl/tw_base58_impl.dart';
 
 
 
