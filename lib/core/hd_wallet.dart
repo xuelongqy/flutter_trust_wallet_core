@@ -32,12 +32,15 @@ class HDWallet {
     return PrivateKey._(pointer);
   }
 
+  PrivateKey getKey(int coinType, String derivationPath) {
+    final pointer = TWHDWalletImpl.getKey(_nativehandle, coinType, derivationPath);
+    return PrivateKey._(pointer);
+  }
+
   PrivateKey getMaterKey(int curve) {
     final pointer = TWHDWalletImpl.getMasterKey(_nativehandle, curve);
     return PrivateKey._(pointer);
   }
-
-
 
   void delete() {
     TWHDWalletImpl.delete(_nativehandle);

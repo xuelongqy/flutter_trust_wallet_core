@@ -52,12 +52,14 @@ class TWHDWalletImpl extends TWHDWallet {
 
   static Pointer<Void> getKeyForCoin(Pointer<Void> wallet, int coin) {
     final Pointer<Void> privateKey = TWHDWallet.TWHDWalletGetKeyForCoin(wallet, coin);
-    // final data = TWPrivateKey.TWPrivateKeyData(privateKey);
-    //
-    // final list = TWData.TWDataBytes(data);
-    //
-    // final ss = hex.encode(list.asTypedList(TWData.TWDataSize(data)));
-    // print(ss);
+    return privateKey;
+  }
+
+  static Pointer<Void> getKey(Pointer<Void> wallet, int coin, String derivationPath) {
+    final _derivationPath = TWStringImpl.toTWString(derivationPath);
+
+    final Pointer<Void> privateKey = TWHDWallet.TWHDWalletGetKey(wallet, coin, _derivationPath);
+    TWStringImpl.delete(_derivationPath);
     return privateKey;
   }
 

@@ -139,7 +139,7 @@ abstract class TWHDWallet  {
   static late final _dart_TWHDWalletGetAddressForCoin _TWHDWalletGetAddressForCoin = _TWHDWalletGetAddressForCoin_ptr.asFunction<_dart_TWHDWalletGetAddressForCoin>();
 
   /// Generates the private key for the specified derivation path.  Returned object needs to be deleted.
-  Pointer<Void> TWHDWalletGetKey(
+  static Pointer<Void> TWHDWalletGetKey(
     Pointer<Void> wallet,
     int coin,
     Pointer<Utf8> derivationPath,
@@ -151,8 +151,8 @@ abstract class TWHDWallet  {
     );
   }
 
-  late final _TWHDWalletGetKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetKey>>('TWHDWalletGetKey');
-  late final _dart_TWHDWalletGetKey _TWHDWalletGetKey = _TWHDWalletGetKey_ptr.asFunction<_dart_TWHDWalletGetKey>();
+  static late final _TWHDWalletGetKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetKey>>('TWHDWalletGetKey');
+  static late final _dart_TWHDWalletGetKey _TWHDWalletGetKey = _TWHDWalletGetKey_ptr.asFunction<_dart_TWHDWalletGetKey>();
 
   /// Shortcut method to generate private key with the specified account/change/address (bip44 standard). Returned object needs to be deleted.
   ///
