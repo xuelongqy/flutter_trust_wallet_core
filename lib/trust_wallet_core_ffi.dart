@@ -84,24 +84,6 @@ part 'ffi_impl/tw_stored_key.dart';
 
 part 'ffi_impl/tw_string.dart';
 
-part 'impl/demo_tw_blockchain.dart';
-
-part 'impl/demo_tw_coin_type.dart';
-
-part 'impl/demo_tw_curve.dart';
-
-part 'impl/demo_tw_data.dart';
-
-part 'impl/demo_tw_hd_version.dart';
-
-part 'impl/demo_tw_hd_wallet.dart';
-
-part 'impl/demo_tw_mnemonic.dart';
-
-part 'impl/demo_tw_purpose.dart';
-
-part 'impl/demo_tw_string.dart';
-
 
 part 'dart_impl/tw_string_impl.dart';
 part 'dart_impl/tw_mnemonic_impl.dart';
