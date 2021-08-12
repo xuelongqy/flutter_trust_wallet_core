@@ -112,6 +112,7 @@ part 'dart_impl/tw_stored_key_impl.dart';
 part 'dart_impl/tw_any_address_impl.dart';
 part 'dart_impl/tw_hash_impl.dart';
 part 'dart_impl/tw_base58_impl.dart';
+part 'dart_impl/tw_bitcoin_address.dart';
 
 
 
