@@ -18,6 +18,7 @@ part 'core/base58.dart';
 part 'core/hash.dart';
 part 'core/bitcoin_address.dart';
 part 'core/any_signer.dart';
+part 'core/bitcoin_script.dart';
 
 
 

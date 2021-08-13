@@ -96,6 +96,7 @@ part 'dart_impl/tw_hash_impl.dart';
 part 'dart_impl/tw_base58_impl.dart';
 part 'dart_impl/tw_bitcoin_address.dart';
 part 'dart_impl/tw_any_signer_impl.dart';
+part 'dart_impl/tw_bitcoin_script_impl.dart';
 
 
 
