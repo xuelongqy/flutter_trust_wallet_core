@@ -1,7 +1,7 @@
 part of flutter_trust_wallet_core;
 
 class BitcoinScript {
-  static late Pointer<Void> _pointer;
+   late Pointer<Void> _pointer;
 
   BitcoinScript._(Pointer<Void> pointer) {
     _pointer = pointer;
@@ -86,27 +86,27 @@ class BitcoinScript {
      TWBitcoinScriptImpl.delete(_pointer);
   }
 
-  static Uint8List? matchPayToPubkey() {
+   Uint8List? matchPayToPubkey() {
     return TWBitcoinScriptImpl.matchPayToPubkey(_pointer);
   }
 
-  static Uint8List? matchPayToPubkeyHash() {
+   Uint8List? matchPayToPubkeyHash() {
     return TWBitcoinScriptImpl.matchPayToPubkeyHash(_pointer);
   }
 
-  static Uint8List? matchPayToScriptHash() {
+   Uint8List? matchPayToScriptHash() {
     return TWBitcoinScriptImpl.matchPayToScriptHash(_pointer);
   }
 
-  static Uint8List? matchPayToWitnessPublicKeyHash() {
+   Uint8List? matchPayToWitnessPublicKeyHash() {
     return TWBitcoinScriptImpl.matchPayToWitnessPublicKeyHash(_pointer);
   }
 
-  static Uint8List? matchPayToWitnessScriptHash() {
+   Uint8List? matchPayToWitnessScriptHash() {
     return TWBitcoinScriptImpl.matchPayToWitnessScriptHash(_pointer);
   }
 
-  static Uint8List encode() {
+   Uint8List encode() {
     return TWBitcoinScriptImpl.encode(_pointer);
   }
 
