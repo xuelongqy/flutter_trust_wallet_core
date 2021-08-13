@@ -4,9 +4,9 @@ part of trust_wallet_core_ffi;
 class TWBitCoinAddressImpl extends TWBitcoinAddress {
 
   static Pointer<Void> create({String string = ""}) {
-    final _stringString = TWStringImpl.toTWString(string);
-    final address = TWBitcoinAddress.TWBitcoinAddressCreateWithString(_stringString);
-    TWStringImpl.delete(_stringString);
+    final _string = TWStringImpl.toTWString(string);
+    final address = TWBitcoinAddress.TWBitcoinAddressCreateWithString(_string);
+    TWStringImpl.delete(_string);
     return address;
   }
 
@@ -14,6 +14,11 @@ class TWBitCoinAddressImpl extends TWBitcoinAddress {
     final _data = TWData.TWDataCreateWithBytes(bytes.toPointerUint8(), bytes.length);
     final address = TWBitcoinAddress.TWBitcoinAddressCreateWithData(_data);
     TWData.TWDataDelete(_data);
+    return address;
+  }
+
+  static Pointer<Void> createWithPublicKey(Pointer<Void> publicKey,int prefix ) {
+    final address = TWBitcoinAddress.TWBitcoinAddressCreateWithPublicKey(publicKey, prefix);
     return address;
   }
 
@@ -30,19 +35,27 @@ class TWBitCoinAddressImpl extends TWBitcoinAddress {
   }
 
   static bool isValidString(String string) {
-    final _stringString = TWStringImpl.toTWString(string);
-    final result = TWBitcoinAddress.TWBitcoinAddressIsValidString(_stringString) >= 1;
-    TWStringImpl.delete(_stringString);
+    final _string = TWStringImpl.toTWString(string);
+    final result = TWBitcoinAddress.TWBitcoinAddressIsValidString(_string) >= 1;
+    TWStringImpl.delete(_string);
     return result;
   }
 
-  // String description(Pointer<Void> address){
-  //    return TWStringImpl.toDartString(TWHDWallet.TWHDWalletMnemonic(wallet));
-  // }
-  //
-  // Uint8List keyhash(Uint8List data){
-  //    final data = TWBitcoinAddress.TW;
-  //   return TWData.TWDataBytes(data).asTypedList(TWData.TWDataSize(data));
-  // }
+  static void delete(Pointer<Void> address){
+    return TWBitcoinAddress.TWBitcoinAddressDelete(address);
+  }
+
+  static String description(Pointer<Void> address){
+     return TWStringImpl.toDartString(TWBitcoinAddress.TWBitcoinAddressDescription(address));
+  }
+
+  static Uint8List keyhash(Pointer<Void> address){
+     final _data = TWBitcoinAddress.TWBitcoinAddressKeyhash(address);
+    return TWData.TWDataBytes(_data).asTypedList(TWData.TWDataSize(_data));
+  }
+
+  static int prefix(Pointer<Void> address){
+    return TWBitcoinAddress.TWBitcoinAddressPrefix(address);
+  }
 
 }

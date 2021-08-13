@@ -16,6 +16,7 @@ part 'core/stored_key.dart';
 part 'core/any_address.dart';
 part 'core/base58.dart';
 part 'core/hash.dart';
+part 'core/bitcoin_address.dart';
 
 
 
