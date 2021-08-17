@@ -1,6 +1,9 @@
 part of flutter_trust_wallet_core;
 
 class PrivateKey {
+
+  static const int PrivateKeySize = 32;
+
   late Pointer<Void> _nativehandle;
 
   static bool isValid(Uint8List data, int curve) {

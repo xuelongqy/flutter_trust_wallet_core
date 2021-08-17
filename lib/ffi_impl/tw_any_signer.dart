@@ -3,7 +3,7 @@ part of trust_wallet_core_ffi;
 /// trust wallet core
 abstract class TWAnySigner  {
   /// Signs a transaction.
-  Pointer<Void> TWAnySignerSign(
+  static Pointer<Void> TWAnySignerSign(
     Pointer<Void> input,
     int coin,
   ) {
@@ -13,11 +13,11 @@ abstract class TWAnySigner  {
     );
   }
 
-  late final _TWAnySignerSign_ptr = _lookup<NativeFunction<_c_TWAnySignerSign>>('TWAnySignerSign');
-  late final _dart_TWAnySignerSign _TWAnySignerSign = _TWAnySignerSign_ptr.asFunction<_dart_TWAnySignerSign>();
+  static late final _TWAnySignerSign_ptr = _lookup<NativeFunction<_c_TWAnySignerSign>>('TWAnySignerSign');
+  static late final _dart_TWAnySignerSign _TWAnySignerSign = _TWAnySignerSign_ptr.asFunction<_dart_TWAnySignerSign>();
 
   /// Signs a json transaction with private key.
-  Pointer<Utf8> TWAnySignerSignJSON(
+  static Pointer<Utf8> TWAnySignerSignJSON(
     Pointer<Utf8> json,
     Pointer<Void> key,
     int coin,
@@ -29,10 +29,10 @@ abstract class TWAnySigner  {
     );
   }
 
-  late final _TWAnySignerSignJSON_ptr = _lookup<NativeFunction<_c_TWAnySignerSignJSON>>('TWAnySignerSignJSON');
-  late final _dart_TWAnySignerSignJSON _TWAnySignerSignJSON = _TWAnySignerSignJSON_ptr.asFunction<_dart_TWAnySignerSignJSON>();
+  static late final _TWAnySignerSignJSON_ptr = _lookup<NativeFunction<_c_TWAnySignerSignJSON>>('TWAnySignerSignJSON');
+  static late final _dart_TWAnySignerSignJSON _TWAnySignerSignJSON = _TWAnySignerSignJSON_ptr.asFunction<_dart_TWAnySignerSignJSON>();
 
-  int TWAnySignerSupportsJSON(
+  static int TWAnySignerSupportsJSON(
     int coin,
   ) {
     return _TWAnySignerSupportsJSON(
@@ -40,11 +40,11 @@ abstract class TWAnySigner  {
     );
   }
 
-  late final _TWAnySignerSupportsJSON_ptr = _lookup<NativeFunction<_c_TWAnySignerSupportsJSON>>('TWAnySignerSupportsJSON');
-  late final _dart_TWAnySignerSupportsJSON _TWAnySignerSupportsJSON = _TWAnySignerSupportsJSON_ptr.asFunction<_dart_TWAnySignerSupportsJSON>();
+  static late final _TWAnySignerSupportsJSON_ptr = _lookup<NativeFunction<_c_TWAnySignerSupportsJSON>>('TWAnySignerSupportsJSON');
+  static late final _dart_TWAnySignerSupportsJSON _TWAnySignerSupportsJSON = _TWAnySignerSupportsJSON_ptr.asFunction<_dart_TWAnySignerSupportsJSON>();
 
   /// Plan a transaction (for UTXO chains).
-  Pointer<Void> TWAnySignerPlan(
+  static Pointer<Void> TWAnySignerPlan(
     Pointer<Void> input,
     int coin,
   ) {
@@ -54,8 +54,8 @@ abstract class TWAnySigner  {
     );
   }
 
-  late final _TWAnySignerPlan_ptr = _lookup<NativeFunction<_c_TWAnySignerPlan>>('TWAnySignerPlan');
-  late final _dart_TWAnySignerPlan _TWAnySignerPlan = _TWAnySignerPlan_ptr.asFunction<_dart_TWAnySignerPlan>();
+  static late final _TWAnySignerPlan_ptr = _lookup<NativeFunction<_c_TWAnySignerPlan>>('TWAnySignerPlan');
+  static late final _dart_TWAnySignerPlan _TWAnySignerPlan = _TWAnySignerPlan_ptr.asFunction<_dart_TWAnySignerPlan>();
 }
 
 typedef _c_TWAnySignerSign = Pointer<Void> Function(

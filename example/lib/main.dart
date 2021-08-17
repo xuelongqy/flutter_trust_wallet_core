@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                   ElevatedButton(
                       onPressed: () async {
                         logs.clear();
-
+                        TWStellarMemoType.TWStellarMemoTypeHash;
                         HDWallet wallet  = HDWallet();
                         logger.d("address ${wallet.getAddressForCoin(60)}");
                         logger.d("mnemonic = ${wallet.mnemonic()}");
