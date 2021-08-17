@@ -1,6 +1,9 @@
 part of flutter_trust_wallet_core;
 
 class PublicKey {
+  static const int PublicKeyCompressedSize = 33;
+  static const int PublicKeyUncompressedSize = 65;
+
   late Pointer<Void> _nativehandle;
 
   PublicKey._(Pointer<Void> pointer) {

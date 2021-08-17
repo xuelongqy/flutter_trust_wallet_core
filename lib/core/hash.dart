@@ -2,6 +2,11 @@ part of flutter_trust_wallet_core;
 
 class Hash {
 
+  static const int HashSHA1Length = 20;
+  static const int HashSHA256Length = 32;
+  static const int HashSHA512Length = 64;
+  static const int HashRipemdLength = 20;
+
   static Uint8List hashSHA1(Uint8List bytes) {
     return TWHashImpl.hashSHA1(bytes);
   }

@@ -19,9 +19,7 @@ part 'core/hash.dart';
 part 'core/bitcoin_address.dart';
 part 'core/any_signer.dart';
 part 'core/bitcoin_script.dart';
-part 'core/purpose.dart';
 part 'core/ripple_x_address.dart';
-part 'core/ss_58_address_type.dart';
 part 'core/segwit_address.dart';
 part 'core/solana_address.dart';
 
