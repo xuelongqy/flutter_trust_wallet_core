@@ -101,6 +101,8 @@ part 'dart_impl/tw_purpose.dart';
 part 'dart_impl/tw_ripple_x_address_impl.dart';
 part 'dart_impl/tw_segwit_address_impl.dart';
 part 'dart_impl/tw_solana_address_impl.dart';
+part 'dart_impl/tw_hd_version_impl.dart';
+part 'dart_impl/tw_groestlcoin_address_impl.dart';
 
 
 

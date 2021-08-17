@@ -22,6 +22,8 @@ part 'core/bitcoin_script.dart';
 part 'core/ripple_x_address.dart';
 part 'core/segwit_address.dart';
 part 'core/solana_address.dart';
+part 'core/hd_version.dart';
+part 'core/groestlcoin_address.dart';
 
 
 
