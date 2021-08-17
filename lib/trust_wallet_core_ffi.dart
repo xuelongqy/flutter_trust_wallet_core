@@ -105,6 +105,7 @@ part 'dart_impl/tw_hd_version_impl.dart';
 part 'dart_impl/tw_groestlcoin_address_impl.dart';
 part 'dart_impl/tw_fio_account_impl.dart';
 part 'dart_impl/tw_ethereum_abi_impl.dart';
+part 'dart_impl/tw_ethereum_abi_value_impl.dart';
 
 
 

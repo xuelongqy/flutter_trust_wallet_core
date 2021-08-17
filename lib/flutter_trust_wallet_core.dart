@@ -26,6 +26,7 @@ part 'core/hd_version.dart';
 part 'core/groestlcoin_address.dart';
 part 'core/fio_account.dart';
 part 'core/ethereum_abi.dart';
+part 'core/ethereum_abi_value.dart';
 
 
 
