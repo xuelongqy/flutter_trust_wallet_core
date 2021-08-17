@@ -99,6 +99,7 @@ part 'dart_impl/tw_any_signer_impl.dart';
 part 'dart_impl/tw_bitcoin_script_impl.dart';
 part 'dart_impl/tw_purpose.dart';
 part 'dart_impl/tw_ripple_x_address_impl.dart';
+part 'dart_impl/tw_segwit_address_impl.dart';
 
 
 

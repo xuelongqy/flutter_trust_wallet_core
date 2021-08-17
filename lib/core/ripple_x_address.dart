@@ -17,7 +17,7 @@ class RippleXAddress {
     return TWRippleXAddressImpl.equal(_pointer, _pointer);
   }
 
-  static bool isValid(String address){
+  static bool isValidString(String address){
     return TWRippleXAddressImpl.isValidString(address);
   }
 

@@ -1,6 +1,5 @@
 part of trust_wallet_core_ffi;
 
-/// 7个
 class TWRippleXAddressImpl extends TWRippleXAddress {
 
   static Pointer<Void> createWithString(String string) {
