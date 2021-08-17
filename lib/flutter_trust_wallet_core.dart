@@ -24,6 +24,7 @@ part 'core/segwit_address.dart';
 part 'core/solana_address.dart';
 part 'core/hd_version.dart';
 part 'core/groestlcoin_address.dart';
+part 'core/fio_account.dart';
 
 
 
