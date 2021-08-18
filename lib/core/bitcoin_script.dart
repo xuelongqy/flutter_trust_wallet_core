@@ -26,28 +26,28 @@ class BitcoinScript {
     return TWBitcoinScriptImpl.equal(lhs, rhs);
   }
 
-  static Pointer<Void> buildPayToPublicKey(Uint8List bytes) {
-    return TWBitcoinScriptImpl.buildPayToPublicKey(bytes);
+   BitcoinScript.buildPayToPublicKey(Uint8List bytes) {
+     _pointer = TWBitcoinScriptImpl.buildPayToPublicKey(bytes);
   }
 
-  static Pointer<Void> buildPayToPublicKeyHash(Uint8List bytes) {
-    return TWBitcoinScriptImpl.buildPayToPublicKeyHash(bytes);
+   BitcoinScript.buildPayToPublicKeyHash(Uint8List bytes) {
+     _pointer = TWBitcoinScriptImpl.buildPayToPublicKeyHash(bytes);
   }
 
-  static Pointer<Void> buildPayToScriptHash(Uint8List bytes) {
-    return TWBitcoinScriptImpl.buildPayToScriptHash(bytes);
+   BitcoinScript.buildPayToScriptHash(Uint8List bytes) {
+    _pointer = TWBitcoinScriptImpl.buildPayToScriptHash(bytes);
   }
 
-  static Pointer<Void> buildPayToWitnessPubkeyHash(Uint8List bytes) {
-    return TWBitcoinScriptImpl.buildPayToWitnessPubkeyHash(bytes);
+   BitcoinScript.buildPayToWitnessPubkeyHash(Uint8List bytes) {
+    _pointer = TWBitcoinScriptImpl.buildPayToWitnessPubkeyHash(bytes);
   }
 
-  static Pointer<Void> buildPayToWitnessScriptHash(Uint8List bytes) {
-    return TWBitcoinScriptImpl.buildPayToWitnessScriptHash(bytes);
+   BitcoinScript.buildPayToWitnessScriptHash(Uint8List bytes) {
+    _pointer = TWBitcoinScriptImpl.buildPayToWitnessScriptHash(bytes);
   }
 
-  static Pointer<Void> lockScriptForAddress(String string, int coin) {
-    return TWBitcoinScriptImpl.lockScriptForAddress(string,coin);
+   BitcoinScript.lockScriptForAddress(String string, int coin) {
+     _pointer = TWBitcoinScriptImpl.lockScriptForAddress(string,coin);
   }
 
   static int hashTypeForCoin(int coin) {
