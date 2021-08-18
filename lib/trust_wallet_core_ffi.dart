@@ -107,6 +107,7 @@ part 'dart_impl/tw_fio_account_impl.dart';
 part 'dart_impl/tw_ethereum_abi_impl.dart';
 part 'dart_impl/tw_ethereum_abi_value_impl.dart';
 part 'dart_impl/tw_coin_type_configuration_impl.dart';
+part 'dart_impl/tw_ethereum_abi_function_impl.dart';
 
 
 

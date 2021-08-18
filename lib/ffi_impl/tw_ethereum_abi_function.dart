@@ -399,7 +399,7 @@ abstract class TWEthereumAbiFunction {
   static late final _dart_TWEthereumAbiFunctionGetParamBool _TWEthereumAbiFunctionGetParamBool =
       _TWEthereumAbiFunctionGetParamBool_ptr.asFunction<_dart_TWEthereumAbiFunctionGetParamBool>();
 
-  static Pointer<Int32> TWEthereumAbiFunctionGetParamString(
+  static Pointer<Utf8> TWEthereumAbiFunctionGetParamString(
     Pointer<Void> fn,
     int idx,
     int isOutput,
@@ -415,7 +415,7 @@ abstract class TWEthereumAbiFunction {
   static late final _dart_TWEthereumAbiFunctionGetParamString _TWEthereumAbiFunctionGetParamString =
       _TWEthereumAbiFunctionGetParamString_ptr.asFunction<_dart_TWEthereumAbiFunctionGetParamString>();
 
-  static Pointer<Int32> TWEthereumAbiFunctionGetParamAddress(
+  static Pointer<Void> TWEthereumAbiFunctionGetParamAddress(
     Pointer<Void> fn,
     int idx,
     int isOutput,
@@ -695,7 +695,7 @@ abstract class TWEthereumAbiFunction {
   static late final _dart_TWEthereumAbiFunctionAddInArrayParamBytes _TWEthereumAbiFunctionAddInArrayParamBytes =
       _TWEthereumAbiFunctionAddInArrayParamBytes_ptr.asFunction<_dart_TWEthereumAbiFunctionAddInArrayParamBytes>();
 
-  int TWEthereumAbiFunctionAddInArrayParamBytesFix(
+ static int TWEthereumAbiFunctionAddInArrayParamBytesFix(
     Pointer<Void> fn,
     int arrayIdx,
     int size,
@@ -1007,25 +1007,25 @@ typedef _dart_TWEthereumAbiFunctionGetParamBool = int Function(
   int isOutput,
 );
 
-typedef _c_TWEthereumAbiFunctionGetParamString = Pointer<Int32> Function(
+typedef _c_TWEthereumAbiFunctionGetParamString = Pointer<Utf8> Function(
   Pointer<Void> fn,
   Int32 idx,
   Int32 isOutput,
 );
 
-typedef _dart_TWEthereumAbiFunctionGetParamString = Pointer<Int32> Function(
+typedef _dart_TWEthereumAbiFunctionGetParamString = Pointer<Utf8> Function(
   Pointer<Void> fn,
   int idx,
   int isOutput,
 );
 
-typedef _c_TWEthereumAbiFunctionGetParamAddress = Pointer<Int32> Function(
+typedef _c_TWEthereumAbiFunctionGetParamAddress = Pointer<Void> Function(
   Pointer<Void> fn,
   Int32 idx,
   Int32 isOutput,
 );
 
-typedef _dart_TWEthereumAbiFunctionGetParamAddress = Pointer<Int32> Function(
+typedef _dart_TWEthereumAbiFunctionGetParamAddress = Pointer<Void> Function(
   Pointer<Void> fn,
   int idx,
   int isOutput,

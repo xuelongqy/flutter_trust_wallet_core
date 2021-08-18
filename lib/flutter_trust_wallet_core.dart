@@ -28,6 +28,7 @@ part 'core/fio_account.dart';
 part 'core/ethereum_abi.dart';
 part 'core/ethereum_abi_value.dart';
 part 'core/coin_type_configuration.dart';
+part 'core/ethereum_abi_function.dart';
 
 
 

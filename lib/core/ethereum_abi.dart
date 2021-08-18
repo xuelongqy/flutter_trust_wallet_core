@@ -8,12 +8,12 @@ class EthereumAbi {
     _pointer = pointer;
   }
 
-  static Uint8List encode(Pointer<Void> fn){
-    return TWEthereumAbiImpl.encode(fn);
+  static Uint8List encode(EthereumAbiFunction fn){
+    return TWEthereumAbiImpl.encode(fn._pointer);
   }
 
-  static bool decodeOutput(Pointer<Void> fn, Uint8List encoded){
-    return TWEthereumAbiImpl.decodeOutput(fn,encoded);
+  static bool decodeOutput(EthereumAbiFunction fn, Uint8List encoded){
+    return TWEthereumAbiImpl.decodeOutput(fn._pointer,encoded);
   }
 
   static String decodeCall(Uint8List encoded, String string){
