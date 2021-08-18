@@ -101,6 +101,12 @@ part 'dart_impl/tw_purpose.dart';
 part 'dart_impl/tw_ripple_x_address_impl.dart';
 part 'dart_impl/tw_segwit_address_impl.dart';
 part 'dart_impl/tw_solana_address_impl.dart';
+part 'dart_impl/tw_hd_version_impl.dart';
+part 'dart_impl/tw_groestlcoin_address_impl.dart';
+part 'dart_impl/tw_fio_account_impl.dart';
+part 'dart_impl/tw_ethereum_abi_impl.dart';
+part 'dart_impl/tw_ethereum_abi_value_impl.dart';
+part 'dart_impl/tw_coin_type_configuration_impl.dart';
 
 
 
