@@ -28,7 +28,7 @@ abstract class TWHDVersion {
   static const int TWHDVersionDGUB = 0x02facafd;
   static const int TWHDVersionDGPV = 0x02fac398;
 
-  int TWHDVersionIsPublic(
+  static int TWHDVersionIsPublic(
     int version,
   ) {
     return _TWHDVersionIsPublic(
@@ -36,10 +36,10 @@ abstract class TWHDVersion {
     );
   }
 
-  late final _TWHDVersionIsPublic_ptr = _lookup<NativeFunction<_c_TWHDVersionIsPublic>>('TWHDVersionIsPublic');
-  late final _dart_TWHDVersionIsPublic _TWHDVersionIsPublic = _TWHDVersionIsPublic_ptr.asFunction<_dart_TWHDVersionIsPublic>();
+  static late final _TWHDVersionIsPublic_ptr = _lookup<NativeFunction<_c_TWHDVersionIsPublic>>('TWHDVersionIsPublic');
+  static late final _dart_TWHDVersionIsPublic _TWHDVersionIsPublic = _TWHDVersionIsPublic_ptr.asFunction<_dart_TWHDVersionIsPublic>();
 
-  int TWHDVersionIsPrivate(
+  static int TWHDVersionIsPrivate(
     int version,
   ) {
     return _TWHDVersionIsPrivate(
@@ -47,8 +47,8 @@ abstract class TWHDVersion {
     );
   }
 
-  late final _TWHDVersionIsPrivate_ptr = _lookup<NativeFunction<_c_TWHDVersionIsPrivate>>('TWHDVersionIsPrivate');
-  late final _dart_TWHDVersionIsPrivate _TWHDVersionIsPrivate = _TWHDVersionIsPrivate_ptr.asFunction<_dart_TWHDVersionIsPrivate>();
+  static late final _TWHDVersionIsPrivate_ptr = _lookup<NativeFunction<_c_TWHDVersionIsPrivate>>('TWHDVersionIsPrivate');
+  static late final _dart_TWHDVersionIsPrivate _TWHDVersionIsPrivate = _TWHDVersionIsPrivate_ptr.asFunction<_dart_TWHDVersionIsPrivate>();
 }
 
 typedef _c_TWHDVersionIsPublic = Int32 Function(

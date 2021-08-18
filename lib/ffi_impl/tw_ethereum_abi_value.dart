@@ -62,7 +62,7 @@ abstract class TWEthereumAbiValue  {
       _TWEthereumAbiValueEncodeUInt256_ptr.asFunction<_dart_TWEthereumAbiValueEncodeUInt256>();
 
   /// Encode the 20 bytes of an address
-  Pointer<Void> TWEthereumAbiValueEncodeAddress(
+  static Pointer<Void> TWEthereumAbiValueEncodeAddress(
     Pointer<Void> value,
   ) {
     return _TWEthereumAbiValueEncodeAddress(
@@ -127,11 +127,11 @@ abstract class TWEthereumAbiValue  {
   /// Decode an arbitrary type, return value as string
   static Pointer<Utf8> TWEthereumAbiValueDecodeValue(
     Pointer<Void> input,
-    Pointer<Void> type,
+      Pointer<Utf8> string,
   ) {
     return _TWEthereumAbiValueDecodeValue(
       input,
-      type,
+      string,
     );
   }
 
@@ -141,7 +141,7 @@ abstract class TWEthereumAbiValue  {
   /// Decode an array of given simple types.  Return a '\n'-separated string of elements
   static Pointer<Utf8> TWEthereumAbiValueDecodeArray(
     Pointer<Void> input,
-    Pointer<Void> type,
+    Pointer<Utf8> type,
   ) {
     return _TWEthereumAbiValueDecodeArray(
       input,
@@ -235,20 +235,20 @@ typedef _dart_TWEthereumAbiValueDecodeUInt256 = Pointer<Utf8> Function(
 
 typedef _c_TWEthereumAbiValueDecodeValue = Pointer<Utf8> Function(
   Pointer<Void> input,
-  Pointer<Void> type,
+    Pointer<Utf8> string,
 );
 
 typedef _dart_TWEthereumAbiValueDecodeValue = Pointer<Utf8> Function(
   Pointer<Void> input,
-  Pointer<Void> type,
+    Pointer<Utf8> string,
 );
 
 typedef _c_TWEthereumAbiValueDecodeArray = Pointer<Utf8> Function(
   Pointer<Void> input,
-  Pointer<Void> type,
+  Pointer<Utf8> type,
 );
 
 typedef _dart_TWEthereumAbiValueDecodeArray = Pointer<Utf8> Function(
   Pointer<Void> input,
-  Pointer<Void> type,
+  Pointer<Utf8> type,
 );

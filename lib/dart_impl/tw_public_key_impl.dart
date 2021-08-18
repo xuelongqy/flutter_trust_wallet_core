@@ -22,4 +22,55 @@ class TWPublicKeyImpl extends TWPublicKey {
 
     return TWData.TWDataBytes(data).asTypedList(TWData.TWDataSize(data));
   }
+
+  static Pointer<Void> recover(Uint8List signature,Uint8List message){
+    final _signatureData = TWData.TWDataCreateWithBytes(signature.toPointerUint8(), signature.length);
+    final _messageData = TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
+    final result = TWPublicKey.TWPublicKeyRecover(_signatureData,_messageData);
+    TWData.TWDataDelete(_signatureData);
+    TWData.TWDataDelete(_messageData);
+    return result;
+  }
+
+  static bool isCompressed(Pointer<Void> publicKey){
+    return TWPublicKey.TWPublicKeyIsCompressed(publicKey) >= 1;
+  }
+
+  static Pointer<Void> compressed(Pointer<Void> publicKey){
+    return TWPublicKey.TWPublicKeyCompressed(publicKey);
+  }
+
+  static Pointer<Void> unCompressed(Pointer<Void> publicKey){
+    return TWPublicKey.TWPublicKeyUncompressed(publicKey);
+  }
+
+  static int keyType(Pointer<Void> publicKey){
+    return TWPublicKey.TWPublicKeyKeyType(publicKey);
+  }
+
+  static String description(Pointer<Void> publicKey){
+    return TWStringImpl.toDartString(TWPublicKey.TWPublicKeyDescription(publicKey));
+  }
+
+  static void delete(Pointer<Void> publicKey){
+    return TWPublicKey.TWPublicKeyDelete(publicKey);
+  }
+
+  static bool verify(Pointer<Void> publicKey,Uint8List signature,Uint8List message){
+    final _signatureData = TWData.TWDataCreateWithBytes(signature.toPointerUint8(), signature.length);
+    final _messageData = TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
+    final result = TWPublicKey.TWPublicKeyVerify(publicKey ,_signatureData,_messageData) >= 1;
+    TWData.TWDataDelete(_signatureData);
+    TWData.TWDataDelete(_messageData);
+    return result;
+  }
+
+  static bool verifySchnorr(Pointer<Void> publicKey,Uint8List signature,Uint8List message){
+    final _signatureData = TWData.TWDataCreateWithBytes(signature.toPointerUint8(), signature.length);
+    final _messageData = TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
+    final result = TWPublicKey.TWPublicKeyVerifySchnorr(publicKey ,_signatureData,_messageData) >= 1;
+    TWData.TWDataDelete(_signatureData);
+    TWData.TWDataDelete(_messageData);
+    return result;
+  }
 }
