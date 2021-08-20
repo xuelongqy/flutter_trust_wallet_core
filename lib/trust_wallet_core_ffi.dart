@@ -84,24 +84,6 @@ part 'ffi_impl/tw_stored_key.dart';
 
 part 'ffi_impl/tw_string.dart';
 
-part 'impl/demo_tw_blockchain.dart';
-
-part 'impl/demo_tw_coin_type.dart';
-
-part 'impl/demo_tw_curve.dart';
-
-part 'impl/demo_tw_data.dart';
-
-part 'impl/demo_tw_hd_version.dart';
-
-part 'impl/demo_tw_hd_wallet.dart';
-
-part 'impl/demo_tw_mnemonic.dart';
-
-part 'impl/demo_tw_purpose.dart';
-
-part 'impl/demo_tw_string.dart';
-
 
 part 'dart_impl/tw_string_impl.dart';
 part 'dart_impl/tw_mnemonic_impl.dart';
@@ -113,6 +95,19 @@ part 'dart_impl/tw_any_address_impl.dart';
 part 'dart_impl/tw_hash_impl.dart';
 part 'dart_impl/tw_base58_impl.dart';
 part 'dart_impl/tw_bitcoin_address.dart';
+part 'dart_impl/tw_any_signer_impl.dart';
+part 'dart_impl/tw_bitcoin_script_impl.dart';
+part 'dart_impl/tw_purpose.dart';
+part 'dart_impl/tw_ripple_x_address_impl.dart';
+part 'dart_impl/tw_segwit_address_impl.dart';
+part 'dart_impl/tw_solana_address_impl.dart';
+part 'dart_impl/tw_hd_version_impl.dart';
+part 'dart_impl/tw_groestlcoin_address_impl.dart';
+part 'dart_impl/tw_fio_account_impl.dart';
+part 'dart_impl/tw_ethereum_abi_impl.dart';
+part 'dart_impl/tw_ethereum_abi_value_impl.dart';
+part 'dart_impl/tw_coin_type_configuration_impl.dart';
+part 'dart_impl/tw_ethereum_abi_function_impl.dart';
 
 
 

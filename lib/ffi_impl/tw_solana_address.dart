@@ -15,7 +15,7 @@ abstract class TWSolanaAddress  {
   static late final _TWSolanaAddressCreateWithString_ptr = _lookup<NativeFunction<_c_TWSolanaAddressCreateWithString>>('TWSolanaAddressCreateWithString');
   static late final _dart_TWSolanaAddressCreateWithString _TWSolanaAddressCreateWithString = _TWSolanaAddressCreateWithString_ptr.asFunction<_dart_TWSolanaAddressCreateWithString>();
 
-  void TWSolanaAddressDelete(
+  static void TWSolanaAddressDelete(
     Pointer<Void> address,
   ) {
     return _TWSolanaAddressDelete(
@@ -23,11 +23,11 @@ abstract class TWSolanaAddress  {
     );
   }
 
-  late final _TWSolanaAddressDelete_ptr = _lookup<NativeFunction<_c_TWSolanaAddressDelete>>('TWSolanaAddressDelete');
-  late final _dart_TWSolanaAddressDelete _TWSolanaAddressDelete = _TWSolanaAddressDelete_ptr.asFunction<_dart_TWSolanaAddressDelete>();
+  static late final _TWSolanaAddressDelete_ptr = _lookup<NativeFunction<_c_TWSolanaAddressDelete>>('TWSolanaAddressDelete');
+  static late final _dart_TWSolanaAddressDelete _TWSolanaAddressDelete = _TWSolanaAddressDelete_ptr.asFunction<_dart_TWSolanaAddressDelete>();
 
   /// Derive default token address for token
-  Pointer<Utf8> TWSolanaAddressDefaultTokenAddress(
+  static Pointer<Utf8> TWSolanaAddressDefaultTokenAddress(
       Pointer<Void> address,
       Pointer<Utf8> tokenMintAddress,
       ) {
@@ -37,16 +37,16 @@ abstract class TWSolanaAddress  {
     );
   }
 
-  late final _TWSolanaAddressDefaultTokenAddress_ptr =
+  static late final _TWSolanaAddressDefaultTokenAddress_ptr =
   _lookup<NativeFunction<_c_TWSolanaAddressDefaultTokenAddress>>(
       'TWSolanaAddressDefaultTokenAddress');
-  late final _dart_TWSolanaAddressDefaultTokenAddress
+  static late final _dart_TWSolanaAddressDefaultTokenAddress
   _TWSolanaAddressDefaultTokenAddress =
   _TWSolanaAddressDefaultTokenAddress_ptr.asFunction<
       _dart_TWSolanaAddressDefaultTokenAddress>();
 
   /// Returns the address string representation.
-  Pointer<Utf8> TWSolanaAddressDescription(
+  static Pointer<Utf8> TWSolanaAddressDescription(
       Pointer<Void> address,
       ) {
     return _TWSolanaAddressDescription(
@@ -54,10 +54,10 @@ abstract class TWSolanaAddress  {
     );
   }
 
-  late final _TWSolanaAddressDescription_ptr =
+  static late final _TWSolanaAddressDescription_ptr =
   _lookup<NativeFunction<_c_TWSolanaAddressDescription>>(
       'TWSolanaAddressDescription');
-  late final _dart_TWSolanaAddressDescription _TWSolanaAddressDescription =
+  static late final _dart_TWSolanaAddressDescription _TWSolanaAddressDescription =
   _TWSolanaAddressDescription_ptr.asFunction<
       _dart_TWSolanaAddressDescription>();
 

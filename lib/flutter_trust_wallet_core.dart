@@ -16,6 +16,19 @@ part 'core/stored_key.dart';
 part 'core/any_address.dart';
 part 'core/base58.dart';
 part 'core/hash.dart';
+part 'core/bitcoin_address.dart';
+part 'core/any_signer.dart';
+part 'core/bitcoin_script.dart';
+part 'core/ripple_x_address.dart';
+part 'core/segwit_address.dart';
+part 'core/solana_address.dart';
+part 'core/hd_version.dart';
+part 'core/groestlcoin_address.dart';
+part 'core/fio_account.dart';
+part 'core/ethereum_abi.dart';
+part 'core/ethereum_abi_value.dart';
+part 'core/coin_type_configuration.dart';
+part 'core/ethereum_abi_function.dart';
 
 
 

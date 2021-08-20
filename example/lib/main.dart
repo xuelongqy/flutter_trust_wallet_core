@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                   ElevatedButton(
                       onPressed: () async {
                         logs.clear();
-
+                        TWStellarMemoType.TWStellarMemoTypeHash;
                         HDWallet wallet  = HDWallet();
                         logger.d("address ${wallet.getAddressForCoin(60)}");
                         logger.d("mnemonic = ${wallet.mnemonic()}");
@@ -97,14 +97,37 @@ class _MyAppState extends State<MyApp> {
                         final anyAddress= AnyAddress.createWithPublicKey(publicKey, 60);
 
 
-                        logger.d("1 = ${AnyAddress.isValid("0xfaC5482fffe86d33c3b8ADB24F839F5e60aF99d4", DartTWCoinType.TWCoinTypeEthereum)}");
-                        logger.d("2 = ${AnyAddress.isValid("0xfaC5482fffe86d33c3b8ADB24F839F5e60af99d4", DartTWCoinType.TWCoinTypeEthereum)}");
-                        logger.d("3 = ${AnyAddress.isValid("faC5482fffe86d33c3b8ADB24F839F5e60af99d4", DartTWCoinType.TWCoinTypeEthereum)}");
+                        // logger.d("1 = ${AnyAddress.isValid("0xfaC5482fffe86d33c3b8ADB24F839F5e60aF99d4", DartTWCoinType.TWCoinTypeEthereum)}");
+                        // logger.d("2 = ${AnyAddress.isValid("0xfaC5482fffe86d33c3b8ADB24F839F5e60af99d4", DartTWCoinType.TWCoinTypeEthereum)}");
+                        // logger.d("3 = ${AnyAddress.isValid("faC5482fffe86d33c3b8ADB24F839F5e60af99d4", DartTWCoinType.TWCoinTypeEthereum)}");
                         final privakye = wallet.getKey(60, "m/49'/60'/0'/0/0");
                         final publicKey1 = privakye.getPublicKeySecp256k1(true);
                         final address = AnyAddress.createWithPublicKey(publicKey1, 0);
 
                         logger.d("keystore a = ${address.description()}");
+
+                        // btc testnet
+                        final privakye2 = wallet.getKey(0, "m/44'/1'/0'/0/0");
+                        logger.d(hex.encode(privakye2.data()));
+                        final publicKey2 = privakye2.getPublicKeySecp256k1(true);
+                        logger.d(hex.encode(publicKey2.data()));
+                        final bitcoinAddress = BitcoinAddress.createWithPublicKey(publicKey2, 111);
+                        logger.d(bitcoinAddress.description());
+                        final segwitAddress = SegwitAddress.createWithPublicKey(1, publicKey2);
+                        logger.d(segwitAddress.description());
+                        final address2 = AnyAddress.createWithPublicKey(publicKey2, 2);
+                        logger.d("keystore a = ${address2.description()}");
+
+                        print(hex.encode(publicKey2.data()));
+                        final pubKeyHash = Hash.hashSHA256RIPEMD(publicKey2.data());
+                        print(hex.encode(pubKeyHash));
+                        final bitcoinScript = BitcoinScript.buildPayToWitnessPubkeyHash(pubKeyHash);
+                        print(hex.encode(bitcoinScript.data()));
+                        final scriptHash = Hash.hashSHA256RIPEMD(bitcoinScript.data());
+                        print(hex.encode(scriptHash));
+                        final data = Uint8List.fromList([196]..addAll(scriptHash.toList()));
+                        final bitcoinAddress2 = BitcoinAddress.createWithData(data);
+                        logger.d(bitcoinAddress2.description());
 
                         setState(() {});
                       },

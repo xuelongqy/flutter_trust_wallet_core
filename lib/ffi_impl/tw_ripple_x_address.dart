@@ -70,7 +70,7 @@ abstract class TWRippleXAddress  {
       _TWRippleXAddressCreateWithPublicKey_ptr.asFunction<
           _dart_TWRippleXAddressCreateWithPublicKey>();
 
-  void TWRippleXAddressDelete(
+  static void TWRippleXAddressDelete(
     Pointer<Void> address,
   ) {
     return _TWRippleXAddressDelete(
@@ -78,14 +78,14 @@ abstract class TWRippleXAddress  {
     );
   }
 
-  late final _TWRippleXAddressDelete_ptr =
+  static late final _TWRippleXAddressDelete_ptr =
       _lookup<NativeFunction<_c_TWRippleXAddressDelete>>(
           'TWRippleXAddressDelete');
-  late final _dart_TWRippleXAddressDelete _TWRippleXAddressDelete =
+  static late final _dart_TWRippleXAddressDelete _TWRippleXAddressDelete =
       _TWRippleXAddressDelete_ptr.asFunction<_dart_TWRippleXAddressDelete>();
 
   /// Returns the address string representation.
-  Pointer<Utf8> TWRippleXAddressDescription(
+  static Pointer<Utf8> TWRippleXAddressDescription(
     Pointer<Void> address,
   ) {
     return _TWRippleXAddressDescription(
@@ -93,15 +93,15 @@ abstract class TWRippleXAddress  {
     );
   }
 
-  late final _TWRippleXAddressDescription_ptr =
+  static late final _TWRippleXAddressDescription_ptr =
       _lookup<NativeFunction<_c_TWRippleXAddressDescription>>(
           'TWRippleXAddressDescription');
-  late final _dart_TWRippleXAddressDescription _TWRippleXAddressDescription =
+  static late final _dart_TWRippleXAddressDescription _TWRippleXAddressDescription =
       _TWRippleXAddressDescription_ptr.asFunction<
           _dart_TWRippleXAddressDescription>();
 
   /// Returns the destination tag.
-  int TWRippleXAddressTag(
+  static int TWRippleXAddressTag(
     Pointer<Void> address,
   ) {
     return _TWRippleXAddressTag(
@@ -109,9 +109,9 @@ abstract class TWRippleXAddress  {
     );
   }
 
-  late final _TWRippleXAddressTag_ptr =
+  static late final _TWRippleXAddressTag_ptr =
       _lookup<NativeFunction<_c_TWRippleXAddressTag>>('TWRippleXAddressTag');
-  late final _dart_TWRippleXAddressTag _TWRippleXAddressTag =
+  static late final _dart_TWRippleXAddressTag _TWRippleXAddressTag =
       _TWRippleXAddressTag_ptr.asFunction<_dart_TWRippleXAddressTag>();
 }
 

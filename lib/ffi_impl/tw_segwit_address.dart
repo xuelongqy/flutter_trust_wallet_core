@@ -63,7 +63,7 @@ abstract class TWSegwitAddress  {
   static late final _dart_TWSegwitAddressCreateWithPublicKey _TWSegwitAddressCreateWithPublicKey =
       _TWSegwitAddressCreateWithPublicKey_ptr.asFunction<_dart_TWSegwitAddressCreateWithPublicKey>();
 
-  void TWSegwitAddressDelete(
+  static void TWSegwitAddressDelete(
     Pointer<Void> address,
   ) {
     return _TWSegwitAddressDelete(
@@ -71,11 +71,11 @@ abstract class TWSegwitAddress  {
     );
   }
 
-  late final _TWSegwitAddressDelete_ptr = _lookup<NativeFunction<_c_TWSegwitAddressDelete>>('TWSegwitAddressDelete');
-  late final _dart_TWSegwitAddressDelete _TWSegwitAddressDelete = _TWSegwitAddressDelete_ptr.asFunction<_dart_TWSegwitAddressDelete>();
+  static late final _TWSegwitAddressDelete_ptr = _lookup<NativeFunction<_c_TWSegwitAddressDelete>>('TWSegwitAddressDelete');
+  static late final _dart_TWSegwitAddressDelete _TWSegwitAddressDelete = _TWSegwitAddressDelete_ptr.asFunction<_dart_TWSegwitAddressDelete>();
 
   /// Returns the address string representation.
-  Pointer<Utf8> TWSegwitAddressDescription(
+  static  Pointer<Utf8> TWSegwitAddressDescription(
       Pointer<Void> address,
       ) {
     return _TWSegwitAddressDescription(
@@ -83,15 +83,15 @@ abstract class TWSegwitAddress  {
     );
   }
 
-  late final _TWSegwitAddressDescription_ptr =
+  static late final _TWSegwitAddressDescription_ptr =
   _lookup<NativeFunction<_c_TWSegwitAddressDescription>>(
       'TWSegwitAddressDescription');
-  late final _dart_TWSegwitAddressDescription _TWSegwitAddressDescription =
+  static late final _dart_TWSegwitAddressDescription _TWSegwitAddressDescription =
   _TWSegwitAddressDescription_ptr.asFunction<
       _dart_TWSegwitAddressDescription>();
 
   /// Returns the human-readable part.
-  int TWSegwitAddressHRP(
+  static int TWSegwitAddressHRP(
     Pointer<Void> address,
   ) {
     return _TWSegwitAddressHRP(
@@ -99,11 +99,11 @@ abstract class TWSegwitAddress  {
     );
   }
 
-  late final _TWSegwitAddressHRP_ptr = _lookup<NativeFunction<_c_TWSegwitAddressHRP>>('TWSegwitAddressHRP');
-  late final _dart_TWSegwitAddressHRP _TWSegwitAddressHRP = _TWSegwitAddressHRP_ptr.asFunction<_dart_TWSegwitAddressHRP>();
+  static late final _TWSegwitAddressHRP_ptr = _lookup<NativeFunction<_c_TWSegwitAddressHRP>>('TWSegwitAddressHRP');
+  static late final _dart_TWSegwitAddressHRP _TWSegwitAddressHRP = _TWSegwitAddressHRP_ptr.asFunction<_dart_TWSegwitAddressHRP>();
 
   /// Returns the witness program
-  Pointer<Void> TWSegwitAddressWitnessProgram(
+  static Pointer<Void> TWSegwitAddressWitnessProgram(
       Pointer<Void> address,
       ) {
     return _TWSegwitAddressWitnessProgram(
@@ -111,10 +111,10 @@ abstract class TWSegwitAddress  {
     );
   }
 
-  late final _TWSegwitAddressWitnessProgram_ptr =
+  static late final _TWSegwitAddressWitnessProgram_ptr =
   _lookup<NativeFunction<_c_TWSegwitAddressWitnessProgram>>(
       'TWSegwitAddressWitnessProgram');
-  late final _dart_TWSegwitAddressWitnessProgram
+  static late final _dart_TWSegwitAddressWitnessProgram
   _TWSegwitAddressWitnessProgram = _TWSegwitAddressWitnessProgram_ptr
       .asFunction<_dart_TWSegwitAddressWitnessProgram>();
 

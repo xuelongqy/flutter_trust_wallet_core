@@ -13,7 +13,7 @@ abstract class TWFIOAccount  {
   static late final _TWFIOAccountCreateWithString_ptr = _lookup<NativeFunction<_c_TWFIOAccountCreateWithString>>('TWFIOAccountCreateWithString');
   static late final _dart_TWFIOAccountCreateWithString _TWFIOAccountCreateWithString = _TWFIOAccountCreateWithString_ptr.asFunction<_dart_TWFIOAccountCreateWithString>();
 
-  void TWFIOAccountDelete(
+  static void TWFIOAccountDelete(
     Pointer<Void> account,
   ) {
     return _TWFIOAccountDelete(
@@ -21,11 +21,11 @@ abstract class TWFIOAccount  {
     );
   }
 
-  late final _TWFIOAccountDelete_ptr = _lookup<NativeFunction<_c_TWFIOAccountDelete>>('TWFIOAccountDelete');
-  late final _dart_TWFIOAccountDelete _TWFIOAccountDelete = _TWFIOAccountDelete_ptr.asFunction<_dart_TWFIOAccountDelete>();
+  static late final _TWFIOAccountDelete_ptr = _lookup<NativeFunction<_c_TWFIOAccountDelete>>('TWFIOAccountDelete');
+  static late final _dart_TWFIOAccountDelete _TWFIOAccountDelete = _TWFIOAccountDelete_ptr.asFunction<_dart_TWFIOAccountDelete>();
 
   /// Returns the short account string representation.
-  Pointer<Utf8> TWFIOAccountDescription(
+  static Pointer<Utf8> TWFIOAccountDescription(
     Pointer<Void> account,
   ) {
     return _TWFIOAccountDescription(
@@ -33,8 +33,8 @@ abstract class TWFIOAccount  {
     );
   }
 
-  late final _TWFIOAccountDescription_ptr = _lookup<NativeFunction<_c_TWFIOAccountDescription>>('TWFIOAccountDelete');
-  late final _dart_TWFIOAccountDescription _TWFIOAccountDescription = _TWFIOAccountDescription_ptr.asFunction<_dart_TWFIOAccountDescription>();
+  static late final _TWFIOAccountDescription_ptr = _lookup<NativeFunction<_c_TWFIOAccountDescription>>('TWFIOAccountDelete');
+  static late final _dart_TWFIOAccountDescription _TWFIOAccountDescription = _TWFIOAccountDescription_ptr.asFunction<_dart_TWFIOAccountDescription>();
 }
 
 typedef _c_TWFIOAccountCreateWithString = Pointer<Void> Function(
