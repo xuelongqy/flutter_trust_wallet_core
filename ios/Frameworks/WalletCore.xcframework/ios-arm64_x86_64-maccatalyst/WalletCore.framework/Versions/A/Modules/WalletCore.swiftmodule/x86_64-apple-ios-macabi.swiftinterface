@@ -124,15 +124,26 @@ extension TW_Aion_Proto_SigningOutput : SwiftProtobuf.Message, SwiftProtobuf._Me
     get
   }
 }
-public typealias AlgorandTransactionPay = WalletCore.TW_Algorand_Proto_TransactionPay
+public typealias AlgorandTransfer = WalletCore.TW_Algorand_Proto_Transfer
+public typealias AlgorandAssetTransfer = WalletCore.TW_Algorand_Proto_AssetTransfer
+public typealias AlgorandAssetOptIn = WalletCore.TW_Algorand_Proto_AssetOptIn
 public typealias AlgorandSigningInput = WalletCore.TW_Algorand_Proto_SigningInput
 public typealias AlgorandSigningOutput = WalletCore.TW_Algorand_Proto_SigningOutput
-public struct TW_Algorand_Proto_TransactionPay {
+public struct TW_Algorand_Proto_Transfer {
   public var toAddress: Swift.String
-  public var fee: Swift.UInt64
   public var amount: Swift.UInt64
-  public var firstRound: Swift.UInt64
-  public var lastRound: Swift.UInt64
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct TW_Algorand_Proto_AssetTransfer {
+  public var toAddress: Swift.String
+  public var amount: Swift.UInt64
+  public var assetID: Swift.UInt64
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct TW_Algorand_Proto_AssetOptIn {
+  public var assetID: Swift.UInt64
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
@@ -141,14 +152,27 @@ public struct TW_Algorand_Proto_SigningInput {
   public var genesisHash: Foundation.Data
   public var note: Foundation.Data
   public var privateKey: Foundation.Data
+  public var firstRound: Swift.UInt64
+  public var lastRound: Swift.UInt64
+  public var fee: Swift.UInt64
   public var messageOneof: WalletCore.TW_Algorand_Proto_SigningInput.OneOf_MessageOneof?
-  public var transactionPay: WalletCore.TW_Algorand_Proto_TransactionPay {
+  public var transfer: WalletCore.TW_Algorand_Proto_Transfer {
+    get
+    set
+  }
+  public var assetTransfer: WalletCore.TW_Algorand_Proto_AssetTransfer {
+    get
+    set
+  }
+  public var assetOptIn: WalletCore.TW_Algorand_Proto_AssetOptIn {
     get
     set
   }
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public enum OneOf_MessageOneof : Swift.Equatable {
-    case transactionPay(WalletCore.TW_Algorand_Proto_TransactionPay)
+    case transfer(WalletCore.TW_Algorand_Proto_Transfer)
+    case assetTransfer(WalletCore.TW_Algorand_Proto_AssetTransfer)
+    case assetOptIn(WalletCore.TW_Algorand_Proto_AssetOptIn)
     public static func == (a: WalletCore.TW_Algorand_Proto_SigningInput.OneOf_MessageOneof, b: WalletCore.TW_Algorand_Proto_SigningInput.OneOf_MessageOneof) -> Swift.Bool
   }
   public init()
@@ -158,12 +182,32 @@ public struct TW_Algorand_Proto_SigningOutput {
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
-extension TW_Algorand_Proto_TransactionPay : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension TW_Algorand_Proto_Transfer : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
   public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
   public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
-  public static func == (lhs: WalletCore.TW_Algorand_Proto_TransactionPay, rhs: WalletCore.TW_Algorand_Proto_TransactionPay) -> Swift.Bool
+  public static func == (lhs: WalletCore.TW_Algorand_Proto_Transfer, rhs: WalletCore.TW_Algorand_Proto_Transfer) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension TW_Algorand_Proto_AssetTransfer : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: WalletCore.TW_Algorand_Proto_AssetTransfer, rhs: WalletCore.TW_Algorand_Proto_AssetTransfer) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension TW_Algorand_Proto_AssetOptIn : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: WalletCore.TW_Algorand_Proto_AssetOptIn, rhs: WalletCore.TW_Algorand_Proto_AssetOptIn) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
@@ -953,6 +997,10 @@ public struct TW_Bitcoin_Proto_SigningInput {
     get
   }
   public mutating func clearPlan()
+  public var lockTime: Swift.UInt32 {
+    get
+    set
+  }
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
 }
@@ -1960,6 +2008,21 @@ extension TW_Elrond_Proto_SigningOutput : SwiftProtobuf.Message, SwiftProtobuf._
 public typealias EthereumTransaction = WalletCore.TW_Ethereum_Proto_Transaction
 public typealias EthereumSigningInput = WalletCore.TW_Ethereum_Proto_SigningInput
 public typealias EthereumSigningOutput = WalletCore.TW_Ethereum_Proto_SigningOutput
+public enum TW_Ethereum_Proto_TransactionMode : SwiftProtobuf.Enum {
+  public typealias RawValue = Swift.Int
+  case legacy
+  case enveloped
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension TW_Ethereum_Proto_TransactionMode : Swift.CaseIterable {
+  public static var allCases: [WalletCore.TW_Ethereum_Proto_TransactionMode]
+  public typealias AllCases = [WalletCore.TW_Ethereum_Proto_TransactionMode]
+}
 public struct TW_Ethereum_Proto_Transaction {
   public var transactionOneof: WalletCore.TW_Ethereum_Proto_Transaction.OneOf_TransactionOneof?
   public var transfer: WalletCore.TW_Ethereum_Proto_Transaction.Transfer {
@@ -2041,8 +2104,11 @@ public struct TW_Ethereum_Proto_Transaction {
 public struct TW_Ethereum_Proto_SigningInput {
   public var chainID: Foundation.Data
   public var nonce: Foundation.Data
+  public var txMode: WalletCore.TW_Ethereum_Proto_TransactionMode
   public var gasPrice: Foundation.Data
   public var gasLimit: Foundation.Data
+  public var maxInclusionFeePerGas: Foundation.Data
+  public var maxFeePerGas: Foundation.Data
   public var toAddress: Swift.String
   public var privateKey: Foundation.Data
   public var transaction: WalletCore.TW_Ethereum_Proto_Transaction {
@@ -2064,6 +2130,9 @@ public struct TW_Ethereum_Proto_SigningOutput {
   public var data: Foundation.Data
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
+}
+extension TW_Ethereum_Proto_TransactionMode : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
 }
 extension TW_Ethereum_Proto_Transaction : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
