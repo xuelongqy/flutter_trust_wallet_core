@@ -9,6 +9,10 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'Ethereum.pbenum.dart';
+
+export 'Ethereum.pbenum.dart';
+
 class Transaction_Transfer extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Transaction.Transfer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ethereum.Proto'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OY)
@@ -587,11 +591,14 @@ class SigningInput extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ethereum.Proto'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId', $pb.PbFieldType.OY)
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonce', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasPrice', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasLimit', $pb.PbFieldType.OY)
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAddress')
-    ..a<$core.List<$core.int>>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
-    ..aOM<Transaction>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transaction', subBuilder: Transaction.create)
+    ..e<TransactionMode>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'txMode', $pb.PbFieldType.OE, defaultOrMaker: TransactionMode.Legacy, valueOf: TransactionMode.valueOf, enumValues: TransactionMode.values)
+    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasPrice', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasLimit', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxInclusionFeePerGas', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxFeePerGas', $pb.PbFieldType.OY)
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAddress')
+    ..a<$core.List<$core.int>>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
+    ..aOM<Transaction>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transaction', subBuilder: Transaction.create)
     ..hasRequiredFields = false
   ;
 
@@ -599,8 +606,11 @@ class SigningInput extends $pb.GeneratedMessage {
   factory SigningInput({
     $core.List<$core.int>? chainId,
     $core.List<$core.int>? nonce,
+    TransactionMode? txMode,
     $core.List<$core.int>? gasPrice,
     $core.List<$core.int>? gasLimit,
+    $core.List<$core.int>? maxInclusionFeePerGas,
+    $core.List<$core.int>? maxFeePerGas,
     $core.String? toAddress,
     $core.List<$core.int>? privateKey,
     Transaction? transaction,
@@ -612,11 +622,20 @@ class SigningInput extends $pb.GeneratedMessage {
     if (nonce != null) {
       _result.nonce = nonce;
     }
+    if (txMode != null) {
+      _result.txMode = txMode;
+    }
     if (gasPrice != null) {
       _result.gasPrice = gasPrice;
     }
     if (gasLimit != null) {
       _result.gasLimit = gasLimit;
+    }
+    if (maxInclusionFeePerGas != null) {
+      _result.maxInclusionFeePerGas = maxInclusionFeePerGas;
+    }
+    if (maxFeePerGas != null) {
+      _result.maxFeePerGas = maxFeePerGas;
     }
     if (toAddress != null) {
       _result.toAddress = toAddress;
@@ -669,51 +688,78 @@ class SigningInput extends $pb.GeneratedMessage {
   void clearNonce() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.int> get gasPrice => $_getN(2);
+  TransactionMode get txMode => $_getN(2);
   @$pb.TagNumber(3)
-  set gasPrice($core.List<$core.int> v) { $_setBytes(2, v); }
+  set txMode(TransactionMode v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasGasPrice() => $_has(2);
+  $core.bool hasTxMode() => $_has(2);
   @$pb.TagNumber(3)
-  void clearGasPrice() => clearField(3);
+  void clearTxMode() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<$core.int> get gasLimit => $_getN(3);
+  $core.List<$core.int> get gasPrice => $_getN(3);
   @$pb.TagNumber(4)
-  set gasLimit($core.List<$core.int> v) { $_setBytes(3, v); }
+  set gasPrice($core.List<$core.int> v) { $_setBytes(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasGasLimit() => $_has(3);
+  $core.bool hasGasPrice() => $_has(3);
   @$pb.TagNumber(4)
-  void clearGasLimit() => clearField(4);
+  void clearGasPrice() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get toAddress => $_getSZ(4);
+  $core.List<$core.int> get gasLimit => $_getN(4);
   @$pb.TagNumber(5)
-  set toAddress($core.String v) { $_setString(4, v); }
+  set gasLimit($core.List<$core.int> v) { $_setBytes(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasToAddress() => $_has(4);
+  $core.bool hasGasLimit() => $_has(4);
   @$pb.TagNumber(5)
-  void clearToAddress() => clearField(5);
+  void clearGasLimit() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<$core.int> get privateKey => $_getN(5);
+  $core.List<$core.int> get maxInclusionFeePerGas => $_getN(5);
   @$pb.TagNumber(6)
-  set privateKey($core.List<$core.int> v) { $_setBytes(5, v); }
+  set maxInclusionFeePerGas($core.List<$core.int> v) { $_setBytes(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasPrivateKey() => $_has(5);
+  $core.bool hasMaxInclusionFeePerGas() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPrivateKey() => clearField(6);
+  void clearMaxInclusionFeePerGas() => clearField(6);
 
   @$pb.TagNumber(7)
-  Transaction get transaction => $_getN(6);
+  $core.List<$core.int> get maxFeePerGas => $_getN(6);
   @$pb.TagNumber(7)
-  set transaction(Transaction v) { setField(7, v); }
+  set maxFeePerGas($core.List<$core.int> v) { $_setBytes(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasTransaction() => $_has(6);
+  $core.bool hasMaxFeePerGas() => $_has(6);
   @$pb.TagNumber(7)
-  void clearTransaction() => clearField(7);
-  @$pb.TagNumber(7)
-  Transaction ensureTransaction() => $_ensure(6);
+  void clearMaxFeePerGas() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.String get toAddress => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set toAddress($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasToAddress() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearToAddress() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.List<$core.int> get privateKey => $_getN(8);
+  @$pb.TagNumber(9)
+  set privateKey($core.List<$core.int> v) { $_setBytes(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasPrivateKey() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearPrivateKey() => clearField(9);
+
+  @$pb.TagNumber(10)
+  Transaction get transaction => $_getN(9);
+  @$pb.TagNumber(10)
+  set transaction(Transaction v) { setField(10, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasTransaction() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearTransaction() => clearField(10);
+  @$pb.TagNumber(10)
+  Transaction ensureTransaction() => $_ensure(9);
 }
 
 class SigningOutput extends $pb.GeneratedMessage {

@@ -392,6 +392,7 @@ class SigningInput extends $pb.GeneratedMessage {
     ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'useMaxAmount')
     ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'coinType', $pb.PbFieldType.OU3)
     ..aOM<TransactionPlan>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'plan', subBuilder: TransactionPlan.create)
+    ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lockTime', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
@@ -408,6 +409,7 @@ class SigningInput extends $pb.GeneratedMessage {
     $core.bool? useMaxAmount,
     $core.int? coinType,
     TransactionPlan? plan,
+    $core.int? lockTime,
   }) {
     final _result = create();
     if (hashType != null) {
@@ -442,6 +444,9 @@ class SigningInput extends $pb.GeneratedMessage {
     }
     if (plan != null) {
       _result.plan = plan;
+    }
+    if (lockTime != null) {
+      _result.lockTime = lockTime;
     }
     return _result;
   }
@@ -548,6 +553,15 @@ class SigningInput extends $pb.GeneratedMessage {
   void clearPlan() => clearField(11);
   @$pb.TagNumber(11)
   TransactionPlan ensurePlan() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $core.int get lockTime => $_getIZ(11);
+  @$pb.TagNumber(12)
+  set lockTime($core.int v) { $_setUnsignedInt32(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasLockTime() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearLockTime() => clearField(12);
 }
 
 class TransactionPlan extends $pb.GeneratedMessage {

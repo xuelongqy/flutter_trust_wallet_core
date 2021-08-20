@@ -83,6 +83,7 @@ const SigningInput$json = const {
     const {'1': 'use_max_amount', '3': 9, '4': 1, '5': 8, '10': 'useMaxAmount'},
     const {'1': 'coin_type', '3': 10, '4': 1, '5': 13, '10': 'coinType'},
     const {'1': 'plan', '3': 11, '4': 1, '5': 11, '6': '.TW.Bitcoin.Proto.TransactionPlan', '10': 'plan'},
+    const {'1': 'lock_time', '3': 12, '4': 1, '5': 13, '10': 'lockTime'},
   ],
   '3': const [SigningInput_ScriptsEntry$json],
 };
@@ -98,7 +99,7 @@ const SigningInput_ScriptsEntry$json = const {
 };
 
 /// Descriptor for `SigningInput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSGwoJaGFzaF90eXBlGAEgASgNUghoYXNoVHlwZRIWCgZhbW91bnQYAiABKANSBmFtb3VudBIZCghieXRlX2ZlZRgDIAEoA1IHYnl0ZUZlZRIdCgp0b19hZGRyZXNzGAQgASgJUgl0b0FkZHJlc3MSJQoOY2hhbmdlX2FkZHJlc3MYBSABKAlSDWNoYW5nZUFkZHJlc3MSHwoLcHJpdmF0ZV9rZXkYBiADKAxSCnByaXZhdGVLZXkSRQoHc2NyaXB0cxgHIAMoCzIrLlRXLkJpdGNvaW4uUHJvdG8uU2lnbmluZ0lucHV0LlNjcmlwdHNFbnRyeVIHc2NyaXB0cxI4CgR1dHhvGAggAygLMiQuVFcuQml0Y29pbi5Qcm90by5VbnNwZW50VHJhbnNhY3Rpb25SBHV0eG8SJAoOdXNlX21heF9hbW91bnQYCSABKAhSDHVzZU1heEFtb3VudBIbCgljb2luX3R5cGUYCiABKA1SCGNvaW5UeXBlEjUKBHBsYW4YCyABKAsyIS5UVy5CaXRjb2luLlByb3RvLlRyYW5zYWN0aW9uUGxhblIEcGxhbho6CgxTY3JpcHRzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAxSBXZhbHVlOgI4AQ==');
+final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSGwoJaGFzaF90eXBlGAEgASgNUghoYXNoVHlwZRIWCgZhbW91bnQYAiABKANSBmFtb3VudBIZCghieXRlX2ZlZRgDIAEoA1IHYnl0ZUZlZRIdCgp0b19hZGRyZXNzGAQgASgJUgl0b0FkZHJlc3MSJQoOY2hhbmdlX2FkZHJlc3MYBSABKAlSDWNoYW5nZUFkZHJlc3MSHwoLcHJpdmF0ZV9rZXkYBiADKAxSCnByaXZhdGVLZXkSRQoHc2NyaXB0cxgHIAMoCzIrLlRXLkJpdGNvaW4uUHJvdG8uU2lnbmluZ0lucHV0LlNjcmlwdHNFbnRyeVIHc2NyaXB0cxI4CgR1dHhvGAggAygLMiQuVFcuQml0Y29pbi5Qcm90by5VbnNwZW50VHJhbnNhY3Rpb25SBHV0eG8SJAoOdXNlX21heF9hbW91bnQYCSABKAhSDHVzZU1heEFtb3VudBIbCgljb2luX3R5cGUYCiABKA1SCGNvaW5UeXBlEjUKBHBsYW4YCyABKAsyIS5UVy5CaXRjb2luLlByb3RvLlRyYW5zYWN0aW9uUGxhblIEcGxhbhIbCglsb2NrX3RpbWUYDCABKA1SCGxvY2tUaW1lGjoKDFNjcmlwdHNFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoDFIFdmFsdWU6AjgB');
 @$core.Deprecated('Use transactionPlanDescriptor instead')
 const TransactionPlan$json = const {
   '1': 'TransactionPlan',

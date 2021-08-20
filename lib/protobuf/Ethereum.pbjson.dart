@@ -8,6 +8,17 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use transactionModeDescriptor instead')
+const TransactionMode$json = const {
+  '1': 'TransactionMode',
+  '2': const [
+    const {'1': 'Legacy', '2': 0},
+    const {'1': 'Enveloped', '2': 1},
+  ],
+};
+
+/// Descriptor for `TransactionMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List transactionModeDescriptor = $convert.base64Decode('Cg9UcmFuc2FjdGlvbk1vZGUSCgoGTGVnYWN5EAASDQoJRW52ZWxvcGVkEAE=');
 @$core.Deprecated('Use transactionDescriptor instead')
 const Transaction$json = const {
   '1': 'Transaction',
@@ -91,16 +102,19 @@ const SigningInput$json = const {
   '2': const [
     const {'1': 'chain_id', '3': 1, '4': 1, '5': 12, '10': 'chainId'},
     const {'1': 'nonce', '3': 2, '4': 1, '5': 12, '10': 'nonce'},
-    const {'1': 'gas_price', '3': 3, '4': 1, '5': 12, '10': 'gasPrice'},
-    const {'1': 'gas_limit', '3': 4, '4': 1, '5': 12, '10': 'gasLimit'},
-    const {'1': 'to_address', '3': 5, '4': 1, '5': 9, '10': 'toAddress'},
-    const {'1': 'private_key', '3': 6, '4': 1, '5': 12, '10': 'privateKey'},
-    const {'1': 'transaction', '3': 7, '4': 1, '5': 11, '6': '.TW.Ethereum.Proto.Transaction', '10': 'transaction'},
+    const {'1': 'tx_mode', '3': 3, '4': 1, '5': 14, '6': '.TW.Ethereum.Proto.TransactionMode', '10': 'txMode'},
+    const {'1': 'gas_price', '3': 4, '4': 1, '5': 12, '10': 'gasPrice'},
+    const {'1': 'gas_limit', '3': 5, '4': 1, '5': 12, '10': 'gasLimit'},
+    const {'1': 'max_inclusion_fee_per_gas', '3': 6, '4': 1, '5': 12, '10': 'maxInclusionFeePerGas'},
+    const {'1': 'max_fee_per_gas', '3': 7, '4': 1, '5': 12, '10': 'maxFeePerGas'},
+    const {'1': 'to_address', '3': 8, '4': 1, '5': 9, '10': 'toAddress'},
+    const {'1': 'private_key', '3': 9, '4': 1, '5': 12, '10': 'privateKey'},
+    const {'1': 'transaction', '3': 10, '4': 1, '5': 11, '6': '.TW.Ethereum.Proto.Transaction', '10': 'transaction'},
   ],
 };
 
 /// Descriptor for `SigningInput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSGQoIY2hhaW5faWQYASABKAxSB2NoYWluSWQSFAoFbm9uY2UYAiABKAxSBW5vbmNlEhsKCWdhc19wcmljZRgDIAEoDFIIZ2FzUHJpY2USGwoJZ2FzX2xpbWl0GAQgASgMUghnYXNMaW1pdBIdCgp0b19hZGRyZXNzGAUgASgJUgl0b0FkZHJlc3MSHwoLcHJpdmF0ZV9rZXkYBiABKAxSCnByaXZhdGVLZXkSQAoLdHJhbnNhY3Rpb24YByABKAsyHi5UVy5FdGhlcmV1bS5Qcm90by5UcmFuc2FjdGlvblILdHJhbnNhY3Rpb24=');
+final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSGQoIY2hhaW5faWQYASABKAxSB2NoYWluSWQSFAoFbm9uY2UYAiABKAxSBW5vbmNlEjsKB3R4X21vZGUYAyABKA4yIi5UVy5FdGhlcmV1bS5Qcm90by5UcmFuc2FjdGlvbk1vZGVSBnR4TW9kZRIbCglnYXNfcHJpY2UYBCABKAxSCGdhc1ByaWNlEhsKCWdhc19saW1pdBgFIAEoDFIIZ2FzTGltaXQSOAoZbWF4X2luY2x1c2lvbl9mZWVfcGVyX2dhcxgGIAEoDFIVbWF4SW5jbHVzaW9uRmVlUGVyR2FzEiUKD21heF9mZWVfcGVyX2dhcxgHIAEoDFIMbWF4RmVlUGVyR2FzEh0KCnRvX2FkZHJlc3MYCCABKAlSCXRvQWRkcmVzcxIfCgtwcml2YXRlX2tleRgJIAEoDFIKcHJpdmF0ZUtleRJACgt0cmFuc2FjdGlvbhgKIAEoCzIeLlRXLkV0aGVyZXVtLlByb3RvLlRyYW5zYWN0aW9uUgt0cmFuc2FjdGlvbg==');
 @$core.Deprecated('Use signingOutputDescriptor instead')
 const SigningOutput$json = const {
   '1': 'SigningOutput',

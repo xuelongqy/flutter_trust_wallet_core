@@ -10,62 +10,47 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class TransactionPay extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TransactionPay', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Algorand.Proto'), createEmptyInstance: create)
+class Transfer extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Transfer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Algorand.Proto'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAddress')
-    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fee', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstRound', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastRound', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
-  TransactionPay._() : super();
-  factory TransactionPay({
+  Transfer._() : super();
+  factory Transfer({
     $core.String? toAddress,
-    $fixnum.Int64? fee,
     $fixnum.Int64? amount,
-    $fixnum.Int64? firstRound,
-    $fixnum.Int64? lastRound,
   }) {
     final _result = create();
     if (toAddress != null) {
       _result.toAddress = toAddress;
     }
-    if (fee != null) {
-      _result.fee = fee;
-    }
     if (amount != null) {
       _result.amount = amount;
     }
-    if (firstRound != null) {
-      _result.firstRound = firstRound;
-    }
-    if (lastRound != null) {
-      _result.lastRound = lastRound;
-    }
     return _result;
   }
-  factory TransactionPay.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TransactionPay.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory Transfer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Transfer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  TransactionPay clone() => TransactionPay()..mergeFromMessage(this);
+  Transfer clone() => Transfer()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TransactionPay copyWith(void Function(TransactionPay) updates) => super.copyWith((message) => updates(message as TransactionPay)) as TransactionPay; // ignore: deprecated_member_use
+  Transfer copyWith(void Function(Transfer) updates) => super.copyWith((message) => updates(message as Transfer)) as Transfer; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static TransactionPay create() => TransactionPay._();
-  TransactionPay createEmptyInstance() => create();
-  static $pb.PbList<TransactionPay> createRepeated() => $pb.PbList<TransactionPay>();
+  static Transfer create() => Transfer._();
+  Transfer createEmptyInstance() => create();
+  static $pb.PbList<Transfer> createRepeated() => $pb.PbList<Transfer>();
   @$core.pragma('dart2js:noInline')
-  static TransactionPay getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TransactionPay>(create);
-  static TransactionPay? _defaultInstance;
+  static Transfer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Transfer>(create);
+  static Transfer? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get toAddress => $_getSZ(0);
@@ -77,59 +62,163 @@ class TransactionPay extends $pb.GeneratedMessage {
   void clearToAddress() => clearField(1);
 
   @$pb.TagNumber(2)
-  $fixnum.Int64 get fee => $_getI64(1);
+  $fixnum.Int64 get amount => $_getI64(1);
   @$pb.TagNumber(2)
-  set fee($fixnum.Int64 v) { $_setInt64(1, v); }
+  set amount($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasFee() => $_has(1);
+  $core.bool hasAmount() => $_has(1);
   @$pb.TagNumber(2)
-  void clearFee() => clearField(2);
+  void clearAmount() => clearField(2);
+}
+
+class AssetTransfer extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AssetTransfer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Algorand.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAddress')
+    ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assetId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
+
+  AssetTransfer._() : super();
+  factory AssetTransfer({
+    $core.String? toAddress,
+    $fixnum.Int64? amount,
+    $fixnum.Int64? assetId,
+  }) {
+    final _result = create();
+    if (toAddress != null) {
+      _result.toAddress = toAddress;
+    }
+    if (amount != null) {
+      _result.amount = amount;
+    }
+    if (assetId != null) {
+      _result.assetId = assetId;
+    }
+    return _result;
+  }
+  factory AssetTransfer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AssetTransfer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AssetTransfer clone() => AssetTransfer()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AssetTransfer copyWith(void Function(AssetTransfer) updates) => super.copyWith((message) => updates(message as AssetTransfer)) as AssetTransfer; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AssetTransfer create() => AssetTransfer._();
+  AssetTransfer createEmptyInstance() => create();
+  static $pb.PbList<AssetTransfer> createRepeated() => $pb.PbList<AssetTransfer>();
+  @$core.pragma('dart2js:noInline')
+  static AssetTransfer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AssetTransfer>(create);
+  static AssetTransfer? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get toAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set toAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasToAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearToAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get amount => $_getI64(1);
+  @$pb.TagNumber(2)
+  set amount($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAmount() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAmount() => clearField(2);
 
   @$pb.TagNumber(3)
-  $fixnum.Int64 get amount => $_getI64(2);
+  $fixnum.Int64 get assetId => $_getI64(2);
   @$pb.TagNumber(3)
-  set amount($fixnum.Int64 v) { $_setInt64(2, v); }
+  set assetId($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAmount() => $_has(2);
+  $core.bool hasAssetId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAmount() => clearField(3);
+  void clearAssetId() => clearField(3);
+}
 
-  @$pb.TagNumber(4)
-  $fixnum.Int64 get firstRound => $_getI64(3);
-  @$pb.TagNumber(4)
-  set firstRound($fixnum.Int64 v) { $_setInt64(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasFirstRound() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearFirstRound() => clearField(4);
+class AssetOptIn extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'AssetOptIn', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Algorand.Proto'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assetId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..hasRequiredFields = false
+  ;
 
-  @$pb.TagNumber(5)
-  $fixnum.Int64 get lastRound => $_getI64(4);
-  @$pb.TagNumber(5)
-  set lastRound($fixnum.Int64 v) { $_setInt64(4, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasLastRound() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearLastRound() => clearField(5);
+  AssetOptIn._() : super();
+  factory AssetOptIn({
+    $fixnum.Int64? assetId,
+  }) {
+    final _result = create();
+    if (assetId != null) {
+      _result.assetId = assetId;
+    }
+    return _result;
+  }
+  factory AssetOptIn.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AssetOptIn.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AssetOptIn clone() => AssetOptIn()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AssetOptIn copyWith(void Function(AssetOptIn) updates) => super.copyWith((message) => updates(message as AssetOptIn)) as AssetOptIn; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static AssetOptIn create() => AssetOptIn._();
+  AssetOptIn createEmptyInstance() => create();
+  static $pb.PbList<AssetOptIn> createRepeated() => $pb.PbList<AssetOptIn>();
+  @$core.pragma('dart2js:noInline')
+  static AssetOptIn getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AssetOptIn>(create);
+  static AssetOptIn? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get assetId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set assetId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAssetId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAssetId() => clearField(1);
 }
 
 enum SigningInput_MessageOneof {
-  transactionPay, 
+  transfer, 
+  assetTransfer, 
+  assetOptIn, 
   notSet
 }
 
 class SigningInput extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, SigningInput_MessageOneof> _SigningInput_MessageOneofByTag = {
-    10 : SigningInput_MessageOneof.transactionPay,
+    10 : SigningInput_MessageOneof.transfer,
+    11 : SigningInput_MessageOneof.assetTransfer,
+    12 : SigningInput_MessageOneof.assetOptIn,
     0 : SigningInput_MessageOneof.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Algorand.Proto'), createEmptyInstance: create)
-    ..oo(0, [10])
+    ..oo(0, [10, 11, 12])
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'genesisId')
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'genesisHash', $pb.PbFieldType.OY)
     ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'note', $pb.PbFieldType.OY)
     ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
-    ..aOM<TransactionPay>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transactionPay', subBuilder: TransactionPay.create)
+    ..a<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstRound', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastRound', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fee', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOM<Transfer>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transfer', subBuilder: Transfer.create)
+    ..aOM<AssetTransfer>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assetTransfer', subBuilder: AssetTransfer.create)
+    ..aOM<AssetOptIn>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assetOptIn', subBuilder: AssetOptIn.create)
     ..hasRequiredFields = false
   ;
 
@@ -139,7 +228,12 @@ class SigningInput extends $pb.GeneratedMessage {
     $core.List<$core.int>? genesisHash,
     $core.List<$core.int>? note,
     $core.List<$core.int>? privateKey,
-    TransactionPay? transactionPay,
+    $fixnum.Int64? firstRound,
+    $fixnum.Int64? lastRound,
+    $fixnum.Int64? fee,
+    Transfer? transfer,
+    AssetTransfer? assetTransfer,
+    AssetOptIn? assetOptIn,
   }) {
     final _result = create();
     if (genesisId != null) {
@@ -154,8 +248,23 @@ class SigningInput extends $pb.GeneratedMessage {
     if (privateKey != null) {
       _result.privateKey = privateKey;
     }
-    if (transactionPay != null) {
-      _result.transactionPay = transactionPay;
+    if (firstRound != null) {
+      _result.firstRound = firstRound;
+    }
+    if (lastRound != null) {
+      _result.lastRound = lastRound;
+    }
+    if (fee != null) {
+      _result.fee = fee;
+    }
+    if (transfer != null) {
+      _result.transfer = transfer;
+    }
+    if (assetTransfer != null) {
+      _result.assetTransfer = assetTransfer;
+    }
+    if (assetOptIn != null) {
+      _result.assetOptIn = assetOptIn;
     }
     return _result;
   }
@@ -219,16 +328,65 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearPrivateKey() => clearField(4);
 
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get firstRound => $_getI64(4);
+  @$pb.TagNumber(5)
+  set firstRound($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFirstRound() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFirstRound() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get lastRound => $_getI64(5);
+  @$pb.TagNumber(6)
+  set lastRound($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasLastRound() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearLastRound() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $fixnum.Int64 get fee => $_getI64(6);
+  @$pb.TagNumber(7)
+  set fee($fixnum.Int64 v) { $_setInt64(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasFee() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearFee() => clearField(7);
+
   @$pb.TagNumber(10)
-  TransactionPay get transactionPay => $_getN(4);
+  Transfer get transfer => $_getN(7);
   @$pb.TagNumber(10)
-  set transactionPay(TransactionPay v) { setField(10, v); }
+  set transfer(Transfer v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasTransactionPay() => $_has(4);
+  $core.bool hasTransfer() => $_has(7);
   @$pb.TagNumber(10)
-  void clearTransactionPay() => clearField(10);
+  void clearTransfer() => clearField(10);
   @$pb.TagNumber(10)
-  TransactionPay ensureTransactionPay() => $_ensure(4);
+  Transfer ensureTransfer() => $_ensure(7);
+
+  @$pb.TagNumber(11)
+  AssetTransfer get assetTransfer => $_getN(8);
+  @$pb.TagNumber(11)
+  set assetTransfer(AssetTransfer v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasAssetTransfer() => $_has(8);
+  @$pb.TagNumber(11)
+  void clearAssetTransfer() => clearField(11);
+  @$pb.TagNumber(11)
+  AssetTransfer ensureAssetTransfer() => $_ensure(8);
+
+  @$pb.TagNumber(12)
+  AssetOptIn get assetOptIn => $_getN(9);
+  @$pb.TagNumber(12)
+  set assetOptIn(AssetOptIn v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasAssetOptIn() => $_has(9);
+  @$pb.TagNumber(12)
+  void clearAssetOptIn() => clearField(12);
+  @$pb.TagNumber(12)
+  AssetOptIn ensureAssetOptIn() => $_ensure(9);
 }
 
 class SigningOutput extends $pb.GeneratedMessage {
