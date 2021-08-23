@@ -270,7 +270,7 @@ typedef _dart_TWDataCreateWithHexString = Pointer<Void> Function(
   Pointer<Utf8> hex,
 );
 
-typedef _c_TWDataSize = Uint8 Function(
+typedef _c_TWDataSize = Uint64 Function(
   Pointer<Void> data,
 );
 

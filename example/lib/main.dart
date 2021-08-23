@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> {
                       onPressed: () async {
                         logs.clear();
                         TWStellarMemoType.TWStellarMemoTypeHash;
-                        HDWallet wallet  = HDWallet();
+                        HDWallet wallet  = HDWallet.createWithMnemonic("ill powder small fine cook kick arch copper lift erosion recall isolate");
                         logger.d("address ${wallet.getAddressForCoin(60)}");
                         logger.d("mnemonic = ${wallet.mnemonic()}");
                         print(wallet.mnemonic());
@@ -90,7 +90,7 @@ class _MyAppState extends State<MyApp> {
                         // logger.d("privateKeyhex0 = $privateKey0");
                         // logger.d("privateKeyhex1 = $privateKey1");
                         logger.d("seed = ${hex.encode(wallet.seed())}");
-                        final a  = StoredKey.importPrivateKey(wallet.getKeyForCoin(60).data(), "", Uint8List.fromList("123aaa".codeUnits),60);
+                        final a  = StoredKey.importPrivateKey(wallet.getKeyForCoin(60).data(), "", Uint8List.fromList("".codeUnits),60);
                         logger.d("keystore a = ${a.exportJson()}");
 
                         final publicKey = wallet.getKeyForCoin(60).getPublicKeySecp256k1(false);
