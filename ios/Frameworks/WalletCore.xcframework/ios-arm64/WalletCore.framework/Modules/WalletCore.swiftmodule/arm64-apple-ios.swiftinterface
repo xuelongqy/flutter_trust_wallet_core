@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name WalletCore
 import Foundation
 import Swift
@@ -1284,6 +1284,7 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   case aion
   case binance
   case bitcoin
+  case bitcoinTestnet
   case bitcoinCash
   case bitcoinGold
   case callisto
@@ -1348,6 +1349,8 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   case optimism
   case arbitrum
   case ecochain
+  case avalancheCChain
+  case xdai
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.CoinType]
   public typealias RawValue = Swift.UInt32
@@ -2342,6 +2345,8 @@ public enum EthereumChainID : Swift.UInt32, Swift.CaseIterable {
   case optimism
   case arbitrum
   case heco
+  case avalanche
+  case xdai
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.EthereumChainID]
   public typealias RawValue = Swift.UInt32
@@ -2712,6 +2717,7 @@ public enum HDVersion : Swift.UInt32, Swift.CaseIterable {
 public enum HRP : Swift.UInt32, Swift.CaseIterable, Swift.CustomStringConvertible {
   case unknown
   case bitcoin
+  case bitcoinTestnet
   case litecoin
   case viacoin
   case groestlcoin
