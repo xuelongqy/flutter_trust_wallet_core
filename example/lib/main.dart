@@ -1,15 +1,8 @@
-import 'dart:typed_data';
-
-import 'package:convert/convert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
-import 'package:flutter_trust_wallet_core/trust_wallet_core_ffi.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_address_example.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_transaction_example.dart';
 import 'package:flutter_trust_wallet_core_example/ethereum_example.dart';
-import 'package:logger/logger.dart';
-import 'package:flutter_trust_wallet_core/protobuf/bitcoin.pb.dart' as Bitcoin;
-import 'package:fixnum/fixnum.dart' as $fixnum;
 
 List<String> logs = [];
 

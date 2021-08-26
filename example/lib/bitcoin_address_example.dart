@@ -24,7 +24,7 @@ class _BitcoinAddressExampleState extends BaseExampleState<BitcoinAddressExample
     final publicKey2 = privakye2.getPublicKeySecp256k1(true);
     final bitcoinAddress = BitcoinAddress.createWithPublicKey(publicKey2, coin);
     logger.d(bitcoinAddress.description());
-    final segwitAddress = SegwitAddress.createWithPublicKey(1, publicKey2);
+    final segwitAddress = SegwitAddress.createWithPublicKey(HRP.Bitcoin, publicKey2);
     logger.d(segwitAddress.description());
     final address2 = AnyAddress.createWithPublicKey(publicKey2, 0);
     logger.d("keystore a = ${address2.description()}");
