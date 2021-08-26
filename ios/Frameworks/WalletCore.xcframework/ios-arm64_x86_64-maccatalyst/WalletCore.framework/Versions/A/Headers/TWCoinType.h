@@ -26,6 +26,7 @@ enum TWCoinType {
     TWCoinTypeAion = 425,
     TWCoinTypeBinance = 714,
     TWCoinTypeBitcoin = 0,
+    TWCoinTypeBitcoinTestnet = 1,
     TWCoinTypeBitcoinCash = 145,
     TWCoinTypeBitcoinGold = 156,
     TWCoinTypeCallisto = 820,
@@ -90,6 +91,8 @@ enum TWCoinType {
     TWCoinTypeOptimism = 10000070,
     TWCoinTypeArbitrum = 10042221,
     TWCoinTypeECOChain = 10000553,
+    TWCoinTypeAvalancheCChain = 10009000,
+    TWCoinTypeXDai = 10000100,
 };
 
 /// Returns the blockchain for a coin type.
