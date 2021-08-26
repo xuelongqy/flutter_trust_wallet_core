@@ -8,7 +8,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 class BitcoinTransactionExample extends BaseExample {
   final HDWallet wallet;
 
-  const BitcoinTransactionExample(this.wallet, {Key? key}) : super('Ethereum', key: key);
+  const BitcoinTransactionExample(this.wallet, {Key? key}) : super('Bitcoin Transaction', key: key);
 
   @override
   _BitcoinTransactionExampleState createState() => _BitcoinTransactionExampleState();

@@ -3,6 +3,7 @@ import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_address_example.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_transaction_example.dart';
 import 'package:flutter_trust_wallet_core_example/ethereum_example.dart';
+import 'package:flutter_trust_wallet_core_example/tron_example.dart';
 
 List<String> logs = [];
 
@@ -33,7 +34,7 @@ class _ExampleState extends State<Example> {
   void initState() {
     FlutterTrustWalletCore.init();
     super.initState();
-    wallet = HDWallet();
+    wallet = HDWallet.createWithMnemonic('memory capital stool joke clarify eager defy shoe civil ball name music');
   }
 
   Widget _exampleItem({
@@ -78,6 +79,12 @@ class _ExampleState extends State<Example> {
                     name: 'Bitcoin Transaction',
                     builder: (_) {
                       return BitcoinTransactionExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'Tron',
+                    builder: (_) {
+                      return TronExample(wallet);
                     },
                   ),
                 ],

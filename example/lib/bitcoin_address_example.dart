@@ -8,7 +8,7 @@ import 'package:flutter_trust_wallet_core_example/base_example.dart';
 class BitcoinAddressExample extends BaseExample {
   final HDWallet wallet;
 
-  const BitcoinAddressExample(this.wallet, {Key? key}) : super('Ethereum', key: key);
+  const BitcoinAddressExample(this.wallet, {Key? key}) : super('Bitcoin Address', key: key);
 
   @override
   _BitcoinAddressExampleState createState() => _BitcoinAddressExampleState();
