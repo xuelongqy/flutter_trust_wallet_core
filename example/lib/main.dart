@@ -129,7 +129,7 @@ class _MyAppState extends State<MyApp> {
                     logger.d(bitcoinAddress2.description());
 
                     // Transaction
-                    int coin = 1;
+                    int coin = CoinType.BitcoinTestnet;
                     final addressBtc = wallet.getAddressForCoin(coin);
                     final toAddress = "tb1qks8l9haxjszn9r6yf2dm65ed3w6wmz85r379ms";
                     final changeAddress = "mvcJcHN3ZhELVVhncfjARUMtfRELwhGXgL";
