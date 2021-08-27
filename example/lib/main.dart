@@ -34,7 +34,7 @@ class _ExampleState extends State<Example> {
   void initState() {
     FlutterTrustWalletCore.init();
     super.initState();
-    wallet = HDWallet.createWithMnemonic('memory capital stool joke clarify eager defy shoe civil ball name music');
+    wallet = HDWallet();
   }
 
   Widget _exampleItem({
