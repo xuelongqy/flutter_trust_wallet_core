@@ -10,6 +10,7 @@ part of trust_wallet_core_ffi;
   static const int TWCoinTypeAion = 425;
   static const int TWCoinTypeBinance = 714;
   static const int TWCoinTypeBitcoin = 0;
+  static const int TWCoinTypeBitcoinTestnet = 1;
   static const int TWCoinTypeBitcoinCash = 145;
   static const int TWCoinTypeBitcoinGold = 156;
   static const int TWCoinTypeCallisto = 820;
@@ -71,6 +72,11 @@ part of trust_wallet_core_ffi;
   static const int TWCoinTypePolygon = 966;
   static const int TWCoinTypeTHORChain = 931;
   static const int TWCoinTypeBluzelle = 483;
+  static const int TWCoinTypeOptimism = 10000070;
+  static const int TWCoinTypeArbitrum = 10042221;
+  static const int TWCoinTypeECOChain = 10000553;
+  static const int TWCoinTypeAvalancheCChain = 10009000;
+  static const int TWCoinTypeXDai = 10000100;
 
   /// Returns the blockchain for a coin type.
   int TWCoinTypeBlockchain(

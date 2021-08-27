@@ -1,6 +1,7 @@
 import 'package:convert/convert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
+import 'package:flutter_trust_wallet_core/trust_wallet_core_ffi.dart';
 import 'package:flutter_trust_wallet_core_example/base_example.dart';
 import 'package:flutter_trust_wallet_core/protobuf/bitcoin.pb.dart' as Bitcoin;
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -18,7 +19,7 @@ class _BitcoinTransactionExampleState extends BaseExampleState<BitcoinTransactio
   @override
   void initState() {
     super.initState();
-    int coin = CoinType.BitcoinTestnet;
+    int coin = TWCoinType.TWCoinTypeBitcoinTestnet;
     final addressBtc = widget.wallet.getAddressForCoin(coin);
     final toAddress = "tb1qks8l9haxjszn9r6yf2dm65ed3w6wmz85r379ms";
     final changeAddress = "mvcJcHN3ZhELVVhncfjARUMtfRELwhGXgL";

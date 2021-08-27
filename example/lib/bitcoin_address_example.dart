@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:convert/convert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
+import 'package:flutter_trust_wallet_core/trust_wallet_core_ffi.dart';
 import 'package:flutter_trust_wallet_core_example/base_example.dart';
 
 class BitcoinAddressExample extends BaseExample {
@@ -18,7 +19,7 @@ class _BitcoinAddressExampleState extends BaseExampleState<BitcoinAddressExample
   @override
   void initState() {
     super.initState();
-    int coin = CoinType.BitcoinTestnet;
+    int coin = TWCoinType.TWCoinTypeBitcoinTestnet;
     final privakye2 = widget.wallet.getKey(coin, "m/44'/0'/0'/0/0");
     logger.d(hex.encode(privakye2.data()));
     final publicKey2 = privakye2.getPublicKeySecp256k1(true);
