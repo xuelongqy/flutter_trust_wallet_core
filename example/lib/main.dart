@@ -34,7 +34,8 @@ class _ExampleState extends State<Example> {
   void initState() {
     FlutterTrustWalletCore.init();
     super.initState();
-    wallet = HDWallet();
+    String tronHasTRX = "horror select baby exile convince sunset outside vehicle write decade powder energy"; // 有测试币的 tron地址
+    wallet = HDWallet.createWithMnemonic(tronHasTRX);
   }
 
   Widget _exampleItem({
