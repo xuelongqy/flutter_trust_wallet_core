@@ -3,6 +3,10 @@ part of flutter_trust_wallet_core;
 class HDWallet {
   late Pointer<Void> _nativehandle;
 
+  HDWallet._(Pointer<Void> pointer) {
+    _nativehandle = pointer;
+  }
+
   HDWallet({int strength = 128, String passphrase = ""}) {
     _nativehandle = TWHDWalletImpl.create(strength: strength, passphrase: passphrase);
     if (_nativehandle.hashCode == 0) throw Exception(["HDWallet nativehandle is null"]);

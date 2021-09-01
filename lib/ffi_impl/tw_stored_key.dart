@@ -77,7 +77,7 @@ abstract class TWStoredKey  {
    static late final _TWStoredKeyCreate_ptr = _lookup<NativeFunction<_c_TWStoredKeyCreate>>('TWStoredKeyCreate');
    static late final _dart_TWStoredKeyCreate _TWStoredKeyCreate = _TWStoredKeyCreate_ptr.asFunction<_dart_TWStoredKeyCreate>();
 
-  void TWStoredKeyDelete(
+   static void TWStoredKeyDelete(
     Pointer<Void> key,
   ) {
     return _TWStoredKeyDelete(
@@ -85,12 +85,12 @@ abstract class TWStoredKey  {
     );
   }
 
-  late final _TWStoredKeyDelete_ptr = _lookup<NativeFunction<_c_TWStoredKeyDelete>>('TWStoredKeyDelete');
-  late final _dart_TWStoredKeyDelete _TWStoredKeyDelete = _TWStoredKeyDelete_ptr.asFunction<_dart_TWStoredKeyDelete>();
+   static late final _TWStoredKeyDelete_ptr = _lookup<NativeFunction<_c_TWStoredKeyDelete>>('TWStoredKeyDelete');
+   static late final _dart_TWStoredKeyDelete _TWStoredKeyDelete = _TWStoredKeyDelete_ptr.asFunction<_dart_TWStoredKeyDelete>();
 
 
    /// Stored key uniqie identifier.  Returned object needs to be deleted.
-   Pointer<Utf8> TWStoredKeyIdentifier(
+  static Pointer<Utf8> TWStoredKeyIdentifier(
        Pointer<Void> key,
        ) {
      return _TWStoredKeyIdentifier(
@@ -98,14 +98,14 @@ abstract class TWStoredKey  {
      );
    }
 
-   late final _TWStoredKeyIdentifier_ptr =
+   static late final _TWStoredKeyIdentifier_ptr =
    _lookup<NativeFunction<_c_TWStoredKeyIdentifier>>(
        'TWStoredKeyIdentifier');
-   late final _dart_TWStoredKeyIdentifier _TWStoredKeyIdentifier =
+   static late final _dart_TWStoredKeyIdentifier _TWStoredKeyIdentifier =
    _TWStoredKeyIdentifier_ptr.asFunction<_dart_TWStoredKeyIdentifier>();
 
    /// Stored key namer.  Returned object needs to be deleted.
-   Pointer<Utf8> TWStoredKeyName(
+   static Pointer<Utf8> TWStoredKeyName(
        Pointer<Void> key,
        ) {
      return _TWStoredKeyName(
@@ -113,13 +113,13 @@ abstract class TWStoredKey  {
      );
    }
 
-   late final _TWStoredKeyName_ptr =
+   static late final _TWStoredKeyName_ptr =
    _lookup<NativeFunction<_c_TWStoredKeyName>>('TWStoredKeyName');
-   late final _dart_TWStoredKeyName _TWStoredKeyName =
+   static late final _dart_TWStoredKeyName _TWStoredKeyName =
    _TWStoredKeyName_ptr.asFunction<_dart_TWStoredKeyName>();
 
    /// Whether this key is a mnemonic phrase for a HD wallet.
-   int TWStoredKeyIsMnemonic(
+   static int TWStoredKeyIsMnemonic(
        Pointer<Void> key,
        ) {
      return _TWStoredKeyIsMnemonic(
@@ -127,14 +127,14 @@ abstract class TWStoredKey  {
      );
    }
 
-   late final _TWStoredKeyIsMnemonic_ptr =
+   static late final _TWStoredKeyIsMnemonic_ptr =
    _lookup<NativeFunction<_c_TWStoredKeyIsMnemonic>>(
        'TWStoredKeyIsMnemonic');
-   late final _dart_TWStoredKeyIsMnemonic _TWStoredKeyIsMnemonic =
+   static late final _dart_TWStoredKeyIsMnemonic _TWStoredKeyIsMnemonic =
    _TWStoredKeyIsMnemonic_ptr.asFunction<_dart_TWStoredKeyIsMnemonic>();
 
    /// The number of accounts.
-   int TWStoredKeyAccountCount(
+   static int TWStoredKeyAccountCount(
        Pointer<Void> key,
        ) {
      return _TWStoredKeyAccountCount(
@@ -142,15 +142,15 @@ abstract class TWStoredKey  {
      );
    }
 
-   late final _TWStoredKeyAccountCount_ptr =
+   static late final _TWStoredKeyAccountCount_ptr =
    _lookup<NativeFunction<_c_TWStoredKeyAccountCount>>(
        'TWStoredKeyAccountCount');
-   late final _dart_TWStoredKeyAccountCount _TWStoredKeyAccountCount =
+   static late final _dart_TWStoredKeyAccountCount _TWStoredKeyAccountCount =
    _TWStoredKeyAccountCount_ptr.asFunction<_dart_TWStoredKeyAccountCount>();
 
 
    /// Returns the account at a given index.  Returned object needs to be deleted.
-  Pointer<Void> TWStoredKeyAccount(
+   static Pointer<Void> TWStoredKeyAccount(
     Pointer<Void> key,
     int index,
   ) {
@@ -160,11 +160,11 @@ abstract class TWStoredKey  {
     );
   }
 
-  late final _TWStoredKeyAccount_ptr = _lookup<NativeFunction<_c_TWStoredKeyAccount>>('TWStoredKeyAccount');
-  late final _dart_TWStoredKeyAccount _TWStoredKeyAccount = _TWStoredKeyAccount_ptr.asFunction<_dart_TWStoredKeyAccount>();
+   static late final _TWStoredKeyAccount_ptr = _lookup<NativeFunction<_c_TWStoredKeyAccount>>('TWStoredKeyAccount');
+   static late final _dart_TWStoredKeyAccount _TWStoredKeyAccount = _TWStoredKeyAccount_ptr.asFunction<_dart_TWStoredKeyAccount>();
 
   /// Returns the account for a specific coin, creating it if necessary.  Returned object needs to be deleted.
-  Pointer<Void> TWStoredKeyAccountForCoin(
+   static Pointer<Void> TWStoredKeyAccountForCoin(
     Pointer<Void> key,
     int coin,
     Pointer<Void> wallet,
@@ -176,11 +176,11 @@ abstract class TWStoredKey  {
     );
   }
 
-  late final _TWStoredKeyAccountForCoin_ptr = _lookup<NativeFunction<_c_TWStoredKeyAccountForCoin>>('TWStoredKeyAccountForCoin');
-  late final _dart_TWStoredKeyAccountForCoin _TWStoredKeyAccountForCoin = _TWStoredKeyAccountForCoin_ptr.asFunction<_dart_TWStoredKeyAccountForCoin>();
+   static late final _TWStoredKeyAccountForCoin_ptr = _lookup<NativeFunction<_c_TWStoredKeyAccountForCoin>>('TWStoredKeyAccountForCoin');
+   static late final _dart_TWStoredKeyAccountForCoin _TWStoredKeyAccountForCoin = _TWStoredKeyAccountForCoin_ptr.asFunction<_dart_TWStoredKeyAccountForCoin>();
 
   /// Remove the account for a specific coin
-  void TWStoredKeyRemoveAccountForCoin(
+   static void TWStoredKeyRemoveAccountForCoin(
     Pointer<Void> key,
     int coin,
   ) {
@@ -190,11 +190,11 @@ abstract class TWStoredKey  {
     );
   }
 
-  late final _TWStoredKeyRemoveAccountForCoin_ptr = _lookup<NativeFunction<_c_TWStoredKeyRemoveAccountForCoin>>('TWStoredKeyRemoveAccountForCoin');
-  late final _dart_TWStoredKeyRemoveAccountForCoin _TWStoredKeyRemoveAccountForCoin = _TWStoredKeyRemoveAccountForCoin_ptr.asFunction<_dart_TWStoredKeyRemoveAccountForCoin>();
+   static late final _TWStoredKeyRemoveAccountForCoin_ptr = _lookup<NativeFunction<_c_TWStoredKeyRemoveAccountForCoin>>('TWStoredKeyRemoveAccountForCoin');
+   static late final _dart_TWStoredKeyRemoveAccountForCoin _TWStoredKeyRemoveAccountForCoin = _TWStoredKeyRemoveAccountForCoin_ptr.asFunction<_dart_TWStoredKeyRemoveAccountForCoin>();
 
   /// Adds a new account.
-  void TWStoredKeyAddAccount(
+   static void TWStoredKeyAddAccount(
     Pointer<Void> key,
     Pointer<Utf8> address,
     int coin,
@@ -210,12 +210,12 @@ abstract class TWStoredKey  {
     );
   }
 
-  late final _TWStoredKeyAddAccount_ptr = _lookup<NativeFunction<_c_TWStoredKeyAddAccount>>('TWStoredKeyAddAccount');
-  late final _dart_TWStoredKeyAddAccount _TWStoredKeyAddAccount = _TWStoredKeyAddAccount_ptr.asFunction<_dart_TWStoredKeyAddAccount>();
+   static late final _TWStoredKeyAddAccount_ptr = _lookup<NativeFunction<_c_TWStoredKeyAddAccount>>('TWStoredKeyAddAccount');
+   static late final _dart_TWStoredKeyAddAccount _TWStoredKeyAddAccount = _TWStoredKeyAddAccount_ptr.asFunction<_dart_TWStoredKeyAddAccount>();
 
 
    /// Saves the key to a file.
-   int TWStoredKeyStore(
+   static int TWStoredKeyStore(
        Pointer<Void> key,
        Pointer<Utf8> path,
        ) {
@@ -225,9 +225,9 @@ abstract class TWStoredKey  {
      );
    }
 
-   late final _TWStoredKeyStore_ptr =
+   static late final _TWStoredKeyStore_ptr =
    _lookup<NativeFunction<_c_TWStoredKeyStore>>('TWStoredKeyStore');
-   late final _dart_TWStoredKeyStore _TWStoredKeyStore =
+   static late final _dart_TWStoredKeyStore _TWStoredKeyStore =
    _TWStoredKeyStore_ptr.asFunction<_dart_TWStoredKeyStore>();
 
    /// Decrypts the private key.
@@ -314,7 +314,7 @@ abstract class TWStoredKey  {
    ///
    /// This method needs the encryption password to re-derive addresses from private keys.
    /// @returns `false` if the password is incorrect.
-   int TWStoredKeyFixAddresses(
+   static int TWStoredKeyFixAddresses(
        Pointer<Void> key,
        Pointer<Void> password,
        ) {
@@ -324,10 +324,10 @@ abstract class TWStoredKey  {
      );
    }
 
-   late final _TWStoredKeyFixAddresses_ptr =
+   static late final _TWStoredKeyFixAddresses_ptr =
    _lookup<NativeFunction<_c_TWStoredKeyFixAddresses>>(
        'TWStoredKeyFixAddresses');
-   late final _dart_TWStoredKeyFixAddresses _TWStoredKeyFixAddresses =
+   static late final _dart_TWStoredKeyFixAddresses _TWStoredKeyFixAddresses =
    _TWStoredKeyFixAddresses_ptr.asFunction<_dart_TWStoredKeyFixAddresses>();
 }
 

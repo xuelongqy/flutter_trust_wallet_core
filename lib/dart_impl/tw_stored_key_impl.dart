@@ -24,24 +24,27 @@ class TWStoredKeyImpl extends TWStoredKey {
     return _storedKey;
   }
 
-  static Pointer<Void> importJson(Pointer<Void> json) {
-    return TWStoredKey.TWStoredKeyImportJSON(json);
+  static Pointer<Void> importJson(Uint8List json) {
+    final _json = TWData.TWDataCreateWithBytes(json.toPointerUint8(), json.length);
+    final _storedKey = TWStoredKey.TWStoredKeyImportJSON(_json);
+    TWData.TWDataDelete(_json);
+    return _storedKey;
   }
 
-  static Pointer<Void> decryptPrivateKey(Pointer<Void> storedKey, Uint8List password) {
+  static Uint8List decryptPrivateKey(Pointer<Void> storedKey, Uint8List password) {
     final _password = TWData.TWDataCreateWithBytes(password.toPointerUint8(), password.length);
     final _pivateKey = TWStoredKey.TWStoredKeyDecryptPrivateKey(storedKey, _password);
     TWData.TWDataDelete(_password);
-    return _pivateKey;
+    return TWData.TWDataBytes(_pivateKey).asTypedList(TWData.TWDataSize(_pivateKey));
   }
 
-  static Pointer<Utf8> decryptMnemonic(Pointer<Void> storedKey, Uint8List password) {
+  static String decryptMnemonic(Pointer<Void> storedKey, Uint8List password) {
     final _password = TWData.TWDataCreateWithBytes(password.toPointerUint8(), password.length);
 
     final _mnemonic = TWStoredKey.TWStoredKeyDecryptMnemonic(storedKey, _password);
     TWData.TWDataDelete(_password);
 
-    return _mnemonic;
+    return TWStringImpl.toDartString(_mnemonic);
   }
 
   static Pointer<Void> privateKey(Pointer<Void> storedKey, int coinType, Uint8List password) {
@@ -61,5 +64,75 @@ class TWStoredKeyImpl extends TWStoredKey {
 
   static Pointer<Void> exportJSON(Pointer<Void> storedKey) {
     return TWStoredKey.TWStoredKeyExportJSON(storedKey);
+  }
+
+  static Pointer<Void> load(String path) {
+    final _path = TWStringImpl.toTWString(path);
+    final _storedKey = TWStoredKey.TWStoredKeyLoad(_path);
+    TWStringImpl.delete(_path);
+    return _storedKey;
+  }
+
+  static String identifier(Pointer<Void> storedKey) {
+    final _identifier = TWStoredKey.TWStoredKeyIdentifier(storedKey);
+    return TWStringImpl.toDartString(_identifier);
+  }
+
+  static String name(Pointer<Void> storedKey) {
+    final _name = TWStoredKey.TWStoredKeyName(storedKey);
+    return TWStringImpl.toDartString(_name);
+  }
+
+  static bool isMnemonic(Pointer<Void> storedKey) {
+
+    return  TWStoredKey.TWStoredKeyIsMnemonic(storedKey) > 0;
+  }
+
+  static void delete(Pointer<Void> storedKey) {
+    TWStoredKey.TWStoredKeyDelete(storedKey);
+  }
+
+  // Account
+  static Pointer<Void> account(Pointer<Void> storedKey,int index) {
+    return TWStoredKey.TWStoredKeyAccount(storedKey, index);
+  }
+
+  // Account
+  static Pointer<Void> accountForCoin(Pointer<Void> storedKey, int coin, Pointer<Void> wallet) {
+    return TWStoredKey.TWStoredKeyAccountForCoin(storedKey, coin, wallet);
+  }
+
+  static int accountCount(Pointer<Void> storedKey) {
+
+    return TWStoredKey.TWStoredKeyAccountCount(storedKey);
+  }
+
+  static void removeAccountForCoin(Pointer<Void> storedKey, int coin) {
+    TWStoredKey.TWStoredKeyRemoveAccountForCoin(storedKey, coin);
+  }
+
+  static void addAccount(Pointer<Void> storedKey, String address, int coin,String derivationPath, String extetndedPublicKey){
+    final _address = TWStringImpl.toTWString(address);
+    final _derivationPath = TWStringImpl.toTWString(derivationPath);
+    final _extetndedPublicKey = TWStringImpl.toTWString(extetndedPublicKey);
+    TWStoredKey.TWStoredKeyAddAccount(storedKey, _address, coin, _derivationPath, _extetndedPublicKey);
+
+    TWStringImpl.delete(_address);
+    TWStringImpl.delete(_derivationPath);
+    TWStringImpl.delete(_extetndedPublicKey);
+  }
+
+  static bool store(Pointer<Void> storedKey, String path) {
+    final _path = TWStringImpl.toTWString(path);
+    final _isStore =  TWStoredKey.TWStoredKeyStore(storedKey, _path) > 0;
+    TWStringImpl.delete(_path);
+    return _isStore;
+  }
+
+  static bool fixAddresses(Pointer<Void> storedKey, Uint8List password) {
+    final _password = TWData.TWDataCreateWithBytes(password.toPointerUint8(), password.length);
+    final _isOk = TWStoredKey.TWStoredKeyFixAddresses(storedKey, _password);
+    TWData.TWDataDelete(_password);
+    return _isOk > 0;
   }
 }
