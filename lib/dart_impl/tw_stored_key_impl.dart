@@ -1,7 +1,7 @@
 part of trust_wallet_core_ffi;
 
 class TWStoredKeyImpl extends TWStoredKey {
-  static Pointer<Void> importPrivateKey(Uint8List pk, String name, Uint8List password, int coin) {
+  static Pointer<Void>? importPrivateKey(Uint8List pk, String name, Uint8List password, int coin) {
     final _name = TWStringImpl.toTWString(name);
     final _password = TWData.TWDataCreateWithBytes(password.toPointerUint8(), password.length);
     final _pk = TWData.TWDataCreateWithBytes(pk.toPointerUint8(), pk.length);
@@ -9,10 +9,13 @@ class TWStoredKeyImpl extends TWStoredKey {
     TWStringImpl.delete(_name);
     TWData.TWDataDelete(_password);
     TWData.TWDataDelete(_pk);
+    if(_storedKey.address == 0) {
+      return null;
+    }
     return _storedKey;
   }
 
-  static Pointer<Void> importHDWallet(String mnemonic, String name, Uint8List password, int coin) {
+  static Pointer<Void>? importHDWallet(String mnemonic, String name, Uint8List password, int coin) {
     final _mnemonic = TWStringImpl.toTWString(mnemonic);
     final _name = TWStringImpl.toTWString(name);
     final _password = TWData.TWDataCreateWithBytes(password.toPointerUint8(), password.length);
@@ -21,29 +24,40 @@ class TWStoredKeyImpl extends TWStoredKey {
     TWStringImpl.delete(_mnemonic);
     TWStringImpl.delete(_name);
     TWData.TWDataDelete(_password);
+    if(_storedKey.address == 0) {
+      return null;
+    }
     return _storedKey;
   }
 
-  static Pointer<Void> importJson(Uint8List json) {
+  static Pointer<Void>? importJson(Uint8List json) {
     final _json = TWData.TWDataCreateWithBytes(json.toPointerUint8(), json.length);
     final _storedKey = TWStoredKey.TWStoredKeyImportJSON(_json);
     TWData.TWDataDelete(_json);
+    if(_storedKey.address == 0) {
+      return null;
+    }
     return _storedKey;
   }
 
-  static Uint8List decryptPrivateKey(Pointer<Void> storedKey, Uint8List password) {
+  static Uint8List? decryptPrivateKey(Pointer<Void> storedKey, Uint8List password) {
     final _password = TWData.TWDataCreateWithBytes(password.toPointerUint8(), password.length);
     final _pivateKey = TWStoredKey.TWStoredKeyDecryptPrivateKey(storedKey, _password);
     TWData.TWDataDelete(_password);
+    if(_pivateKey.address == 0) {
+      return null;
+    }
     return TWData.TWDataBytes(_pivateKey).asTypedList(TWData.TWDataSize(_pivateKey));
   }
 
-  static String decryptMnemonic(Pointer<Void> storedKey, Uint8List password) {
+  static String? decryptMnemonic(Pointer<Void> storedKey, Uint8List password) {
     final _password = TWData.TWDataCreateWithBytes(password.toPointerUint8(), password.length);
 
     final _mnemonic = TWStoredKey.TWStoredKeyDecryptMnemonic(storedKey, _password);
     TWData.TWDataDelete(_password);
-
+    if(_mnemonic.address == 0) {
+      return null;
+    }
     return TWStringImpl.toDartString(_mnemonic);
   }
 
@@ -62,15 +76,18 @@ class TWStoredKeyImpl extends TWStoredKey {
     return _wallet;
   }
 
-  static Pointer<Void> exportJSON(Pointer<Void> storedKey) {
+  static Pointer<Void>? exportJSON(Pointer<Void> storedKey) {
     return TWStoredKey.TWStoredKeyExportJSON(storedKey);
   }
 
-  static Pointer<Void> load(String path) {
+  static Pointer<Void>? load(String path) {
     final _path = TWStringImpl.toTWString(path);
-    final _storedKey = TWStoredKey.TWStoredKeyLoad(_path);
+    final _load = TWStoredKey.TWStoredKeyLoad(_path);
     TWStringImpl.delete(_path);
-    return _storedKey;
+    if(_load.address == 0) {
+      return null;
+    }
+    return _load;
   }
 
   static String identifier(Pointer<Void> storedKey) {
