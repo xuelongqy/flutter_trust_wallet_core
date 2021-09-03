@@ -2,33 +2,49 @@ part of flutter_trust_wallet_core;
 
 class StoredKey {
   static late Pointer<Void> _nativehandle;
-  static StoredKey importHDWallet(String mnemonic, String name, Uint8List password, int coin) {
-    _nativehandle = TWStoredKeyImpl.importHDWallet(mnemonic, name, password, coin);
-
+  static StoredKey? importHDWallet(String mnemonic, String name, Uint8List password, int coin) {
+    final pointer = TWStoredKeyImpl.importHDWallet(mnemonic, name, password, coin);
+    if(pointer == null) {
+      return null;
+    }
+    _nativehandle = pointer;
     return StoredKey();
   }
 
-  static StoredKey importPrivateKey(Uint8List privateKeyData, String name, Uint8List password, int coin) {
-    _nativehandle = TWStoredKeyImpl.importPrivateKey(privateKeyData, name, password, coin);
-
+  static StoredKey? importPrivateKey(Uint8List privateKeyData, String name, Uint8List password, int coin) {
+    final pointer = TWStoredKeyImpl.importPrivateKey(privateKeyData, name, password, coin);
+    if(pointer == null) {
+      return null;
+    }
+    _nativehandle = pointer;
     return StoredKey();
   }
 
-  String exportJson() {
+  String? exportJson() {
     final _data = TWStoredKeyImpl.exportJSON(_nativehandle);
-
+    if(_data == null){
+      return null;
+    }
     final bytes = TWData.TWDataBytes(_data).asTypedList(TWData.TWDataSize(_data));
     return String.fromCharCodes(bytes);
   }
 
-  static StoredKey load(String path){
-    _nativehandle = TWStoredKeyImpl.load(path);
+  static StoredKey? load(String path){
+    final pointer = TWStoredKeyImpl.load(path);
+    if(pointer == null) {
+      return null;
+    }
+    _nativehandle = pointer;
 
     return StoredKey();
   }
 
-  static StoredKey importJson(Uint8List json) {
-    _nativehandle = TWStoredKeyImpl.importJson(json);
+  static StoredKey? importJson(Uint8List json) {
+    final pointer = TWStoredKeyImpl.importJson(json);
+    if(pointer == null) {
+      return null;
+    }
+    _nativehandle = pointer;
 
     return StoredKey();
   }
@@ -77,25 +93,31 @@ class StoredKey {
     return TWStoredKeyImpl.store(_nativehandle, path);
   }
 
-  Uint8List decryptPrivateKey(Uint8List password) {
-
-    return TWStoredKeyImpl.decryptPrivateKey(_nativehandle, password);
+  String? decryptPrivateKey(Uint8List password) {
+    final _data = TWStoredKeyImpl.decryptPrivateKey(_nativehandle, password);
+    if(_data == null) {
+      return null;
+    }
+    return String.fromCharCodes(_data);
   }
 
-  String decryptMnemonic(Uint8List password) {
-
+  String? decryptMnemonic(Uint8List password) {
     return TWStoredKeyImpl.decryptMnemonic(_nativehandle, password);
   }
 
-  PrivateKey privateKey(int coin,Uint8List password) {
+  PrivateKey? privateKey(int coin,Uint8List password) {
     final pointer = TWStoredKeyImpl.privateKey(_nativehandle, coin, password);
-
+    if(pointer.address == 0) {
+      return null;
+    }
     return PrivateKey._(pointer);
   }
 
-   HDWallet wallet(Uint8List password) {
+   HDWallet? wallet(Uint8List password) {
     final pointer = TWStoredKeyImpl.wallet(_nativehandle, password);
-
+    if(pointer.address == 0) {
+      return null;
+    }
     return HDWallet._(pointer);
   }
 
