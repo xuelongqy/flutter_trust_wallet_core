@@ -53,4 +53,8 @@ class HDWallet {
   String mnemonic() {
     return TWHDWalletImpl.mnemonic(_nativehandle);
   }
+
+  String getExtendedPublicKey(int purpose, int coinType, int twHdVersion) {
+    return TWHDWalletImpl.getExtendedPublicKey(_nativehandle, purpose, coinType, twHdVersion);
+  }
 }

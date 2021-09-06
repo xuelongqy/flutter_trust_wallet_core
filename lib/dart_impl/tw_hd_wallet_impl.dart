@@ -71,4 +71,10 @@ class TWHDWalletImpl extends TWHDWallet {
   static String mnemonic(Pointer<Void> wallet) {
     return TWStringImpl.toDartString(TWHDWallet.TWHDWalletMnemonic(wallet));
   }
+
+  static String getExtendedPublicKey(Pointer<Void> wallet, int purpose, int coinType, int twHdVersion) {
+    final publicKey = TWHDWallet.TWHDWalletGetExtendedPublicKey(wallet, purpose, coinType, twHdVersion);
+
+    return TWStringImpl.toDartString(publicKey);
+  }
 }

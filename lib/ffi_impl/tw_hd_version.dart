@@ -14,6 +14,11 @@ abstract class TWHDVersion {
   static const int TWHDVersionZPUB = 0x04b24746;
   static const int TWHDVersionZPRV = 0x04b2430c;
 
+  // Bitcoin Testnet
+  static const int TWHDVersionTPUB = 0x043587cf;
+  static const int TWHDVersionUPUB = 0x044a5262;
+  static const int TWHDVersionVPUB = 0x045f1cf6;
+
   // Litecoin
   static const int TWHDVersionLTUB = 0x019da462;
   static const int TWHDVersionLTPV = 0x019d9cfe;
