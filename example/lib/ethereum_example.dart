@@ -29,7 +29,7 @@ class _EthereumExampleState extends BaseExampleState<EthereumExample> {
     // logger.d("privateKeyhex1 = $privateKey1");
     logger.d("seed = ${hex.encode(widget.wallet.seed())}");
     final a = StoredKey.importPrivateKey(widget.wallet.getKeyForCoin(60).data(), "", Uint8List.fromList("123aaa".codeUnits), 60);
-    logger.d("keystore a = ${a.exportJson()}");
+    logger.d("keystore a = ${a?.exportJson()}");
 
     final publicKey = widget.wallet.getKeyForCoin(60).getPublicKeySecp256k1(false);
     final anyAddress = AnyAddress.createWithPublicKey(publicKey, 60);
