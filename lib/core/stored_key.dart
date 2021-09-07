@@ -93,12 +93,12 @@ class StoredKey {
     return TWStoredKeyImpl.store(_nativehandle, path);
   }
 
-  String? decryptPrivateKey(Uint8List password) {
-    final _data = TWStoredKeyImpl.decryptPrivateKey(_nativehandle, password);
+  Uint8List? decryptPrivateKey(Uint8List password) {
+    Uint8List? _data = TWStoredKeyImpl.decryptPrivateKey(_nativehandle, password);
     if(_data == null) {
       return null;
     }
-    return String.fromCharCodes(_data);
+    return  _data;
   }
 
   String? decryptMnemonic(Uint8List password) {
