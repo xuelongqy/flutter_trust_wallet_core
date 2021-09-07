@@ -195,7 +195,7 @@ abstract class TWHDWallet  {
   late final _dart_TWHDWalletGetExtendedPrivateKey _TWHDWalletGetExtendedPrivateKey = _TWHDWalletGetExtendedPrivateKey_ptr.asFunction<_dart_TWHDWalletGetExtendedPrivateKey>();
 
   /// Returns the exteded public key.  Returned object needs to be deleted.
-  Pointer<Utf8> TWHDWalletGetExtendedPublicKey(
+  static Pointer<Utf8> TWHDWalletGetExtendedPublicKey(
     Pointer<Void> wallet,
     int purpose,
     int coin,
@@ -209,8 +209,8 @@ abstract class TWHDWallet  {
     );
   }
 
-  late final _TWHDWalletGetExtendedPublicKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetExtendedPublicKey>>('TWHDWalletGetExtendedPublicKey');
-  late final _dart_TWHDWalletGetExtendedPublicKey _TWHDWalletGetExtendedPublicKey = _TWHDWalletGetExtendedPublicKey_ptr.asFunction<_dart_TWHDWalletGetExtendedPublicKey>();
+  static late final _TWHDWalletGetExtendedPublicKey_ptr = _lookup<NativeFunction<_c_TWHDWalletGetExtendedPublicKey>>('TWHDWalletGetExtendedPublicKey');
+  static late final _dart_TWHDWalletGetExtendedPublicKey _TWHDWalletGetExtendedPublicKey = _TWHDWalletGetExtendedPublicKey_ptr.asFunction<_dart_TWHDWalletGetExtendedPublicKey>();
 
   /// Computes the public key from an exteded public key representation.  Returned object needs to be deleted.
   static Pointer<Void> TWHDWalletGetPublicKeyFromExtended(
