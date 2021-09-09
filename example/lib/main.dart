@@ -3,6 +3,7 @@ import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_address_example.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_transaction_example.dart';
 import 'package:flutter_trust_wallet_core_example/ethereum_example.dart';
+import 'package:flutter_trust_wallet_core_example/private_key_is_valid_example.dart';
 import 'package:flutter_trust_wallet_core_example/tron_example.dart';
 
 List<String> logs = [];
@@ -88,6 +89,12 @@ class _ExampleState extends State<Example> {
                       return TronExample(wallet);
                     },
                   ),
+                _exampleItem(
+                name: 'PrivateKey.isValid(a,b)',
+                builder: (_) {
+                return PrivateKeyIsValidExample(wallet);
+                  },
+                ),
                 ],
               ),
             ),
