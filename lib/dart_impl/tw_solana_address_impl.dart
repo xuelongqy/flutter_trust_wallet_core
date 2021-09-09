@@ -17,9 +17,12 @@ class TWSolanaAddressImpl extends TWSolanaAddress {
     return TWSolanaAddress.TWSolanaAddressDelete(address);
   }
 
-  static String defaultTokenAddress(Pointer<Void> address,String string){
+  static String? defaultTokenAddress(Pointer<Void> address,String string){
     final _string = TWStringImpl.toTWString(string);
     final result = TWSolanaAddress.TWSolanaAddressDefaultTokenAddress(address,_string);
+    if(result.address == 0) {
+      return null;
+    }
     TWStringImpl.delete(_string);
     return TWStringImpl.toDartString(result);
   }

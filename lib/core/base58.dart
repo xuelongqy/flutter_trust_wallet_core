@@ -9,11 +9,11 @@ class Base58 {
     return TWBase58Impl.base58EncodeNoCheck(bytes);
   }
 
-  static Uint8List base58Decode(String str) {
+  static Uint8List? base58Decode(String str) {
     return TWBase58Impl.base58Decode(str);
   }
 
-  static Uint8List base58DecodeNoCheck(String str) {
+  static Uint8List? base58DecodeNoCheck(String str) {
     return TWBase58Impl.base58DecodeNoCheck(str);
   }
 }

@@ -8,7 +8,7 @@ class SolanaAddress {
     if (_pointer.hashCode == 0) throw Exception(["SegwitAddress nativehandle is null"]);
   }
 
-  String defaultTokenAddress(String tokenMintAddress) {
+  String? defaultTokenAddress(String tokenMintAddress) {
     return TWSolanaAddressImpl.defaultTokenAddress(_pointer, tokenMintAddress);
   }
 
