@@ -31,7 +31,12 @@ class _TronExampleState extends BaseExampleState<TronExample> {
     Map blockHeader = json.decode(nowBlock)['block_header']['raw_data'];
     print(blockHeader);
     logger.d(widget.wallet.getAddressForCoin(coin));
-    String hexaaddress = hex.encode(Base58.base58DecodeNoCheck(widget.wallet.getAddressForCoin(coin)));
+    final addressList = Base58.base58DecodeNoCheck(widget.wallet.getAddressForCoin(coin));
+    if(addressList == null) {
+      print("addressList null !!!");
+      return;
+    }
+    String hexaaddress = hex.encode(addressList);
     logger.d("hexAddress = $hexaaddress");
 
 

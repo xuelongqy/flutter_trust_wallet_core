@@ -15,17 +15,23 @@ class TWBase58Impl extends TWBase58 {
     return result;
   }
 
-  static Uint8List base58Decode(String str) {
+  static Uint8List? base58Decode(String str) {
     final twString = TWStringImpl.toTWString(str);
     final decode = TWBase58.TWBase58Decode(twString);
+    if(decode.address == 0) {
+      return null;
+    }
     final result = TWData.TWDataBytes(decode).asTypedList(TWData.TWDataSize(decode));
     TWStringImpl.delete(twString);
     return result;
   }
 
-  static Uint8List base58DecodeNoCheck(String str) {
+  static Uint8List? base58DecodeNoCheck(String str) {
     final twString = TWStringImpl.toTWString(str);
     final decode = TWBase58.TWBase58DecodeNoCheck(twString);
+    if(decode.address == 0) {
+      return null;
+    }
     final result = TWData.TWDataBytes(decode).asTypedList(TWData.TWDataSize(decode));
     TWStringImpl.delete(twString);
     return result;
