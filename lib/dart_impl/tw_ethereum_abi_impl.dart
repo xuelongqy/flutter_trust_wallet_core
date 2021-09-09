@@ -14,10 +14,13 @@ class TWEthereumAbiImpl extends TWEthereumAbi {
     return result;
   }
 
-  static String decodeCall(Uint8List encoded, String string){
+  static String? decodeCall(Uint8List encoded, String string){
     final _string = TWStringImpl.toTWString(string);
     final _data = TWData.TWDataCreateWithBytes(encoded.toPointerUint8(), encoded.length);
     final result = TWEthereumAbi.TWEthereumAbiDecodeCall(_data, _string);
+    if(result.address == 0) {
+      return null;
+    }
     TWData.TWDataDelete(_data);
     TWStringImpl.delete(_string);
     return TWStringImpl.toDartString(result);

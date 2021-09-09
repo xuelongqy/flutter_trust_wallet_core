@@ -16,7 +16,7 @@ class EthereumAbi {
     return TWEthereumAbiImpl.decodeOutput(fn._pointer,encoded);
   }
 
-  static String decodeCall(Uint8List encoded, String string){
+  static String? decodeCall(Uint8List encoded, String string){
     return TWEthereumAbiImpl.decodeCall(encoded,string);
   }
 

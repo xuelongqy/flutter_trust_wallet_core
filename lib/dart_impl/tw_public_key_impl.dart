@@ -23,10 +23,13 @@ class TWPublicKeyImpl extends TWPublicKey {
     return TWData.TWDataBytes(data).asTypedList(TWData.TWDataSize(data));
   }
 
-  static Pointer<Void> recover(Uint8List signature,Uint8List message){
+  static Pointer<Void>? recover(Uint8List signature,Uint8List message){
     final _signatureData = TWData.TWDataCreateWithBytes(signature.toPointerUint8(), signature.length);
     final _messageData = TWData.TWDataCreateWithBytes(message.toPointerUint8(), message.length);
     final result = TWPublicKey.TWPublicKeyRecover(_signatureData,_messageData);
+    if(result.address == 0) {
+      return null;
+    }
     TWData.TWDataDelete(_signatureData);
     TWData.TWDataDelete(_messageData);
     return result;

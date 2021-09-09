@@ -69,13 +69,13 @@ class StoredKey {
     TWStoredKeyImpl.delete(_nativehandle);
   }
 
- //Account
+ //Account ?
   Pointer<Void> account(int index) {
 
     return TWStoredKeyImpl.account(_nativehandle, index);
   }
 
-  //Account
+  //Account ?
   Pointer<Void> accountForCoin(int coin,HDWallet hdWallet) {
 
     return TWStoredKeyImpl.accountForCoin(_nativehandle, coin,hdWallet._nativehandle);

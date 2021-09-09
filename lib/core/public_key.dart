@@ -22,7 +22,7 @@ class PublicKey {
     return TWPublicKeyImpl.data(_nativehandle);
   }
 
-  static Pointer<Void> recover(Uint8List signature,Uint8List message){
+  static Pointer<Void>? recover(Uint8List signature,Uint8List message){
     return TWPublicKeyImpl.recover(signature, message);
   }
 
