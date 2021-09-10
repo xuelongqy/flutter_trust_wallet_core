@@ -38,4 +38,8 @@ class PrivateKey {
     final data = TWPrivateKeyImpl.getPublicKeySecp256k1(_nativehandle, compressed);
     return PublicKey._(data);
   }
+
+  void delete() {
+    TWPrivateKeyImpl.delete(_nativehandle);
+  }
 }
