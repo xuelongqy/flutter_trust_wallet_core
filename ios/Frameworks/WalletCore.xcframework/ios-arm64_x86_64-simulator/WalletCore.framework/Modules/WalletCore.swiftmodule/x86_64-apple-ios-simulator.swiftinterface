@@ -1351,6 +1351,7 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   case ecochain
   case avalancheCChain
   case xdai
+  case fantom
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.CoinType]
   public typealias RawValue = Swift.UInt32
@@ -2347,6 +2348,7 @@ public enum EthereumChainID : Swift.UInt32, Swift.CaseIterable {
   case heco
   case avalanche
   case xdai
+  case fantom
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.EthereumChainID]
   public typealias RawValue = Swift.UInt32
@@ -2704,6 +2706,7 @@ public enum HDVersion : Swift.UInt32, Swift.CaseIterable {
   }
   public init?(strength: Swift.Int32, passphrase: Swift.String)
   public init?(mnemonic: Swift.String, passphrase: Swift.String)
+  public init?(mnemonic: Swift.String, passphrase: Swift.String, check: Swift.Bool)
   public init?(entropy: Foundation.Data, passphrase: Swift.String)
   @objc deinit
   final public func getMasterKey(curve: WalletCore.Curve) -> WalletCore.PrivateKey
@@ -3618,6 +3621,7 @@ extension KeyStore {
   public enum Error : Swift.Error, Foundation.LocalizedError {
     case accountNotFound
     case invalidMnemonic
+    case invalidJSON
     case invalidKey
     case invalidPassword
     public var errorDescription: Swift.String? {
